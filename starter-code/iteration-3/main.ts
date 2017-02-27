@@ -1,9 +1,27 @@
 // Add the reference to the interface
-
+import { TodoItemInterface} from "./interfaces";
+import { TodoListInterface } from "./interfaces";
 // Create class TodoItem that implements the corresponding interface
-
+class TodoItem implements TodoItemInterface {
+  constructor(public title: string) {}
+  updatedAt:Date = new Date.now();
+  status:boolean = true;
+  toggleStatus(status:boolean):void {
+    if (status === true) {
+      status = false;
+    } else status = true;
+    updatedAt = new Date.now();
+  }
+}
 // Create class TodoList that implements the corresponding interface
+class TodoList implements TodoListInterface {
+  tasks:Array<string> = [];
 
+  addTask(task:string):number {
+    tasks.push(task);
+    return tasks.length;
+  }
+}
 // Execution
 let task1 = new TodoItem('This is our first task');
 let task2 = new TodoItem('Eat pizza 🍕 yummy!!!');
