@@ -1,4 +1,37 @@
 // Add the reference to the interface
+import {TodoItemInterface} from "./interfaces";
+import {TodoListInterface} from "./interfaces";
+
+// 1. Create a class Todo that implements the Interface created before.
+class TodoItem implements TodoItemInterface {
+  constructor(public title: string, public status: boolian,public updatedAt: date) {}
+
+  toggleStatus() {
+    if (this.status = false) {this.status = true}
+    else if (this.status = true) {this.status = false}
+    this.updatedAt = today;
+  }
+
+}
+
+class TodoList implements TodoListInterface {
+  constructor(public myArray: Array<TodoItem> = []) {}
+
+  addTask(task: string): number{
+    this.myArray.push(task)
+    return this.myArray.length;
+  }
+
+  listAllTasks() {
+    this.myArray.forEach((elem)=>{console.log(elem.updatedAt),console.log(elem.title)})
+  }
+
+  deleteTask(task: string): number {
+  let position = this.myArray.indexOf(task);
+    this.myArray.splice(position, 1)
+    return this.myArray.length;
+  }
+}
 
 // Create class TodoItem that implements the corresponding interface
 
