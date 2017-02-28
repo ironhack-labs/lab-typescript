@@ -1,0 +1,27 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "sourceMap": false,
+    "target": "es6",
+    "module": "None"
+  },
+  "filesGlob": [
+    "**/*.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  },
+  "files": [
+    "iteration-1/main.ts",
+    "iteration-2/main.ts",
+    "iteration-2/todoInterface.ts",
+    "iteration-3/interfaces.ts",
+    "iteration-3/main.ts"
+  ]
+}
