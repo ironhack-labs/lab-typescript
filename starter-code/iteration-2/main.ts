@@ -1,6 +1,15 @@
 // Add the reference to the "TodoInterface"
 
+import { UserInterface }   from './todointerface';
+
+
 // 1. Create a class Todo that implements the Interface created before.
+
+export class ToDo {
+  addTask: string =
+  deleteTask: string =
+  listAllTasks: string =
+}
 
 // Execution
 let myTodos = new Todo();
