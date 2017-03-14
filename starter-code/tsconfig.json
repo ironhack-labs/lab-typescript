@@ -1,0 +1,11 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "removeComments": true
+  },
+  "files": [
+    "./iteration-1/main.ts",
+    "./iteration-2/main.ts",
+    "./iteration-2/todoInterface.ts"
+  ]
+}
