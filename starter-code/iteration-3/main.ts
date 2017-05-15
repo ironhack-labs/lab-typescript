@@ -1,8 +1,45 @@
 // Add the reference to the interface
-
+import {TodoItemInterface, TodoListInterface} from "./interfaces"
 // Create class TodoItem that implements the corresponding interface
 
+class TodoItem implements TodoItemInterface{
+  constructor(public taskTitle: string, ){}
+
+  status: boolean = false;
+  updatedAt: Date;
+
+  toggleStatus():void{
+    if (this.status === false){
+      this.status = true;
+    } else {
+      this.status = false;
+    }
+      this.updatedAt = new Date(new Date().getDate());
+  }
+}
 // Create class TodoList that implements the corresponding interface
+class TodoList implements TodoListInterface{
+  toDoArray:Array<TodoItem> =[];
+
+  addTask(task):void{
+    this.toDoArray.push(task);
+    console.log("=========== NEW TASK ==========  Task " + task + " added to the list");
+    console.log("Number of items: " + this.toDoArray.length);
+  }
+
+  listAllTasks():void{
+    for (let i in this.toDoArray){
+      console.log(this.toDoArray[i]);
+    }
+  }
+
+  deleteTask(task):void{
+    let deleteItem = this.toDoArray.indexOf(task);
+    this.toDoArray.splice(deleteItem, 1);
+  }
+}
+
+
 
 // Execution
 let task1 = new TodoItem('This is our first task');
@@ -22,4 +59,4 @@ myTodos.listAllTasks();
 console.log("Number of items:", myTodos.deleteTask(task3));
 console.log("Number of items:", myTodos.deleteTask(task4));
 console.log("Number of items:", myTodos.deleteTask(task5));
-myTodos.listUncomplete();
+// myTodos.listUncomplete();
