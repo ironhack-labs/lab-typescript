@@ -1,3 +1,10 @@
+"use strict";
+exports.__esModule = true;
+var Todo = (function () {
+    function Todo() {
+    }
+    return Todo;
+}());
 var myTodos = new Todo();
 console.log("Number of items:", myTodos.addTask('This is our first task'));
 console.log("Number of items:", myTodos.addTask('Eat pizza 🍕 yummy!!!'));

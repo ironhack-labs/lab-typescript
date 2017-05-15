@@ -1,6 +1,14 @@
 // Add the reference to the "TodoInterface"
+import {TestInterface} from './todoInterface.ts';
+
 
 // 1. Create a class Todo that implements the Interface created before.
+class Todo implements TestInterface {
+  
+}
+
+
+
 
 // Execution
 let myTodos = new Todo();
