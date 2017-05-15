@@ -3,3 +3,11 @@
 // - Method for adding task where will receive a string, doesn't return anything.
 // - Method for listing all task in the console, doesn't return anything.
 // - Method for delete a task where will receive a string, doesn't return anything.
+interface Tasker {
+  tasks: Array<string>;
+  addTask(task: string):number;
+  listAllTasks();
+  deleteTask(item: string);
+}
+
+// module.exports = Tasker;

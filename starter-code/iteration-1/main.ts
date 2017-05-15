@@ -1,5 +1,22 @@
 // Iteration 1
 // 1. Create an array of strings
+let arrayOfStrings : Array<string> = [];
+
+function addTask(item: string) {
+  arrayOfStrings.push(item);
+  return arrayOfStrings.length;
+  }
+
+function listAllTasks(){
+  arrayOfStrings.forEach(element =>{
+    console.log(element)
+  });
+}
+
+function deleteTask(task: string){
+  let beautifulNumber = arrayOfStrings.indexOf(task);
+  arrayOfStrings.splice(beautifulNumber, 1);
+}
 
 // 2. Create a function to add a task in to the array, call it `addTask`, the function has to accept a string and don't have to return anything.
 
