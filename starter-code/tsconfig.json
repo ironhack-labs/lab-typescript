@@ -1,7 +1,9 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "removeComments": true
+    "removeComments": true,
+    "target": "es5",
+    "module": "commonjs"
   },
   "files": [
     "./iteration-1/main.ts",
