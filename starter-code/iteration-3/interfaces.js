@@ -1,1 +1,1 @@
-"use strict";
+module.exports = { TodoItemInterface: TodoItemInterface, TodoInterface: TodoInterface };
