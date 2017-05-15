@@ -1,9 +1,35 @@
 // Add the reference to the "TodoInterface"
-
+export interface Tasker {
+  tasks: Array<string>;
+  addTask(task: string):Number;
+  listAllTasks();
+  deleteTask(item: string):Number;
+};
 // 1. Create a class Todo that implements the Interface created before.
+class Todo implements Tasker {
 
+constructor(public tasks: Array<string> = []){}
+
+
+   addTask(item: string) {
+    this.tasks.push(item);
+    return this.tasks.length;
+    }
+
+   listAllTasks(){
+      this.tasks.forEach(element =>{
+        console.log(element)
+      });
+    }
+
+    deleteTask(task: string){
+      let beautifulNumber = this.tasks.indexOf(task);
+      this.tasks.splice(beautifulNumber, 1);
+      return this.tasks.length;
+    }
+}
 // Execution
-let myTodos = new Todo();
+let myTodos = new Todo([]);
 console.log("Number of items:", myTodos.addTask('This is our first task'));
 console.log("Number of items:", myTodos.addTask('Eat pizza 🍕 yummy!!!'));
 console.log("Number of items:", myTodos.addTask('Finish this iteration 1!! 🤓'));
