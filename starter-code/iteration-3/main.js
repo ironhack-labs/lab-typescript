@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var TodoItem = (function () {
     function TodoItem(title) {
         this.title = title;
