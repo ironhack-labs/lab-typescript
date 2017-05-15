@@ -1,3 +1,17 @@
+export interface TodoItemInterface {
+  title: String;
+  status: Boolean;
+  updatedAt: Date;
+  toggleStatus(todo: String):void;
+}
+
+export interface TodoListInterface {
+  todoItems: Array<String>;
+  addTask(todoItems): Number;
+  listAllTasks():void;
+  deleteTask(todoItems): Number;
+}
+
 // Write the interface for class TodoItem. It must have:
 // - A title of the task as a property.
 // - A boolean to mark if it's done.
