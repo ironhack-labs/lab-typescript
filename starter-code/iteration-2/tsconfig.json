@@ -1,0 +1,12 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "removeComments": true,
+    "module": "None",
+    "target": "es6"
+  },
+  "files": [
+    "./todoInterface.ts",
+    "./main.ts"
+  ]
+}
