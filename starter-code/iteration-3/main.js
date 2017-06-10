@@ -1,6 +1,8 @@
 var TodoItem = (function () {
-    function TodoItem(taskTitle) {
+    function TodoItem(taskTitle, taskUpdatedAt) {
+        if (taskUpdatedAt === void 0) { taskUpdatedAt = Date(); }
         this.taskTitle = taskTitle;
+        this.taskUpdatedAt = taskUpdatedAt;
         this.taskCompleted = false;
     }
     TodoItem.prototype.toggleCompleted = function () {

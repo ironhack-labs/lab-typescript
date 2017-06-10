@@ -8,10 +8,10 @@ interface TodoItemInterface{
   taskCompleted: boolean;
 
 // - A property updatedAt, obiously is a date.
-  taskUpdatedAt: Date;
+  taskUpdatedAt: string;
 
 // - Method for toogle if it's done or not, doesn't return anything.
-  toggleCompleted(): void;
+  toggleCompleted(): boolean;
 
 }
 

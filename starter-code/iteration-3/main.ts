@@ -2,9 +2,8 @@
 
 // Create class TodoItem that implements the corresponding interface
 class TodoItem implements TodoItemInterface{
-  constructor(public taskTitle: string){}
+  constructor(public taskTitle: string, public taskUpdatedAt: string = Date()){}
   taskCompleted: boolean = false;
-  taskUpdatedAt: Date;
   toggleCompleted(): boolean{
     return !this.taskCompleted;
   }
@@ -40,7 +39,8 @@ class TodoList implements TodoListInterface{
         }
     })
   }
-}
+
+  }
 
 
 // Execution
