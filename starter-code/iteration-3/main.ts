@@ -33,7 +33,7 @@ class TodoList implements TodoListInterface{
     })
     return this.taskList.length;
 }
-  listUncomplete():void{
+  listUncomplete(): void{
     this.taskList.forEach((oneTask) => {
       console.log(oneTask.taskTitle);
     })
