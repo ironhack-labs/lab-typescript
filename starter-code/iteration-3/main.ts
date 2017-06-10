@@ -12,7 +12,7 @@ class TodoItem implements TodoItemInterface{
 
 // Create class TodoList that implements the corresponding interface
 class TodoList implements TodoListInterface{
-  constructor(public taskList: Array<string> = []){}
+  constructor(public taskList: Array<TodoItem> = []){}
   addTask(task): number{
     console.log("Adding " + task.taskTitle)
     this.taskList.push(task)
@@ -34,8 +34,10 @@ class TodoList implements TodoListInterface{
     return this.taskList.length;
 }
   listUncomplete(): void{
-    this.taskList.forEach((oneTask) => {
-      console.log(oneTask.taskTitle);
+      this.taskList.forEach((oneTask) => {
+        if(oneTask.taskCompleted === false){
+          console.log("Not Completed: " + oneTask.taskTitle);
+        }
     })
   }
 }
@@ -48,15 +50,15 @@ let task3 = new TodoItem('Finish this iteration 1!! 🤓');
 let task4 = new TodoItem('Finish this iteration 2!! 🤓');
 let task5 = new TodoItem('Finish this iteration 3!! 🤓');
 
-let myTodos = new TodoList();
+const allTodos = new TodoList();
 
-console.log("Number of items:", myTodos.addTask(task1));
-console.log("Number of items:", myTodos.addTask(task2));
-console.log("Number of items:", myTodos.addTask(task3));
-console.log("Number of items:", myTodos.addTask(task4));
-console.log("Number of items:", myTodos.addTask(task5));
-myTodos.listAllTasks();
-console.log("Number of items:", myTodos.deleteTask(task3));
-console.log("Number of items:", myTodos.deleteTask(task4));
-console.log("Number of items:", myTodos.deleteTask(task5));
-myTodos.listUncomplete();
+console.log("Number of items:", allTodos.addTask(task1));
+console.log("Number of items:", allTodos.addTask(task2));
+console.log("Number of items:", allTodos.addTask(task3));
+console.log("Number of items:", allTodos.addTask(task4));
+console.log("Number of items:", allTodos.addTask(task5));
+allTodos.listAllTasks();
+console.log("Number of items:", allTodos.deleteTask(task3));
+console.log("Number of items:", allTodos.deleteTask(task4));
+console.log("Number of items:", allTodos.deleteTask(task5));
+allTodos.listUncomplete();

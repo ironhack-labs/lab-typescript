@@ -19,7 +19,7 @@ interface TodoItemInterface{
 interface TodoListInterface{
 
 // - An array of TodoItem as a property.
-  taskList: Array<string>;
+  taskList: Array<TodoItem>;
 
 // - Method for adding task where will receive an instance of TodoItem, doesn't return anything.
   addTask(task): void;

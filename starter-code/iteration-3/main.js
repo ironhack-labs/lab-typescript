@@ -36,7 +36,9 @@ var TodoList = (function () {
     };
     TodoList.prototype.listUncomplete = function () {
         this.taskList.forEach(function (oneTask) {
-            console.log(oneTask.taskTitle);
+            if (oneTask.taskCompleted === false) {
+                console.log("Not Completed: " + oneTask.taskTitle);
+            }
         });
     };
     return TodoList;
@@ -46,14 +48,14 @@ var task2 = new TodoItem('Eat pizza 🍕 yummy!!!');
 var task3 = new TodoItem('Finish this iteration 1!! 🤓');
 var task4 = new TodoItem('Finish this iteration 2!! 🤓');
 var task5 = new TodoItem('Finish this iteration 3!! 🤓');
-var myTodos = new TodoList();
-console.log("Number of items:", myTodos.addTask(task1));
-console.log("Number of items:", myTodos.addTask(task2));
-console.log("Number of items:", myTodos.addTask(task3));
-console.log("Number of items:", myTodos.addTask(task4));
-console.log("Number of items:", myTodos.addTask(task5));
-myTodos.listAllTasks();
-console.log("Number of items:", myTodos.deleteTask(task3));
-console.log("Number of items:", myTodos.deleteTask(task4));
-console.log("Number of items:", myTodos.deleteTask(task5));
-myTodos.listUncomplete();
+var allTodos = new TodoList();
+console.log("Number of items:", allTodos.addTask(task1));
+console.log("Number of items:", allTodos.addTask(task2));
+console.log("Number of items:", allTodos.addTask(task3));
+console.log("Number of items:", allTodos.addTask(task4));
+console.log("Number of items:", allTodos.addTask(task5));
+allTodos.listAllTasks();
+console.log("Number of items:", allTodos.deleteTask(task3));
+console.log("Number of items:", allTodos.deleteTask(task4));
+console.log("Number of items:", allTodos.deleteTask(task5));
+allTodos.listUncomplete();
