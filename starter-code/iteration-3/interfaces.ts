@@ -28,7 +28,7 @@ interface TodoListInterface{
   listAllTasks(): void;
 
 // - Method for delete a task where will receive an instance of TodoItem, doesn't return anything.
-  deleteTask(): number;
+  deleteTask(taskToDelete): number;
 
 // - Method for show all tasks that are not yet done, doesn't return anything.
   listUncomplete(): void;
