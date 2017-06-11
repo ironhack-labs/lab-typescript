@@ -35,4 +35,3 @@ myTodos.listAllTasks();
 console.log("Number of items:", myTodos.deleteTask('Finish this iteration 1!! 🤓'));
 console.log("Number of items:", myTodos.deleteTask('Finish this iteration 2!! 🤓'));
 myTodos.listAllTasks();
-//# sourceMappingURL=main.js.map
