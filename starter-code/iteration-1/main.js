@@ -13,7 +13,6 @@ function listAllTasks() {
 }
 ;
 function deleteTask(task) {
-    console.log('DELETE THISSSSSSSS', '\n', task);
     for (var i = 0; i < tasks.length; i++) {
         if (tasks[i] === task) {
             tasks.splice(i, 1);

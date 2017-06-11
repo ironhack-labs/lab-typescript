@@ -19,7 +19,6 @@ function listAllTasks(): number {
 
 // 4. Create a function to delete a task, you must find the task inside the array and delete it.
 function deleteTask (task: string): number {
-  console.log('DELETE THISSSSSSSS', '\n', task);
   for (let i = 0; i < tasks.length; i++) {
     if (tasks[i] === task) {
       tasks.splice(i, 1);
