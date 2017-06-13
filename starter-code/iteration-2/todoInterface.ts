@@ -7,7 +7,7 @@
 interface TodoItem {
     list: string[];
 
-    addTask(task): number,
+    addTask(task): number;
 
     listAllTasks(): void;
 
