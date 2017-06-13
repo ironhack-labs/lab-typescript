@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use strict";
 exports.__esModule = true;
 var Todo = (function () {
@@ -25,6 +26,8 @@ var Todo = (function () {
     };
     return Todo;
 }());
+=======
+>>>>>>> accded598e1e09f0de7f6ed0771ce1a266bea0dd
 var myTodos = new Todo();
 console.log("Number of items:", myTodos.addTask('This is our first task'));
 console.log("Number of items:", myTodos.addTask('Eat pizza 🍕 yummy!!!'));
