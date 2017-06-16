@@ -21,6 +21,37 @@ console.log(`Created Item --> ${ titles }`)
   }
 }
 // Create class TodoList that implements the corresponding interface
+class TodoList implements listInterface {
+  itemList: any[] = [];
+
+  addTask(task) {
+    this.itemList.push(task);
+    console.log(`Added + ${task.titles} to the list `);
+  }
+
+  listAllTasks() {
+    console.log("--------------- Task List -------------")
+    for (let listItem of this.itemList) {
+      console.log(listItem.titles);
+    }
+  }
+
+  deleteTask(task) {
+    let findTask = this.itemList.indexOf(task.titles);
+    console.log("Task # " + findTask);
+    console.log(`Deleted ${findTask}`);
+  }
+
+  showPending() {
+    for (let listItem of this.itemList) {
+      if (listItem.done == false) {
+        console.log(`${listItem.titles} is pending to do`);
+      }
+    }
+  }
+
+}
+
 
 // Execution
 let task1 = new TodoItem('This is our first task');
@@ -40,4 +71,4 @@ myTodos.listAllTasks();
 console.log("Number of items:", myTodos.deleteTask(task3));
 console.log("Number of items:", myTodos.deleteTask(task4));
 console.log("Number of items:", myTodos.deleteTask(task5));
-myTodos.listUncomplete();
+myTodos.showPending();

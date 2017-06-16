@@ -16,8 +16,8 @@ export interface itemInterface {
 // - Method for delete a task where will receive an instance of TodoItem, doesn't return anything.
 // - Method for show all tasks that are not yet done, doesn't return anything.
 export interface listInterface {
-  itemList:         string[];
-  addTask():        string;
+  itemList:         any[];
+  addTask():        void;
   listAllTasks():   void;
   deleteTask():     string;
   showPending():    void;
