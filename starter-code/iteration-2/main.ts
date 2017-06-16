@@ -1,9 +1,13 @@
 // Add the reference to the "TodoInterface"
-import { todoInterface } from "./todoInterface";
+// <reference path="./todoInterface.ts"/>
+import { toDoint } from "./todoInterface";
 
 // 1. Create a class Todo that implements the Interface created before.
 
-class Todo implements todoInterface {
+class Todo implements toDoint {
+  tasks: string[] = [];
+  task: string = "";
+
 
   addTask(task) {
 
@@ -33,8 +37,7 @@ class Todo implements todoInterface {
 let myTodos = new Todo();
 console.log("Number of items:", myTodos.addTask('This is our first task'));
 console.log("Number of items:", myTodos.addTask('Eat pizza 🍕 yummy!!!'));
-console.log("Number of items:", myTodos.addT
-ask('Finish this iteration 1!! 🤓'));
+console.log("Number of items:", myTodos.addTask('Finish this iteration 1!! 🤓'));
 console.log("Number of items:", myTodos.addTask('Finish this iteration 2!! 🤓'));
 console.log("Number of items:", myTodos.addTask('Finish this iteration 3!! 🤓'));
 myTodos.listAllTasks();

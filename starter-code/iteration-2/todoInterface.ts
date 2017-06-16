@@ -4,14 +4,12 @@
 // - Method for listing all task in the console, doesn't return anything.
 // - Method for delete a task where will receive a string, doesn't return anything.
 
-interface toDoint {
+export interface toDoint {
     tasks:        string[];
     task:         string;
-    addTask:      void;
-    listAllTasks: void;
-    deleteTask:   void;
+    addTask:      (task: string) => void;
+    listAllTasks: () => void;
+    deleteTask:   (str: any) => number;
 
 
 }
-
-export default toDoint;
