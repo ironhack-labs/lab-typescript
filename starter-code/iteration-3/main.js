@@ -1,3 +1,22 @@
+"use strict";
+exports.__esModule = true;
+var TodoItem = (function () {
+    function TodoItem(titles) {
+        this.done = false;
+        this.titles = "";
+        var itemTitle = titles;
+        console.log("Created Item --> " + titles);
+    }
+    TodoItem.prototype.toggle = function () {
+        if (this.done == false) {
+            this.done = true;
+        }
+        else if (this.done == true) {
+            this.done = false;
+        }
+    };
+    return TodoItem;
+}());
 var task1 = new TodoItem('This is our first task');
 var task2 = new TodoItem('Eat pizza 🍕 yummy!!!');
 var task3 = new TodoItem('Finish this iteration 1!! 🤓');

@@ -1,7 +1,25 @@
 // Add the reference to the interface
-
+import { itemInterface, listInterface } from "./interfaces";
 // Create class TodoItem that implements the corresponding interface
+class TodoItem implements itemInterface {
+  done: boolean = false;
+  updatedAt: Date;
+  titles: string = "";
 
+
+toggle() {
+  if (this.done == false ) {
+    this.done = true;
+  } else if (this.done == true ) {
+    this.done = false;
+  }
+}
+
+constructor(titles) {
+let itemTitle = titles;
+console.log(`Created Item --> ${ titles }`)
+  }
+}
 // Create class TodoList that implements the corresponding interface
 
 // Execution

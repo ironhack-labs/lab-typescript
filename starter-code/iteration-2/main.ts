@@ -5,8 +5,6 @@ import { toDoint } from "./todoInterface";
 // 1. Create a class Todo that implements the Interface created before.
 
 class Todo implements toDoint {
-  tasks: string[] = [];
-  task: string = "";
 
 
   addTask(task) {
@@ -30,6 +28,8 @@ class Todo implements toDoint {
   }
 
   constructor() {}
+  tasks: string[] = [];
+  task: string = "";
 }
 
 
