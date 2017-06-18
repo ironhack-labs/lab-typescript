@@ -10,9 +10,11 @@ var TodoItem = (function () {
     }
     TodoItem.prototype.toggle = function () {
         if (this.done == false) {
+            console.log("Task completed");
             this.done = true;
         }
         else if (this.done == true) {
+            console.log("Task pending");
             this.done = false;
         }
     };

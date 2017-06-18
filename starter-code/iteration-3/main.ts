@@ -9,8 +9,10 @@ export class TodoItem implements itemInterface {
 
 toggle() {
   if (this.done == false ) {
+    console.log("Task completed");
     this.done = true;
   } else if (this.done == true ) {
+    console.log("Task pending");
     this.done = false;
   }
 }
