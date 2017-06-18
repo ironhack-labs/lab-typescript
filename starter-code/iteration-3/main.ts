@@ -1,10 +1,10 @@
 // Add the reference to the interface
 import { itemInterface, listInterface } from "./interfaces";
 // Create class TodoItem that implements the corresponding interface
-class TodoItem implements itemInterface {
-  done: boolean = false;
-  updatedAt: Date;
-  titles: string = "";
+export class TodoItem implements itemInterface {
+  done:       boolean = false;
+  updatedAt:  Date = new Date;
+  taskTitle:  string = "";
 
 
 toggle() {
@@ -15,37 +15,41 @@ toggle() {
   }
 }
 
-constructor(titles) {
-let itemTitle = titles;
-console.log(`Created Item --> ${ titles }`)
+constructor(title) {
+this.taskTitle = title;
+console.log(`Created Item --> ${ title }`)
   }
 }
 // Create class TodoList that implements the corresponding interface
 class TodoList implements listInterface {
-  itemList: any[] = [];
+  itemList: TodoItem[] = [];
 
-  addTask(task) {
+  addTask(task: TodoItem) {
     this.itemList.push(task);
-    console.log(`Added + ${task.titles} to the list `);
+    console.log(`Added --> ${task.taskTitle} to the list `);
+    return this.itemList.length;
   }
 
   listAllTasks() {
-    console.log("--------------- Task List -------------")
+    console.log("--------------- Task List -------------");
     for (let listItem of this.itemList) {
-      console.log(listItem.titles);
+      console.log(listItem.taskTitle);
     }
+    return this.itemList.length;
   }
 
-  deleteTask(task) {
-    let findTask = this.itemList.indexOf(task.titles);
-    console.log("Task # " + findTask);
+  deleteTask(task: TodoItem) {
+    let findTask = this.itemList.indexOf(task);
     console.log(`Deleted ${findTask}`);
+    this.itemList.splice(findTask, 1);
+    return this.itemList.length;
   }
 
   showPending() {
+    console.log("-------------- Pending Items -------------")
     for (let listItem of this.itemList) {
       if (listItem.done == false) {
-        console.log(`${listItem.titles} is pending to do`);
+        console.log(`${listItem.taskTitle} is pending to do`);
       }
     }
   }

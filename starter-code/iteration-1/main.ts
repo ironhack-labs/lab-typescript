@@ -37,6 +37,7 @@ class toDolist {
   deleteTask(str) {
     let findTask = this.tasks.indexOf(str);
     console.log("Task # " + findTask);
+    this.tasks.splice(findTask, 1);
     return this.tasks.length;
   }
 }

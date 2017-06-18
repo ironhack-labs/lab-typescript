@@ -7,11 +7,11 @@
 //not sure why this syntax works but it should be more like addTask(): string;
 
 export interface toDoint {
-    tasks:        string[];
-    task:         string;
-    addTask:      (task: string) => void;
-    listAllTasks: () => void;
-    deleteTask:   (str: string) => number;
+    tasks:          string[];
+    task:           string;
+    addTask:        (task: string) => number;
+    listAllTasks(): number;
+    deleteTask:     (str: string) => number;
 
 
 }

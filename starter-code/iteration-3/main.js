@@ -1,11 +1,12 @@
 "use strict";
 // exports.__esModule = true;
 var TodoItem = (function () {
-    function TodoItem(titles) {
+    function TodoItem(title) {
         this.done = false;
-        this.titles = "";
-        var itemTitle = titles;
-        console.log("Created Item --> " + titles);
+        this.updatedAt = new Date;
+        this.taskTitle = "";
+        this.taskTitle = title;
+        console.log("Created Item --> " + title);
     }
     TodoItem.prototype.toggle = function () {
         if (this.done == false) {
@@ -17,31 +18,36 @@ var TodoItem = (function () {
     };
     return TodoItem;
 }());
+// exports.TodoItem = TodoItem;
 var TodoList = (function () {
     function TodoList() {
         this.itemList = [];
     }
     TodoList.prototype.addTask = function (task) {
         this.itemList.push(task);
-        console.log("Added + " + task.titles + " to the list ");
+        console.log("Added --> " + task.taskTitle + " to the list ");
+        return this.itemList.length;
     };
     TodoList.prototype.listAllTasks = function () {
         console.log("--------------- Task List -------------");
         for (var _i = 0, _a = this.itemList; _i < _a.length; _i++) {
             var listItem = _a[_i];
-            console.log(listItem.titles);
+            console.log(listItem.taskTitle);
         }
+        return this.itemList.length;
     };
     TodoList.prototype.deleteTask = function (task) {
-        var findTask = this.itemList.indexOf(task.titles);
-        console.log("Task # " + findTask);
+        var findTask = this.itemList.indexOf(task);
         console.log("Deleted " + findTask);
+        this.itemList.splice(findTask, 1);
+        return this.itemList.length;
     };
     TodoList.prototype.showPending = function () {
+        console.log("-------------- Pending Items -------------");
         for (var _i = 0, _a = this.itemList; _i < _a.length; _i++) {
             var listItem = _a[_i];
             if (listItem.done == false) {
-                console.log(listItem.titles + " is pending to do");
+                console.log(listItem.taskTitle + " is pending to do");
             }
         }
     };

@@ -18,6 +18,7 @@ var toDolist = (function () {
     toDolist.prototype.deleteTask = function (str) {
         var findTask = this.tasks.indexOf(str);
         console.log("Task # " + findTask);
+        this.tasks.splice(findTask, 1);
         return this.tasks.length;
     };
     return toDolist;
