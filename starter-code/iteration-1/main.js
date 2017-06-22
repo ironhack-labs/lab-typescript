@@ -1,20 +1,22 @@
 var tasks = [];
-function addTasks(newTask) {
-    tasks.push(newTask);
-    console.log(newTask + " added to the list.");
+function addTask(task) {
+    tasks.push(task);
+    console.log("=========== NEW TASK ===========");
+    console.log("Task " + task + " added to the list.");
     return tasks.length;
 }
-function listTasks(taskList) {
-    tasks.forEach(function (oneTask) {
-        console.log(oneTask);
+function listAllTasks() {
+    tasks.forEach(function (task) {
+        console.log(task);
     });
 }
-function deleteTask(deletedTask) {
-    var index = tasks.indexOf(deletedTask);
+function deleteTask(task) {
+    var index = tasks.indexOf(task);
     if (index > -1) {
         tasks.splice(index, 1);
     }
-    console.log(deletedTask + " deleted");
+    console.log("=========== TASK REMOVED ===========");
+    console.log("Task " + task + " deleted");
     return (tasks.length);
 }
 console.log("Number of items:", addTask('This is our first task'));

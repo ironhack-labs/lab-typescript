@@ -5,7 +5,7 @@
 // - Method for delete a task where will receive a string, doesn't return anything.
 export interface Todo {
     tasks: string[];
-    addTasks(newTask): number,
-    listTasks(): void;
-    deleteTask(deletedTask): number;
+    addTask(task: string): void;
+    listAllTasks(): void;
+    deleteTask(task: string): void;
 }
