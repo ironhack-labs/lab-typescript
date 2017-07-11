@@ -2,29 +2,31 @@
 
 // 1. Create a class Todo that implements the Interface created before.
 class Todo implements TodoInterface {
-  constructor (
-    public tasks: Array<string>
-  )
-
+  listOfTasks: string[] = [];
+  constructor (){}
 
   listAllTasks() {
-    this.tasks.forEach((task) => {
+    this.listOfTasks.forEach((task) => {
       console.log(task);
     });
   },
 
-  addTask(task: String) {
-    this.tasks.push(task);
+  addTask(task: string) {
+    this.listOfTasks.push(task);
     console.log('Task ' + task + ' inserted in the list');
   },
 
-  deleteTask(task: String) {
-    const index = this.tasks.indexOf(task);
-    this.tasks.splice(index, 1);
-    console.log('Task ' + task + ' removed from the list');
-    console.log(tasks);
+  deleteTask(task: string) {
+    const index = this.listOfTasks.indexOf(task);
+    if (index) {
+      this.listOfTasks.splice(index, 1);
+      console.log('Task ' + task + ' removed from the list');
+    } else {
+      console.log('Task doesn\'t exist');
+    }
   }
-}
+
+}//----------------END OF CLASS--------------------
 
 let myTodos = new Todo();
 console.log("Number of items:", myTodos.addTask('This is our first task'));

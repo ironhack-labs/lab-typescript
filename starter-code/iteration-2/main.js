@@ -1,20 +1,25 @@
 var Todo = (function () {
     function Todo() {
+        this.listOfTasks = [];
     }
     Todo.prototype.listAllTasks = function () {
-        this.tasks.forEach(function (task) {
+        this.listOfTasks.forEach(function (task) {
             console.log(task);
         });
     };
     Todo.prototype.addTask = function (task) {
-        this.tasks.push(task);
+        this.listOfTasks.push(task);
         console.log('Task ' + task + ' inserted in the list');
     };
     Todo.prototype.deleteTask = function (task) {
-        var index = this.tasks.indexOf(task);
-        this.tasks.splice(index, 1);
-        console.log('Task ' + task + ' removed from the list');
-        console.log(tasks);
+        var index = this.listOfTasks.indexOf(task);
+        if (index) {
+            this.listOfTasks.splice(index, 1);
+            console.log('Task ' + task + ' removed from the list');
+        }
+        else {
+            console.log('Task doesn\'t exist');
+        }
     };
     return Todo;
 }());

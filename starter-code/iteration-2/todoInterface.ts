@@ -5,8 +5,8 @@
 // - Method for delete a task where will receive a string, doesn't return anything.
 
 interface TodoInterface {
-  tasks: Array<string>;
-  addTask(string);
+  listOfTasks: string[];
+  addTask(task: string);
   listAllTasks();
-  deleteTask(string);
+  deleteTask(task: string);
 }
