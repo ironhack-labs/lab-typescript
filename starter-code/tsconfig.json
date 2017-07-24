@@ -1,7 +1,13 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "removeComments": true
+    "module": "none",
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "target": "es5",
+    "scrict": false,
+    "allowJs": false
   },
   "files": [
     "./iteration-1/main.ts",
