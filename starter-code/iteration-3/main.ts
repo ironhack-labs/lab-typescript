@@ -1,8 +1,24 @@
 // Add the reference to the interface
-
+import {TodoItemInterface} from './interfaces';
+import {TodoListInterface} from './interfaces';
 // Create class TodoItem that implements the corresponding interface
-
+class TodoItem implements TodoItemInterface{
+  constructor(public title: string, public updatedAt: Date){ }
+  status: boolean;
+  toggleStatus(TodoItem): void {
+    if (TodoItem.status) {
+      TodoItem.status = false;
+    } else {
+      TodoItem.status = true;
+    };
+    TodoItem.updatedAt = Date;
+  };
+}
 // Create class TodoList that implements the corresponding interface
+class TodoList implements TodoListInterface{
+  constructor(public TodoItem){ }
+  arr: Array<string> = [TodoItem];
+}
 
 // Execution
 let task1 = new TodoItem('This is our first task');
