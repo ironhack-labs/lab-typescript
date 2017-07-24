@@ -3,12 +3,30 @@ exports.__esModule = true;
 var TodoItem = (function () {
     function TodoItem(title) {
         this.title = title;
+        this.done = false;
+        this.updateAt = new Date();
     }
+    TodoItem.prototype.isDone = function () {
+        this.done = this.done ? false : true;
+    };
     return TodoItem;
 }());
 var TodoList = (function () {
     function TodoList() {
+        this.tasks = [];
     }
+    TodoList.prototype.addTask = function (task) {
+        this.tasks.push(task);
+    };
+    TodoList.prototype.listAllTasks = function () {
+        this.tasks.forEach(function (e) { return console.log(e); });
+    };
+    TodoList.prototype.deleteTask = function (task) {
+        this.tasks.filter(function (e) { return e !== task; });
+    };
+    TodoList.prototype.listUncomplete = function () {
+        this.tasks.filter(function (e) { return e.done == false; });
+    };
     return TodoList;
 }());
 var task1 = new TodoItem('This is our first task');

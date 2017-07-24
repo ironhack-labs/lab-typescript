@@ -18,10 +18,10 @@ export interface TodoItemInterface {
 // - Method for listing all task in the console, doesn't return anything.
 // - Method for delete a task where will receive an instance of TodoItem, doesn't return anything.
 // - Method for show all tasks that are not yet done, doesn't return anything.
-export interface TodoInterface{
+export interface TodoInterface {
   tasks: Array<TodoItemInterface>,
   addTask(task: TodoItemInterface): void,
   listAllTasks(): void,
   deleteTask(task: TodoItemInterface): void,
-  listTaskNotDone(): void
+  listUncomplete(): void
 }
