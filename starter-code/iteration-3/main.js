@@ -1,6 +1,5 @@
 "use strict";
 exports.__esModule = true;
-var interfaces_1 = require("./interfaces");
 var TodoItem = (function () {
     function TodoItem(title, updatedAt) {
         this.title = title;
@@ -19,11 +18,18 @@ var TodoItem = (function () {
     ;
     return TodoItem;
 }());
-var task1 = new interfaces_1.TodoItem('This is our first task');
-var task2 = new interfaces_1.TodoItem('Eat pizza 🍕 yummy!!!');
-var task3 = new interfaces_1.TodoItem('Finish this iteration 1!! 🤓');
-var task4 = new interfaces_1.TodoItem('Finish this iteration 2!! 🤓');
-var task5 = new interfaces_1.TodoItem('Finish this iteration 3!! 🤓');
+var TodoList = (function () {
+    function TodoList(TodoItem) {
+        this.TodoItem = TodoItem;
+        this.arr = [TodoItem];
+    }
+    return TodoList;
+}());
+var task1 = new TodoItem('This is our first task');
+var task2 = new TodoItem('Eat pizza 🍕 yummy!!!');
+var task3 = new TodoItem('Finish this iteration 1!! 🤓');
+var task4 = new TodoItem('Finish this iteration 2!! 🤓');
+var task5 = new TodoItem('Finish this iteration 3!! 🤓');
 var myTodos = new TodoList();
 console.log("Number of items:", myTodos.addTask(task1));
 console.log("Number of items:", myTodos.addTask(task2));
