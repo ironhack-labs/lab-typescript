@@ -1,25 +1,32 @@
 // Add the reference to the "TodoInterface"
-import {toDoInterface} from "./todoInterface";
+// import ToDoInterface from "./todoInterface.js";
 // 1. Create a class Todo that implements the Interface created before.
-class Todo implements toDoInterface {
+interface ToDoInterface {
+  tasks: Array<string>;
+  addTask(task: string): number;
+  listAllTasks(): void;
+  deleteTask(task: string): number;
+}
+
+class Todo implements ToDoInterface {
+  tasks: Array<string> = [];
   constructor () {}
-  tasks:Array<string>
   addTask(task):number {
-      tasks.push(task);
+      this.tasks.push(task);
       console.log(task);
-      return tasks.length;
+      return this.tasks.length;
   }
 
-  listAllTasks(tasks):void {
-    return tasks.forEach(task => {
+  listAllTasks():void {
+   this.tasks.forEach(task => {
       console.log(task)
     })
   }
 
   deleteTask(task):number {
-  tasks.splice(tasks.indexOf(task), 1)
+  this.tasks.splice(this.tasks.indexOf(task), 1)
   console.log("Task deleted: "+task);
-  return tasks.length;
+  return this.tasks.length;
   }
 
 }
@@ -30,7 +37,7 @@ console.log("Number of items:", myTodos.addTask('Eat pizza 🍕 yummy!!!'));
 console.log("Number of items:", myTodos.addTask('Finish this iteration 1!! 🤓'));
 console.log("Number of items:", myTodos.addTask('Finish this iteration 2!! 🤓'));
 console.log("Number of items:", myTodos.addTask('Finish this iteration 3!! 🤓'));
-myTodos.listAllTasks(tasks);
+myTodos.listAllTasks();
 console.log("Number of items:", myTodos.deleteTask('Finish this iteration 1!! 🤓'));
 console.log("Number of items:", myTodos.deleteTask('Finish this iteration 2!! 🤓'));
-myTodos.listAllTasks(tasks);
+myTodos.listAllTasks();
