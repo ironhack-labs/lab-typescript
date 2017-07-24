@@ -3,6 +3,22 @@
 // - A boolean to mark if it's done.
 // - A property updatedAt, obiously is a date.
 // - Method for toogle if it's done or not, doesn't return anything.
+interface TodoItemInterface {
+  title : string,
+  status: boolean,
+  updatedAt: Date
+  toggleStatus(): void,
+}
+
+interface TodoListInterface {
+  todoItems: Array <TodoItem>,
+  addTask(word:string): number,
+  listAllTasks(): void,
+  deleteTask(word:string): number
+}
+
+export {TodoItemInterface};
+export {TodoListInterface};
 
 // Write the interface for class Todo. It must have:
 // - An array of TodoItem as a property.
