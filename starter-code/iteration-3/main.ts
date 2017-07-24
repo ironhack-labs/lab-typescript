@@ -1,9 +1,17 @@
 // Add the reference to the interface
+import {TodoItemInterface, TodoInterface} from './interfaces';
 
 // Create class TodoItem that implements the corresponding interface
+class TodoItem implements TodoItemInterface {
+  constructor(public title: string){
 
+  }
+
+}
 // Create class TodoList that implements the corresponding interface
+class TodoList implements TodoInterface {
 
+}
 // Execution
 let task1 = new TodoItem('This is our first task');
 let task2 = new TodoItem('Eat pizza 🍕 yummy!!!');
