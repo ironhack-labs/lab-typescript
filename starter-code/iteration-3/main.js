@@ -1,3 +1,42 @@
+"use strict";
+exports.__esModule = true;
+var TodoItem = (function () {
+    function TodoItem(title) {
+        this.title = title;
+        this.status = false;
+        this.updatedAt = new Date(Date.now());
+    }
+    TodoItem.prototype.toogleStatus = function () {
+        this.status = !this.status;
+        this.updatedAt = new Date(Date.now());
+    };
+    return TodoItem;
+}());
+exports.TodoItem = TodoItem;
+var TodoList = (function () {
+    function TodoList(items) {
+        if (items === void 0) { items = []; }
+        this.items = items;
+    }
+    TodoList.prototype.addTask = function (item) {
+        console.log("Task \"" + item.title + "\" inserted in the list!");
+        this.items.push(item);
+        return this.items.length;
+    };
+    TodoList.prototype.listAllTasks = function () {
+        this.items.forEach(function (item) {
+            console.log("Task " + item.title + " Updated at " + item.updatedAt);
+        });
+    };
+    TodoList.prototype.deleteTask = function (item) {
+        this.items.splice(this.items.indexOf(item), 1);
+        console.log("Task \"" + item.title + "\" removed from list");
+        return this.items.length;
+    };
+    TodoList.prototype.listUncomplete = function () {
+    };
+    return TodoList;
+}());
 var task1 = new TodoItem('This is our first task');
 var task2 = new TodoItem('Eat pizza 🍕 yummy!!!');
 var task3 = new TodoItem('Finish this iteration 1!! 🤓');

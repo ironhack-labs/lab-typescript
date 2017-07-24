@@ -1,3 +1,5 @@
+// Exporto de maiin.ts para usar en interface TodoInterface
+import { TodoItem } from "./main";
 // Write the interface for class TodoItem. It must have:
 // - A title of the task as a property.
 // - A boolean to mark if it's done.
@@ -7,7 +9,7 @@ export interface TodoItemInterface {
   title: string;
   status: boolean;
   updatedAt: Date;
-  toogleStatus();
+  toogleStatus():void;
 }
 // Write the interface for class Todo. It must have:
 // - An array of TodoItem as a property.
@@ -16,8 +18,8 @@ export interface TodoItemInterface {
 // - Method for delete a task where will receive an instance of TodoItem, doesn't return anything.
 // - Method for show all tasks that are not yet done, doesn't return anything.
 export interface TodoInterface {
-  tasks: Array<TodoItemInterface>;
-  addTaks(task: String);
-  listAllTasks();
-  deleteTask(task:string);
-}
+    items: Array<TodoItem>;
+    addTask(item:TodoItem):Number;
+    listAllTasks();
+    deleteTask(item:TodoItem):Number;
+  }
