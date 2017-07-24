@@ -1,7 +1,9 @@
 // Add the reference to the interface
-
+import {TodoItemInterface} from './interfaces'
 // Create class TodoItem that implements the corresponding interface
-
+class TodoItem implements TodoItemInterface {
+  constructor() {}
+}
 // Create class TodoList that implements the corresponding interface
 
 // Execution
