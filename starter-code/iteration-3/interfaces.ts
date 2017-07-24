@@ -3,18 +3,21 @@
 // - A boolean to mark if it's done.
 // - A property updatedAt, obiously is a date.
 // - Method for toogle if it's done or not, doesn't return anything.
+import TodoItem from './main'
+
+
 interface TodoItemInterface {
-  title : string,
+  title: string,
   status: boolean,
   updatedAt: Date
   toggleStatus(): void,
 }
 
 interface TodoListInterface {
-  todoItems: Array <TodoItem>,
-  addTask(word:string): number,
+  todoItems: Array<TodoItem>,
+  addTask(item: TodoItem): number,
   listAllTasks(): void,
-  deleteTask(word:string): number
+  deleteTask(item: TodoItem): number
 }
 
 export {TodoItemInterface};
