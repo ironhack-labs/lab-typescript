@@ -1,3 +1,11 @@
+export interface TaskInterface{
+    addTask(task: string): number;  
+    listAllTasks(): void;
+    deleteTask(task: string): number;
+}
+
+
+
 // Write the interface for class Todo. It must have:
 // - An array of strings as a property.
 // - Method for adding task where will receive a string, doesn't return anything.
