@@ -14,6 +14,7 @@ function deleteTask(task) {
     if (index > -1) {
         arrayOfTasks.splice(index, 1);
     }
+    return arrayOfTasks.length;
 }
 console.log("Number of items:", addTask('This is our first task'));
 console.log("Number of items:", addTask('Eat pizza 🍕 yummy!!!'));

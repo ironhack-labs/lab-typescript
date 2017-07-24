@@ -21,8 +21,8 @@ function deleteTask(task: string): number {
     if(index > -1){
       arrayOfTasks.splice(index, 1);
     }
+    return arrayOfTasks.length;
 }
-
 
 // Execution
 console.log("Number of items:", addTask('This is our first task'));
