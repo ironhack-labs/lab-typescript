@@ -1,33 +1,45 @@
 // Add the reference to the interface
 import {TodoItemInterface, TodoListInterface} from './interfaces';
 // Create class TodoItem that implements the corresponding interface
-class TodoItem implements TodoItemInterface {
+export class TodoItem implements TodoItemInterface {
   status: boolean;
+  updatedAt: Date;
 
-  constructor(public title: string, public updatedAt: Date) {}
+  constructor(public title: string) {
+    this.updatedAt = new Date();
+    this.status = false;
+  }
+
     toggleStatus(): boolean {
-      this.updatedAt = new Date;
-      return (this.status) ? false : true;
+      this.updatedAt = new Date();
+      return this.status = (this.status) ? false : true;
     }
 }
 // Create class TodoList that implements the corresponding interface
 class TodoList implements TodoListInterface {
-  tasks: Array<string> = [];
+  tasks: Array<TodoItem> = [];
   constructor() {}
-    addTask(task): number {
-      this.tasks.push(task);
-      console.log(`Task \"${task}\" inserted in the list`);
+    addTask(todoItem): number {
+      this.tasks.push(todoItem);
+      console.log(`Task \"${todoItem.title}\" inserted in the list`);
       return this.tasks.length;
     }
     listAllTasks(): void {
-      this.tasks.forEach(listElement => console.log(listElement));
+      this.tasks.forEach(todoItem => {
+        console.log(`task ${todoItem.title} updated at: ${todoItem.updatedAt}`);
+      });
     }
     deleteTask(task): number {
-      this.tasks.forEach((listElement, i) => {
-        if(listElement == task) this.tasks.splice(i, 1);
+      this.tasks.forEach((todoItem, i) => {
+        if(todoItem == task) this.tasks.splice(i, 1);
       });
-      console.log(`Task \"${task}\" removed from the list`);
+      console.log(`Task \"${task.title}\" removed from the list`);
       return this.tasks.length;
+    }
+    listUncomplete(): void {
+      this.tasks.forEach(todoItem => {
+        if(todoItem.status == false) console.log(todoItem.title);
+      });
     }
 }
 // Execution

@@ -1,36 +1,46 @@
 "use strict";
 exports.__esModule = true;
 var TodoItem = (function () {
-    function TodoItem(title, updatedAt) {
+    function TodoItem(title) {
         this.title = title;
-        this.updatedAt = updatedAt;
+        this.updatedAt = new Date();
+        this.status = false;
     }
     TodoItem.prototype.toggleStatus = function () {
-        this.updatedAt = new Date;
-        return (this.status) ? false : true;
+        this.updatedAt = new Date();
+        return this.status = (this.status) ? false : true;
     };
     return TodoItem;
 }());
+exports.TodoItem = TodoItem;
 var TodoList = (function () {
     function TodoList() {
         this.tasks = [];
     }
-    TodoList.prototype.addTask = function (task) {
-        this.tasks.push(task);
-        console.log("Task \"" + task + "\" inserted in the list");
+    TodoList.prototype.addTask = function (todoItem) {
+        this.tasks.push(todoItem);
+        console.log("Task \"" + todoItem.title + "\" inserted in the list");
         return this.tasks.length;
     };
     TodoList.prototype.listAllTasks = function () {
-        this.tasks.forEach(function (listElement) { return console.log(listElement); });
+        this.tasks.forEach(function (todoItem) {
+            console.log("task " + todoItem.title + " updated at: " + todoItem.updatedAt);
+        });
     };
     TodoList.prototype.deleteTask = function (task) {
         var _this = this;
-        this.tasks.forEach(function (listElement, i) {
-            if (listElement == task)
+        this.tasks.forEach(function (todoItem, i) {
+            if (todoItem == task)
                 _this.tasks.splice(i, 1);
         });
-        console.log("Task \"" + task + "\" removed from the list");
+        console.log("Task \"" + task.title + "\" removed from the list");
         return this.tasks.length;
+    };
+    TodoList.prototype.listUncomplete = function () {
+        this.tasks.forEach(function (todoItem) {
+            if (todoItem.status == false)
+                console.log(todoItem.title);
+        });
     };
     return TodoList;
 }());

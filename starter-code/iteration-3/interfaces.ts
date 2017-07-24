@@ -1,3 +1,4 @@
+import {TodoItem} from './main';
 // Write the interface for class TodoItem. It must have:
 // - A title of the task as a property.
 // - A boolean to mark if it's done.
@@ -16,8 +17,9 @@ export interface TodoItemInterface {
 // - Method for delete a task where will receive an instance of TodoItem, doesn't return anything.
 // - Method for show all tasks that are not yet done, doesn't return anything.
 export interface TodoListInterface {
-  tasks: Array<string>;
-  addTask(task: string): number;
+  tasks: Array<TodoItem>;
+  addTask(TodoItem: Object): number;
   listAllTasks(): void;
-  deleteTask(task: string): number;
+  deleteTask(TodoItem: Object): number;
+  listUncomplete(): void;
 }
