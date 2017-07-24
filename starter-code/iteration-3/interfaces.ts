@@ -3,6 +3,13 @@
 // - A boolean to mark if it's done.
 // - A property updatedAt, obiously is a date.
 // - Method for toogle if it's done or not, doesn't return anything.
+ interface todoInterface {
+    title : string;
+    itsDone : boolean;
+    updatedAt : date;
+    toogle(x:boolean):void;
+}
+
 
 // Write the interface for class Todo. It must have:
 // - An array of TodoItem as a property.
