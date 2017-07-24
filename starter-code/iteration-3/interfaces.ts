@@ -3,11 +3,12 @@
 // - A boolean to mark if it's done.
 // - A property updatedAt, obiously is a date.
 // - Method for toogle if it's done or not, doesn't return anything.
- interface todoInterface {
+import{TodoItem}from'./main';
+export interface todoInterface {
     title : string;
     itsDone : boolean;
-    updatedAt : date;
-    toogle(x:boolean):void;
+    updatedAt : Date;
+    toogle():void;
 }
 
 
@@ -17,3 +18,11 @@
 // - Method for listing all task in the console, doesn't return anything.
 // - Method for delete a task where will receive an instance of TodoItem, doesn't return anything.
 // - Method for show all tasks that are not yet done, doesn't return anything.
+
+export interface todoList {
+    TodoItems : Array<TodoItem>;
+    addTask(TodoItem):number;
+    listAllTasks():void;
+    deleteTask(TodoItem) : number;
+    listUncomplete():void;
+}

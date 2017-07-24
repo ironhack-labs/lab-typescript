@@ -1,3 +1,55 @@
+"use strict";
+exports.__esModule = true;
+var TodoItem = (function () {
+    function TodoItem(title, itsDone, updatedAt) {
+        this.title = title;
+        this.itsDone = itsDone;
+        this.updatedAt = updatedAt;
+        this.itsDone = false;
+        this.updatedAt = new Date();
+    }
+    TodoItem.prototype.toogle = function () {
+        if (this.itsDone) {
+            this.itsDone = false;
+        }
+        else {
+            this.itsDone = true;
+        }
+    };
+    return TodoItem;
+}());
+exports.TodoItem = TodoItem;
+var TodoList = (function () {
+    function TodoList(TodoItems) {
+        this.TodoItems = TodoItems;
+    }
+    TodoList.prototype.addTask = function (TodoItem) {
+        this.TodoItems.push(TodoItem);
+        return this.TodoItems.length;
+    };
+    TodoList.prototype.listAllTasks = function () {
+        for (var i = 0; i < this.TodoItems.length; i++) {
+            console.log(this.TodoItems[i].title);
+        }
+    };
+    TodoList.prototype.deleteTask = function (TodoItem) {
+        for (var i = 0; i < this.TodoItems.length; i++) {
+            if (TodoItem === this.TodoItems[i]) {
+                delete this.TodoItems[i];
+                return this.TodoItems.length;
+            }
+        }
+    };
+    TodoList.prototype.listUncomplete = function () {
+        for (var i = 0; i < this.TodoItems.length; i++) {
+            if (this.TodoItems[i].itsDone == false) {
+                console.log(this.TodoItems[i]);
+            }
+            ;
+        }
+    };
+    return TodoList;
+}());
 var task1 = new TodoItem('This is our first task');
 var task2 = new TodoItem('Eat pizza 🍕 yummy!!!');
 var task3 = new TodoItem('Finish this iteration 1!! 🤓');
