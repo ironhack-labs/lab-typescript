@@ -2,6 +2,40 @@
 
 // Create class TodoItem that implements the corresponding interface
 
+class TodoItem implements TodoItemInterface{
+
+  done: boolean;
+  updateAt: Date;
+
+  constructor(public title:string) {};
+  toggleDone():void{
+    this.done = !this.done;
+  };
+};
+
+class TodoList implements TodoInterface{
+  todoItems: TodoItemInterface[]=[];
+
+  addTask(task:TodoItemInterface):void{
+    this.todoItems.push(task);
+  };
+  listAllTasks():void{
+    this.todoItems.forEach( task  => console.log(task.title));
+  }
+  deleteTask(task:TodoItemInterface):void{
+    let index = this.todoItems.indexOf(task);
+    this.todoItems.splice(index, 1);
+  };
+  listUncomplete():void{
+    this.todoItems.forEach(task => {
+      if (task.done == false) {
+        console.log(task.title);
+      }
+    })
+  };
+}
+
+
 // Create class TodoList that implements the corresponding interface
 
 // Execution
