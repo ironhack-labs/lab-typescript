@@ -1,22 +1,22 @@
-"use strict";
-exports.__esModule = true;
 // 1. Create a class Todo that implements the Interface created before.
 var Todo = /** @class */ (function () {
     function Todo(task) {
         this.task = task;
+        this.taskArray = [];
     }
     Todo.prototype.addTask = function (task) {
-        this.taskArray.push(this.task);
-        return this.task;
+        this.taskArray.push(task);
+        return task;
     };
+    ;
     Todo.prototype.listAllTasks = function () {
         for (var _i = 0, _a = this.taskArray; _i < _a.length; _i++) {
             var task = _a[_i];
-            console.log(this.task);
+            console.log(task);
         }
     };
     Todo.prototype.deleteTask = function (task) {
-        var indexTask = this.taskArray.indexOf(this.task);
+        var indexTask = this.taskArray.indexOf(task);
         this.taskArray.splice(indexTask, 1);
         return this.taskArray.length;
     };
