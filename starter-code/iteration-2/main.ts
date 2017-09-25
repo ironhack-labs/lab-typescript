@@ -1,6 +1,13 @@
 // Add the reference to the "TodoInterface"
+import {TodoInterface} from './todoInterface';
 
 // 1. Create a class Todo that implements the Interface created before.
+class Todo implements TodoInterface {
+    tasks: Array<string>;
+    addTask(task: string):number {
+        return 1;
+    }
+}
 
 // Execution
 let myTodos = new Todo();
