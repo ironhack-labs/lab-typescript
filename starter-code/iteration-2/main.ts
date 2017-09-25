@@ -1,5 +1,5 @@
 // Add the reference to the "TodoInterface"
-/// <referencepath="./TodoInterface"/>
+import {TodoInterface} from "./todoInterface"
 // 1. Create a class Todo that implements the Interface created before.
 class Todo implements TodoInterface {
   TodoList: Array<string> = [];

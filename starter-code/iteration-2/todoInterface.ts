@@ -9,3 +9,6 @@ interface TodoInterface {
   listAllTasks();
   deleteTask(arg: string): number;
 }
+
+
+export {TodoInterface}

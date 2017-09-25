@@ -1,4 +1,4 @@
-var TodoList = [];
+let TodoList = [];
 function addTask(task) {
     TodoList.push(task);
     console.log("Task added!");
