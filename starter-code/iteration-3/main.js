@@ -16,15 +16,15 @@ var TodoList = (function () {
     function TodoList(TodoItems) {
         this.TodoItems = TodoItems;
     }
-    TodoList.prototype.addTask = function (ToDoItem) {
-        this.TodoItems.push(ToDoItem);
+    TodoList.prototype.addTask = function (item) {
+        this.TodoItems.push(item);
         console.log(this.TodoItems.length);
     };
     TodoList.prototype.listAllTasks = function () {
         console.log(this.TodoItems);
     };
-    TodoList.prototype.deleteTask = function (ToDoItem) {
-        this.TodoItems.splice(this.TodoItems.indexOf(ToDoItem), 1);
+    TodoList.prototype.deleteTask = function (item) {
+        this.TodoItems.splice(this.TodoItems.indexOf(item), 1);
     };
     TodoList.prototype.listUncomplete = function () {
         TodoItems.forEach(function (item) {

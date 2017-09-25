@@ -15,15 +15,15 @@ class TodoItem implements TodoItemInterface{
 
 class TodoList implements TodoListInterface{
   constructor(public TodoItems: string[]){ }
-  addTask(ToDoItem){
-    this.TodoItems.push(ToDoItem);
+  addTask(item){
+    this.TodoItems.push(item);
     console.log(this.TodoItems.length)
   }
   listAllTasks(){
     console.log(this.TodoItems);
   }
-  deleteTask(ToDoItem){
-    this.TodoItems.splice(this.TodoItems.indexOf(ToDoItem), 1);
+  deleteTask(item){
+    this.TodoItems.splice(this.TodoItems.indexOf(item), 1);
   }
   listUncomplete(){
     TodoItems.forEach((item)=>{
