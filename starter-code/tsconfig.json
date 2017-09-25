@@ -2,7 +2,7 @@
   "compileOnSave": true,
   "compilerOptions": {
     "removeComments": true,
-    "target: "es2015"
+    "target": "es2015"
   },
   "files": [
     "./iteration-1/main.ts",

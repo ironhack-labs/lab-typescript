@@ -3,11 +3,23 @@ import {TodoInterface} from './todoInterface';
 
 // 1. Create a class Todo that implements the Interface created before.
 class Todo implements TodoInterface {
-    tasks: Array<string>;
-    addTask(task: string):number {
-        return 1;
+    tasks: Array<string> = [];
+
+    addTask(task: string):void {
+        this.tasks.push(task)
     }
-}
+
+    listAllTasks():void {
+        this.tasks.forEach((task: string)=>{
+            console.log(task);
+        });
+    }
+
+    deleteTask(chosenTask) {
+        this.tasks.splice(this.tasks.findIndex(function(potato), chosenTask));
+    }
+
+};
 
 // Execution
 let myTodos = new Todo();
