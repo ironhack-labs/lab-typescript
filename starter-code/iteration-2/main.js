@@ -1,14 +1,15 @@
 "use strict";
 exports.__esModule = true;
+var taskArr = [];
 var Todo = (function () {
     function Todo(taskArr) {
         this.taskArr = taskArr;
     }
     Todo.prototype.addTask = function (task) {
-        taskArr.push(task);
+        this.taskArr.push(task);
     };
     Todo.prototype.listAllTasks = function () {
-        return this.taskArr;
+        console.log(taskArr);
     };
     Todo.prototype.deleteTask = function (task) {
         var taskIndex = this.taskArr.indexOf(task);
@@ -16,7 +17,7 @@ var Todo = (function () {
     };
     return Todo;
 }());
-var myTodos = new Todo();
+var myTodos = new Todo(taskArr);
 console.log("Number of items:", myTodos.addTask('This is our first task'));
 console.log("Number of items:", myTodos.addTask('Eat pizza 🍕 yummy!!!'));
 console.log("Number of items:", myTodos.addTask('Finish this iteration 1!! 🤓'));

@@ -4,18 +4,20 @@ import {TodoInterface} from "./todoInterface";
 // 1. Create a class Todo that implements the Interface created before.
 
 
+const taskArr =[];
 
 class Todo implements TodoInterface{
-  constructor(
+  constructor(  
     public taskArr: string[]
   ){}
 
   addTask(task: string){
-    taskArr.push(task)
+    this.taskArr.push(task)
   }
 
   listAllTasks(){
-    return this.taskArr;
+    // return `all tasks: ${this.taskArr}`;
+    console.log(taskArr);
   }
 
   deleteTask(task: string){
@@ -26,7 +28,7 @@ class Todo implements TodoInterface{
 }
 
 // Execution
-let myTodos = new Todo();
+let myTodos = new Todo(taskArr);
 console.log("Number of items:", myTodos.addTask('This is our first task'));
 console.log("Number of items:", myTodos.addTask('Eat pizza 🍕 yummy!!!'));
 console.log("Number of items:", myTodos.addTask('Finish this iteration 1!! 🤓'));
