@@ -1,7 +1,17 @@
 // Add the reference to the interface
 
 // Create class TodoItem that implements the corresponding interface
+class TodoItem implements TodoItemInterface {
 
+  constructor (
+    public name: string,
+    public status: boolean,
+    public updatedAt: string) { }
+
+    toggleStatus(status:boolean) {
+      console.log(status);
+    }
+}
 // Create class TodoList that implements the corresponding interface
 
 // Execution
