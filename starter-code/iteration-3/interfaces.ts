@@ -1,4 +1,18 @@
 // Write the interface for class TodoItem. It must have:
+
+export interface TodoItemInterface {
+  title: string;
+  status: boolean;
+  updatedAt: string;
+  toogle();
+}
+
+export interface TodoInterface {
+  tasks: string[];
+  addTask(task: string);
+  listAllTasks();
+  deleteTask(task: string);
+}
 // - A title of the task as a property.
 // - A boolean to mark if it's done.
 // - A property updatedAt, obiously is a date.
