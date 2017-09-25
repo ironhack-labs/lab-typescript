@@ -1,8 +1,56 @@
 // Add the reference to the interface
-
+import { TodoItemInterface, TodoInterface } from './interfaces';
 // Create class TodoItem that implements the corresponding interface
+class TodoItem implements TodoItemInterface {
 
+  constructor(
+    public title: string
+  ) {}
+
+  status: boolean = false;
+  updatedAt: string = Date.now().toString();
+  toogle() {
+    this.status === false ? this.status = true : this.status = false;
+  }
+}
 // Create class TodoList that implements the corresponding interface
+class TodoList implements TodoInterface {
+
+  tasks: any[] = [];
+
+  addTask(task: any) {
+    this.tasks.push(task);
+    console.log('=========== NEW TASK ===========')
+    console.log(`Task ${task.title} inserted in the list`);
+    return this.tasks.length;
+  }
+
+  // 3. Create a function to list all tasks, it must show in the console de task.
+  listAllTasks () {
+
+    this.tasks.forEach(task => {
+      console.log('task --> ', task.title)
+      console.log('updated at ---> ', task.updatedAt);
+    });
+  }
+
+  // 4. Create a function to delete a task, you must find the task inside the array and delete it.
+  deleteTask (task: any) {
+    let index: number;
+    this.tasks.forEach((t, i) => {
+      if (JSON.stringify(t) === JSON.stringify(task)) index = i;
+    });
+    this.tasks.splice(index,1);
+    console.log('=========== TASK REMOVED ===========')
+    console.log(`Task ${task.title} removed from the list`);
+    return this.tasks.length;
+  }
+
+  listUncomplete () {
+    this.tasks.forEach(task => console.log('Uncomplete --> ', task.title));
+  }
+
+}
 
 // Execution
 let task1 = new TodoItem('This is our first task');
