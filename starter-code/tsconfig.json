@@ -1,6 +1,8 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
+    "target": "es2015",
+    "alwaysStrict": false,
     "removeComments": true
   },
   "files": [
