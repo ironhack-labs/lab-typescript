@@ -1,6 +1,34 @@
 // Add the reference to the "TodoInterface"
-
+import {ToDo} from './todoInterface'
 // 1. Create a class Todo that implements the Interface created before.
+
+class Todo implements ToDo{
+  public taskList: string[];
+
+
+  addTask(task){
+    taskList.push(task)
+    console.log(`You've added "${task}" to your To Do List!`);
+    return taskList.length
+  }
+  listAllTasks(){
+    for( let i = 0; i < taskList.length ; i++){
+      console.log(taskList[i]);
+    }
+  }
+  deleteTask(task){
+    let toBeDeleted = taskList.indexOf(task);
+    if (toBeDeleted === -1){
+      console.log("That is not a valid task, please check your spelling!")
+    }
+    else{
+      taskList.splice(toBeDeleted, 1)
+      console.log(`You've deleted "${task}" from your To Do List!`);
+      return taskList.length;
+    }
+  }
+};
+
 
 // Execution
 let myTodos = new Todo();
