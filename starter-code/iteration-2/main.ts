@@ -1,5 +1,12 @@
 // Add the reference to the "TodoInterface"
+import * as todoInterface from './todoInterface.js';
 
+class Todo implements todoInterface{
+  arr:Array<string> = [];
+  addTask(e:string):number;
+  listAllTasks();
+  deleteTask(e:string):number;
+}
 // 1. Create a class Todo that implements the Interface created before.
 
 // Execution
