@@ -6,7 +6,8 @@
 export interface TodoItemInterface {
   title:string;
   status:boolean;
-
+  updatedAt:Date;
+  toggleStatus():boolean;
 };
 // Write the interface for class Todo. It must have:
 // - An array of TodoItem as a property.
@@ -14,3 +15,9 @@ export interface TodoItemInterface {
 // - Method for listing all task in the console, doesn't return anything.
 // - Method for delete a task where will receive an instance of TodoItem, doesn't return anything.
 // - Method for show all tasks that are not yet done, doesn't return anything.
+export interface TodoListInterface {
+  todoItems:Array<TodoItemInterface>;
+  addTask(TodoItem):number;
+  listAllTasks();
+  deleteTask(TodoItem):number;
+};
