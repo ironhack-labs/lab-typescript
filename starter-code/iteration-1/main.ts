@@ -1,7 +1,50 @@
 // Iteration 1
 // 1. Create an array of strings
-
 // 2. Create a function to add a task in to the array, call it `addTask`, the function has to accept a string and don't have to return anything.
+
+let taskList = [];
+
+function addTask(task) {
+    taskList.push(task);
+    console.log("Is inside!!");
+    console.log(taskList.length);
+    return taskList.length;
+}
+function listAllTasks() {
+    for (var i = 0; i < this.taskList.length; i++) {
+        console.log(this.taskList[i]);
+    }
+}
+function deleteTask(task) {
+    taskList.pop();
+    console.log(taskList.length);
+    console.log(`It's deleted`);
+    return taskList.length;
+}
+
+// class List {
+//     taskList: Array<String>;
+//     constructor(taskList: Array<String>) { }
+//     addTask(task) {
+//         this.taskList.push(task);
+//         console.log("Is inside!!");
+//         console.log(this.taskList.length);
+//         return this.taskList.length;
+
+//     }
+//     listAllTasks() {
+//         for (var i = 0; i < this.taskList.length; i++) {
+//             console.log(this.taskList[i]);
+//         }
+//     }
+//     deleteTask(task){
+//         this.taskList.pop();
+//         console.log(this.taskList.length);
+//         console.log(`It's deleted`);
+//         return this.taskList.length;
+
+//     }
+// }
 
 // 3. Create a function to list all tasks, it must show in the console de task.
 
