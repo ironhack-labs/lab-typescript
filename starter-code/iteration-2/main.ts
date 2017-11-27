@@ -1,10 +1,11 @@
 // Add the reference to the "TodoInterface"
 import { TodoInterface } from "./todoInterface";
+
 // 1. Create a class Todo that implements the Interface created before.
 class Todo implements TodoInterface{
   constructor(){};
 
-  tasks: Array<string>
+  tasks: Array<string> = [];
 
   addTask(task:string):number{
     this.tasks.push(task);
