@@ -36,7 +36,9 @@ class TodoList {
         return this.TodoItems.length;
     }
     listUncomplete() {
-        this.TodoItems.forEach(e => console.log(e));
+        this.TodoItems.forEach(e => { if (e.status == false) {
+            console.log(e);
+        } });
     }
 }
 let task1 = new TodoItem('This is our first task');

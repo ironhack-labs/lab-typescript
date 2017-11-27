@@ -21,7 +21,7 @@ class TodoItem implements TodoItemInterface{
 class TodoList implements TodoListInterface{
   TodoItems = [];
   constructor(){};
-  addTask(task:TodoItem){
+  addTask(task:TodoItem):number{
     this.TodoItems.push(task);
     console.log('=========== NEW TASK ===========')
     console.log(`Task ${task.title} inserted in the list`)
@@ -32,14 +32,14 @@ class TodoList implements TodoListInterface{
     this.TodoItems.forEach(e => console.log(e));
   }
   // 4. Create a function to delete a task, you must find the task inside the array and delete it.
-  deleteTask(taskToDelete:TodoItem){
+  deleteTask(taskToDelete:TodoItem):number{
     this.TodoItems.splice(this.TodoItems.indexOf(taskToDelete),1);
     console.log('=========== TASK REMOVED ===========')
     console.log(`Task ${taskToDelete.title} removed from the list`)
     return this.TodoItems.length;
   }
   listUncomplete():void{
-    this.TodoItems.forEach(e => console.log(e));
+    this.TodoItems.forEach(e => {if(e.status == false){console.log(e)}})
   }
 }
 // Create class TodoList that implements the corresponding interface
