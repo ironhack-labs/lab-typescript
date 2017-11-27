@@ -5,7 +5,7 @@ let tasksToComplete: Array<string> = [];
 
 // 2. Create a function to add a task in to the array, call it `addTask`, the function has to accept a string and don't have to return anything.
 
-function addTask(public task: string) {
+function addTask(task: string) {
     tasksToComplete.push(task);
     console.log("Task\"" + task + "\"inserted in the list")
     console.log("Number of items: " + tasksToComplete.length)
