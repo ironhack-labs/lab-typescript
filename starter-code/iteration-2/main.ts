@@ -1,5 +1,8 @@
 // Add the reference to the "TodoInterface"
 
+// correct method to export/import code !
+// import { object } from 'thispath/model'
+
 // 1. Create a class Todo that implements the Interface created before.
 
 // Execution
