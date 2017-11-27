@@ -1,7 +1,10 @@
 // Add the reference to the "TodoInterface"
+import { TodoInterface } from "./todoInterface";
 
 // 1. Create a class Todo that implements the Interface created before.
-
+class Todo implements TodoInterface {
+    
+}
 // Execution
 let myTodos = new Todo();
 console.log("Number of items:", myTodos.addTask('This is our first task'));
