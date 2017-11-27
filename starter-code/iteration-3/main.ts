@@ -23,6 +23,8 @@ class TodoList implements TodoListInterface{
   constructor(){};
   addTask(task:TodoItem){
     this.TodoItems.push(task);
+    console.log('=========== NEW TASK ===========')
+    console.log(`Task ${task.title} inserted in the list`)
     return this.TodoItems.length;
   }
   // 3. Create a function to list all tasks, it must show in the console de task.
@@ -32,6 +34,8 @@ class TodoList implements TodoListInterface{
   // 4. Create a function to delete a task, you must find the task inside the array and delete it.
   deleteTask(taskToDelete:TodoItem){
     this.TodoItems.splice(this.TodoItems.indexOf(taskToDelete),1);
+    console.log('=========== TASK REMOVED ===========')
+    console.log(`Task ${taskToDelete.title} removed from the list`)
     return this.TodoItems.length;
   }
   listUncomplete():void{

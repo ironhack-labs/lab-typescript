@@ -22,6 +22,8 @@ class TodoList {
     ;
     addTask(task) {
         this.TodoItems.push(task);
+        console.log('=========== NEW TASK ===========');
+        console.log(`Task ${task.title} inserted in the list`);
         return this.TodoItems.length;
     }
     listAllTasks() {
@@ -29,6 +31,8 @@ class TodoList {
     }
     deleteTask(taskToDelete) {
         this.TodoItems.splice(this.TodoItems.indexOf(taskToDelete), 1);
+        console.log('=========== TASK REMOVED ===========');
+        console.log(`Task ${taskToDelete.title} removed from the list`);
         return this.TodoItems.length;
     }
     listUncomplete() {

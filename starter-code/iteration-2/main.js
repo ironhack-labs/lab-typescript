@@ -4,6 +4,8 @@ class Todo {
     }
     addTask(task) {
         this.myList.push(task);
+        console.log('=========== NEW TASK ===========');
+        console.log(`Task ${task} inserted in the list`);
         return this.myList.length;
     }
     listAllTasks() {
@@ -11,6 +13,8 @@ class Todo {
     }
     deleteTask(taskToDelete) {
         this.myList.splice(this.myList.indexOf(taskToDelete), 1);
+        console.log('=========== TASK REMOVED ===========');
+        console.log(`Task ${taskToDelete} removed from the list`);
         return this.myList.length;
     }
 }
