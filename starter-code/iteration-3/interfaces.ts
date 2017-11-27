@@ -4,6 +4,20 @@
 // - A property updatedAt, obiously is a date.
 // - Method for toogle if it's done or not, doesn't return anything.
 
+export interface TaskInterface {
+  task:string;
+  statusTask:boolean;
+  updatedAt: Date;
+  toogle():void
+}
+
+export interface Todo {
+  TodoItem: Array<string>;
+  addTask(TodoItem):void;
+  listAllTasks():void;
+  deleteTask(TodoItem):void;
+  showTask():void;
+}
 // Write the interface for class Todo. It must have:
 // - An array of TodoItem as a property.
 // - Method for adding task where will receive an instance of TodoItem, doesn't return anything.
