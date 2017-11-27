@@ -1,0 +1,9 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "removeComments": true
+  },
+  "files": [
+    "./helloworld.ts"
+  ]
+}
