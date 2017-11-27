@@ -1,17 +1,38 @@
 var TodoItem = (function () {
     function TodoItem(title) {
         this.title = title;
+        this.status = false;
+        this.updatedAt = new Date();
     }
     TodoItem.prototype.toggleStatus = function () {
-        if (status == true) {
-            return 'finished';
+        if (this.status === true) {
+            return false;
         }
         else {
-            return 'unfinished';
+            return true;
         }
-        updatedAt = new Date();
     };
     return TodoItem;
+}());
+var TodoList = (function () {
+    function TodoList() {
+        this.TodoItem = [];
+    }
+    TodoList.prototype.addTask = function (task) {
+        this.TodoItem.push(task);
+        return this.TodoItem.length;
+    };
+    TodoList.prototype.listAllTasks = function () {
+        for (var i = 0; i < this.TodoItem.length; i++) {
+            console.log(i);
+        }
+    };
+    TodoList.prototype.deleteTask = function (task) {
+        var taskIndex = this.TodoItem.indexOf(task);
+        this.TodoItem.splice(taskIndex, 1);
+        return this.TodoItem.length;
+    };
+    return TodoList;
 }());
 var task1 = new TodoItem('This is our first task');
 var task2 = new TodoItem('Eat pizza 🍕 yummy!!!');

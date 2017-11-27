@@ -1,16 +1,38 @@
 // Add the reference to the interface
-class TodoItem implements TodoItemInterface{
-    status: false;
-    // updatedAt = new Date();
-  constructor(public title:string){}
+class TodoItem implements TodoItemInterface {
+  status = false;
+  // updatedAt = new Date();
+  constructor(public title: string) { }
 
-  toggleStatus():string {
-    if(status == true){
-      return 'finished';
+  toggleStatus(): boolean {
+    if (this.status === true) {
+      return false;
     } else {
-      return 'unfinished';
+      return true;
     }
-    updatedAt = new Date();
+  }
+  updatedAt = new Date();
+}
+
+
+class TodoList implements TodoListInterface {
+  TodoItem = [];
+
+  addTask(task:string):number {
+    this.TodoItem.push(task);
+    return this.TodoItem.length;
+  }
+
+  listAllTasks(): void {
+    for(var i= 0; i < this.TodoItem.length; i++){
+      console.log(i);
+    }
+  }
+
+  deleteTask(task:string):number {
+    let taskIndex = this.TodoItem.indexOf(task);
+    this.TodoItem.splice(taskIndex, 1);
+    return this.TodoItem.length;
   }
 
 }

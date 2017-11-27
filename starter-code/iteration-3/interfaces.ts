@@ -3,7 +3,7 @@ interface TodoItemInterface {
   title:string;
   status:boolean;
   updatedAt:Date;
-  toggleStatus(): void;
+  toggleStatus(): boolean;
 }
 
 
