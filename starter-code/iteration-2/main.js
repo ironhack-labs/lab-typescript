@@ -1,7 +1,5 @@
 class Todo {
-    constructor() {
-        this.arr = [];
-    }
+    constructor() { }
 }
 let myTodos = new Todo();
 console.log("Number of items:", myTodos.addTask('This is our first task'));
