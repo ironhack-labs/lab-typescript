@@ -2,6 +2,7 @@
 
 interface ToDoInterface {
     tasksToComplete: array;
-    function addTask(task: string): string;
-
+    addTask(task: string): string;
+    listAllTasks(task: array): void;
+    deleteTask(task: string): number;
 }

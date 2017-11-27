@@ -24,9 +24,9 @@ function listAllTasks(tasksToComplete) {
 function deleteTask(task: string) {
     let taskIndex = tasksToComplete.indexOf(task);
     tasksToComplete.splice(taskIndex, 1);
-    return tasksToComplete.length;
     console.log("Task \"" + task + "\" removed from the list");
     console.log("Number of items: " + tasksToComplete.length);
+    return tasksToComplete.length;
 }
 
 // Execution
