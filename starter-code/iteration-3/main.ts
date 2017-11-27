@@ -1,7 +1,11 @@
 // Add the reference to the interface
+import { TaskInterface } from './interfaces';
+import { Todo } from './interfaces';
 
 // Create class TodoItem that implements the corresponding interface
+class TodoItem implements TaskInterface  {
 
+}
 // Create class TodoList that implements the corresponding interface
 
 // Execution
