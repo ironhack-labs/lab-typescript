@@ -1,4 +1,4 @@
-var myArray = ["comprar huevos", "sacar al perro", "llevar a Luis a clase de piano"];
+let myArray = ["comprar huevos", "sacar al perro", "llevar a Luis a clase de piano"];
 function addTask(task) {
     myArray.push(task);
     console.log(task + "inserted in the list");
