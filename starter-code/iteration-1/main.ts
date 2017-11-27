@@ -8,6 +8,45 @@
 // 4. Create a function to delete a task, you must find the task inside the array and delete it.
 
 // Execution
+
+let myArray = ["comprar huevos", "sacar al perro", "llevar a Luis a clase de piano"];
+
+function addTask(task) {
+  myArray.push(task);
+  console.log(task + "inserted in the list");
+  console.log("Number of items " + myArray.length);
+  return myArray.length;
+};
+
+function listAllTasks() {
+  for (var i = 0; i < myArray.length; i++) {
+    console.log(myArray[i]);
+    console.log("Number of items " + myArray.length);
+  }
+};
+
+function deleteTask(task) {
+  myArray.splice(myArray.indexOf(task), 1);
+  console.log(task + "remove from the list");
+  console.log("Number of items " + myArray.length);
+  return myArray.length;
+};
+
+
+
+
+// class Greeter {
+//     constructor(public message: string) { }
+//     sayHi() {
+//         return "<h1>" + this.message + "</h1>";
+//     }
+// }
+//
+// let greeter = new Greeter("Hello, world!");
+//
+// document.body.innerHTML = greeter.sayHi();
+
+
 console.log("Number of items:", addTask('This is our first task'));
 console.log("Number of items:", addTask('Eat pizza 🍕 yummy!!!'));
 console.log("Number of items:", addTask('Finish this iteration 1!! 🤓'));
