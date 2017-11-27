@@ -17,7 +17,9 @@ var TodoItem = (function () {
     return TodoItem;
 }());
 var TodoList = (function () {
-    function TodoList(todoItem) {
+    function TodoList(title, updatedAt, todoItem) {
+        this.title = title;
+        this.updatedAt = updatedAt;
         this.todoItem = todoItem;
     }
     TodoList.prototype.addTask = function (task) {
@@ -25,6 +27,8 @@ var TodoList = (function () {
         return array.length;
     };
     TodoList.prototype.listAllTasks = function () {
+        console.log(this.title);
+        console.log(this.updatedAt);
         this.todoItem.forEach(function (e) { return console.log(e); });
     };
     TodoList.prototype.deleteTask = function (task) {

@@ -17,7 +17,7 @@ class TodoItem implements TodoItemInterface{
 }
 // Create class TodoList that implements the corresponding interface
 class TodoList implements TodoListInterface{
-  constructor(public todoItem: Array<string>){}
+  constructor(public title:string, public updatedAt: Date, public todoItem: Array<string>){}
 
   addTask(task){
     this.todoItem.push(task)
@@ -25,7 +25,9 @@ class TodoList implements TodoListInterface{
   }
 
   listAllTasks():void{
-      this.todoItem.forEach(e => console.log(e));
+    console.log(this.title);
+    console.log(this.updatedAt);
+    this.todoItem.forEach(e => console.log(e));
   }
 
   deleteTask(task){
@@ -36,7 +38,7 @@ class TodoList implements TodoListInterface{
   }
   }
 
-}
+
 // Execution
 let task1 = new TodoItem('This is our first task');
 let task2 = new TodoItem('Eat pizza 🍕 yummy!!!');

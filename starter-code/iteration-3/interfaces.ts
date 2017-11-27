@@ -6,6 +6,8 @@ export interface TodoItemInterface{
 }
 
 export interface TodoListInterface{
+  title: string;
+  updatedAt: Date;
   todoItem: Array<string>;
   addTask(todoItem): number;
   listAllTasks():void;
