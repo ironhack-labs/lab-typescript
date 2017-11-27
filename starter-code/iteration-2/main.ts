@@ -30,7 +30,7 @@ class Todo implements TodoInterface {
 }
 
 // Execution
-let myTodos = new Todo();
+let myTodos = new Todo([]);
 console.log("Number of items:", myTodos.addTask('This is our first task'));
 console.log("Number of items:", myTodos.addTask('Eat pizza 🍕 yummy!!!'));
 console.log("Number of items:", myTodos.addTask('Finish this iteration 1!! 🤓'));
