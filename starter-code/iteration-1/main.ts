@@ -8,21 +8,55 @@
 // 4. Create a function to delete a task, you must find the task inside the array and delete it.
 
 // Execution
+// let taskArray : Array<String> =[];
+//
+// let addTask = function(task:String, taskArray: Array<String>): Number
+//   {
+//     console.log("Task :"+ task + "inserted in the list");
+//     taskArray.push(task);
+//     return taskArray.length;
+//   }
+//
+// let listAllTasks = function (taskArray: Array<String>) : void {
+//   taskArray.forEach( e => {
+//     console.log(e);
+//   });
+// }
+//
+// let deleteTask = function (task:String, taskArray: Array<String>): Number
+// {
+//   let index = taskArray.indexOf (task);
+//   taskArray.splice(index,1);
+//   console.log("Task :" + task + "removed from the list");
+//   return taskArray.length;
+// };
+//
+// console.log("Number of items:", addTask('This is our first task',taskArray));
+// console.log("Number of items:", addTask('Eat pizza 🍕 yummy!!!',taskArray));
+// console.log("Number of items:", addTask('Finish this iteration 1!! 🤓',taskArray));
+// console.log("Number of items:", addTask('Finish this iteration 2!! 🤓',taskArray));
+// console.log("Number of items:", addTask('Finish this iteration 3!! 🤓',taskArray));
+// listAllTasks(taskArray);
+// console.log("Number of items:", deleteTask('Finish this iteration 1!! 🤓', taskArray));
+// listAllTasks(taskArray);
+
+
 let taskArray : Array<String> =[];
-let addTask = function(task:String, taskArray: Array<String>): Number
+
+let addTask = function(task:String): Number
   {
     console.log("Task :"+ task + "inserted in the list");
     taskArray.push(task);
     return taskArray.length;
   }
 
-let listAllTasks = function (taskArray: Array<String>) : void {
+let listAllTasks = function () : void {
   taskArray.forEach( e => {
     console.log(e);
   });
 }
 
-let deleteTask = function (task:String, taskArray: Array<String>): Number
+let deleteTask = function (task:String): Number
 {
   let index = taskArray.indexOf (task);
   taskArray.splice(index,1);
@@ -30,11 +64,11 @@ let deleteTask = function (task:String, taskArray: Array<String>): Number
   return taskArray.length;
 };
 
-console.log("Number of items:", addTask('This is our first task',taskArray));
-console.log("Number of items:", addTask('Eat pizza 🍕 yummy!!!',taskArray));
-console.log("Number of items:", addTask('Finish this iteration 1!! 🤓',taskArray));
-console.log("Number of items:", addTask('Finish this iteration 2!! 🤓',taskArray));
-console.log("Number of items:", addTask('Finish this iteration 3!! 🤓',taskArray));
-listAllTasks(taskArray);
-console.log("Number of items:", deleteTask('Finish this iteration 1!! 🤓', taskArray));
-listAllTasks(taskArray);
+console.log("Number of items:", addTask('This is our first task'));
+console.log("Number of items:", addTask('Eat pizza 🍕 yummy!!!'));
+console.log("Number of items:", addTask('Finish this iteration 1!! 🤓'));
+console.log("Number of items:", addTask('Finish this iteration 2!! 🤓'));
+console.log("Number of items:", addTask('Finish this iteration 3!! 🤓'));
+listAllTasks();
+console.log("Number of items:", deleteTask('Finish this iteration 1!! 🤓'));
+listAllTasks();
