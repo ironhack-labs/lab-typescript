@@ -19,6 +19,7 @@ function listAllTasks() {
 // 4. Create a function to delete a task, you must find the task inside the array and delete it.
 function deleteTask(task : string) {
   tasks.splice(tasks.indexOf(task), 1);
+  console.log(`Task ${task} removed from the list. Number of items: ${tasks.length}`)
   return tasks.length;
 }
 

@@ -10,6 +10,7 @@ function listAllTasks() {
 }
 function deleteTask(task) {
     tasks.splice(tasks.indexOf(task), 1);
+    console.log("Task " + task + " removed from the list. Number of items: " + tasks.length);
     return tasks.length;
 }
 console.log("Number of items:", addTask('This is our first task'));
