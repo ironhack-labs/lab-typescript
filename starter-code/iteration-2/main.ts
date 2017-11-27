@@ -12,7 +12,7 @@ class Todo implements List {
     return this.myList.length;
   }
   // 3. Create a function to list all tasks, it must show in the console de task.
-  listAllTasks():void{
+  listAllTasks(){
     this.myList.forEach(e => console.log(e));
   }
   // 4. Create a function to delete a task, you must find the task inside the array and delete it.

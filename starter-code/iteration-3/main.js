@@ -1,9 +1,46 @@
-var task1 = new TodoItem('This is our first task');
-var task2 = new TodoItem('Eat pizza 🍕 yummy!!!');
-var task3 = new TodoItem('Finish this iteration 1!! 🤓');
-var task4 = new TodoItem('Finish this iteration 2!! 🤓');
-var task5 = new TodoItem('Finish this iteration 3!! 🤓');
-var myTodos = new TodoList();
+class TodoItem {
+    constructor(title) {
+        this.title = title;
+        this.status = false;
+        this.updateAt = new Date();
+    }
+    toggleStatus() {
+        if (this.status == true) {
+            this.status = false;
+            this.updateAt = new Date();
+        }
+        else {
+            this.status = true;
+            this.updateAt = new Date();
+        }
+    }
+}
+class TodoList {
+    constructor() {
+        this.TodoItems = [];
+    }
+    ;
+    addTask(task) {
+        this.TodoItems.push(task);
+        return this.TodoItems.length;
+    }
+    listAllTasks() {
+        this.TodoItems.forEach(e => console.log(e));
+    }
+    deleteTask(taskToDelete) {
+        this.TodoItems.splice(this.TodoItems.indexOf(taskToDelete), 1);
+        return this.TodoItems.length;
+    }
+    listUncomplete() {
+        this.TodoItems.forEach(e => console.log(e));
+    }
+}
+let task1 = new TodoItem('This is our first task');
+let task2 = new TodoItem('Eat pizza 🍕 yummy!!!');
+let task3 = new TodoItem('Finish this iteration 1!! 🤓');
+let task4 = new TodoItem('Finish this iteration 2!! 🤓');
+let task5 = new TodoItem('Finish this iteration 3!! 🤓');
+let myTodos = new TodoList();
 console.log("Number of items:", myTodos.addTask(task1));
 console.log("Number of items:", myTodos.addTask(task2));
 console.log("Number of items:", myTodos.addTask(task3));

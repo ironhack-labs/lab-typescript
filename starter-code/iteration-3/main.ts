@@ -1,7 +1,43 @@
 // Add the reference to the interface
-
+import { TodoItemInterface } from './interfaces';
+import { TodoListInterface } from './interfaces';
 // Create class TodoItem that implements the corresponding interface
+class TodoItem implements TodoItemInterface{
+  status = false;
+  updateAt = new Date();
+  constructor(public title:string){}
+  toggleStatus(){
+    if (this.status == true) {
+      this.status = false;
+      this.updateAt = new Date();
+    } else{
+        this.status = true;
+        this.updateAt = new Date();
+    }
+  }
 
+}
+
+class TodoList implements TodoListInterface{
+  TodoItems = [];
+  constructor(){};
+  addTask(task:TodoItem){
+    this.TodoItems.push(task);
+    return this.TodoItems.length;
+  }
+  // 3. Create a function to list all tasks, it must show in the console de task.
+  listAllTasks():void{
+    this.TodoItems.forEach(e => console.log(e));
+  }
+  // 4. Create a function to delete a task, you must find the task inside the array and delete it.
+  deleteTask(taskToDelete:TodoItem){
+    this.TodoItems.splice(this.TodoItems.indexOf(taskToDelete),1);
+    return this.TodoItems.length;
+  }
+  listUncomplete():void{
+    this.TodoItems.forEach(e => console.log(e));
+  }
+}
 // Create class TodoList that implements the corresponding interface
 
 // Execution

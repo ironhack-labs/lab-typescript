@@ -1,10 +1,10 @@
-var myList = [];
+let myList = [];
 function addTask(task) {
     myList.push(task);
     return myList.length;
 }
 function listAllTasks() {
-    myList.forEach(function (e) { return console.log(e); });
+    myList.forEach(e => console.log(e));
 }
 function deleteTask(taskToDelete) {
     myList.splice(myList.indexOf(taskToDelete), 1);
