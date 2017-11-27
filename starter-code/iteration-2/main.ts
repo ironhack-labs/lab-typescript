@@ -1,5 +1,5 @@
 // Add the reference to the "TodoInterface"
-interface Todos {
+interface TodoInterface {
   tasks: Array<string>;
   addTask(task: string): number;
   listAllTasks();
@@ -7,19 +7,22 @@ interface Todos {
 };
 
 // 1. Create a class Todo that implements the Interface created before.
-class Todo implements Todos {
+class Todo implements TodoInterface {
   constructor(public tasks: Array<string>) {};
+  
   addTask(task) {
-    this.tasks.push(task);
+    return tasks.push(task);
   }
+  
   listAllTasks(){
-    this.tasks.forEach(task => {
+    tasks.forEach(task => {
       console.log(task);
     });
   }
   deleteTask(task) {
     const i = this.tasks.indexOf(task);
-    this.tasks.splice(i, 1);
+    tasks.splice(i, 1);
+    return i;
   }
 }
 // Execution
