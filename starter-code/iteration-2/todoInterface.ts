@@ -4,7 +4,7 @@
 // - Method for listing all task in the console, doesn't return anything.
 // - Method for delete a task where will receive a string, doesn't return anything.
 
-interface ToDoInterface {
+export interface ToDoInterface {
   list:Array<String>,
 
   addTask(task:String):Number;

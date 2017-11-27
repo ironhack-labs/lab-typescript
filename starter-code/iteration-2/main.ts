@@ -1,4 +1,5 @@
 // Add the reference to the "TodoInterface"
+import {ToDoInterface} from './todoInterface';
 // 1. Create a class Todo that implements the Interface created before.
 class Todo implements ToDoInterface{
   list:Array<String> = [];
