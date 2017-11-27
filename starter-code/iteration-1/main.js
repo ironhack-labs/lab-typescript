@@ -1,6 +1,8 @@
 let myList = [];
 function addTask(task) {
     myList.push(task);
+    console.log('=========== NEW TASK ===========');
+    console.log(`Task ${task} inserted in the list`);
     return myList.length;
 }
 function listAllTasks() {
@@ -8,6 +10,8 @@ function listAllTasks() {
 }
 function deleteTask(taskToDelete) {
     myList.splice(myList.indexOf(taskToDelete), 1);
+    console.log('=========== TASK REMOVED ===========');
+    console.log(`Task ${taskToDelete} removed from the list`);
     return myList.length;
 }
 console.log("Number of items:", addTask('This is our first task'));

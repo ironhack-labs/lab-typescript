@@ -14,7 +14,7 @@ export interface TodoListInterface{
   TodoItems:Array<TodoItemInterface>;
   addTask(task:TodoItemInterface):number;
   listAllTasks():void;
-  deleteTask(task:TodoItemInterface):number;
+  deleteTask(taskToDelete:TodoItemInterface):number;
   listUncomplete():void;
 }
 // Write the interface for class Todo. It must have:

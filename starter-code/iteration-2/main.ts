@@ -9,6 +9,8 @@ class Todo implements List {
   // the function has to accept a string and don't have to return anything.
   addTask(task:string){
     this.myList.push(task);
+    console.log('=========== NEW TASK ===========')
+    console.log(`Task ${task} inserted in the list`)
     return this.myList.length;
   }
   // 3. Create a function to list all tasks, it must show in the console de task.
@@ -18,6 +20,8 @@ class Todo implements List {
   // 4. Create a function to delete a task, you must find the task inside the array and delete it.
   deleteTask(taskToDelete:string){
     this.myList.splice(this.myList.indexOf(taskToDelete),1);
+    console.log('=========== TASK REMOVED ===========')
+    console.log(`Task ${taskToDelete} removed from the list`)
     return this.myList.length;
   }
 }
