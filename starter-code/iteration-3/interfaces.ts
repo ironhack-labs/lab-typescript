@@ -1,8 +1,16 @@
-// Write the interface for class TodoItem. It must have:
-// - A title of the task as a property.
-// - A boolean to mark if it's done.
-// - A property updatedAt, obiously is a date.
-// - Method for toogle if it's done or not, doesn't return anything.
+export interface TodoItemInterface{
+  title: string;
+  status: boolean;
+  updatedAt: Date;
+  toggleStatus(task): boolean;
+}
+
+export interface TodoListInterface{
+  todoItem: Array<string>;
+  addTask(todoItem): number;
+  listAllTasks():void;
+  deleteTask(todoItem):number;
+}
 
 // Write the interface for class Todo. It must have:
 // - An array of TodoItem as a property.

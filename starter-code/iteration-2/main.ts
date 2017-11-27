@@ -8,7 +8,7 @@ class Tareas implements Todo{
     return array.length;
   }
 
-  listAllTasks(): void{
+  listAllTasks():void{
     array.forEach(e => console.log(e));
   }
 
