@@ -1,6 +1,6 @@
 var array = [];
 function addTask(task) {
-    array.push(task);
+    array.push();
     return array.length;
 }
 function listAllTasks() {

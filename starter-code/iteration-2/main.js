@@ -1,3 +1,20 @@
+"use strict";
+exports.__esModule = true;
+var Tareas = (function () {
+    function Tareas(array) {
+        this.array = array;
+    }
+    Tareas.prototype.addTask = function (string) {
+        return array.length;
+    };
+    Tareas.prototype.listAllTasks = function () {
+        array.forEach(function (e) { return console.log(e); });
+    };
+    Tareas.prototype.deleteTask = function (string) {
+        return array.length;
+    };
+    return Tareas;
+}());
 var myTodos = new Todo();
 console.log("Number of items:", myTodos.addTask('This is our first task'));
 console.log("Number of items:", myTodos.addTask('Eat pizza 🍕 yummy!!!'));
