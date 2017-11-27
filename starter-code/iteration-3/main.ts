@@ -1,4 +1,19 @@
 // Add the reference to the interface
+class TodoItem implements TodoItemInterface{
+    status: false;
+    // updatedAt = new Date();
+  constructor(public title:string){}
+
+  toggleStatus():string {
+    if(status == true){
+      return 'finished';
+    } else {
+      return 'unfinished';
+    }
+    updatedAt = new Date();
+  }
+
+}
 
 // Create class TodoItem that implements the corresponding interface
 
