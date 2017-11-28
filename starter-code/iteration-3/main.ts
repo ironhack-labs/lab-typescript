@@ -21,8 +21,8 @@ class TodoItem implements TodoItemInterface {
 // Create class TodoList that implements the corresponding interface
 
 class TodoList implements TodoInterface{
-  constructor(public taskArray:Array<TodoItem>){}
-
+  constructor(){}
+  public taskArray: Array<TodoItem>=[];
   addTask = function(task:TodoItem): Number
     {
       task.updateAt =new Date();
@@ -54,8 +54,7 @@ let task3 = new TodoItem('Finish this iteration 1!! 🤓');
 let task4 = new TodoItem('Finish this iteration 2!! 🤓');
 let task5 = new TodoItem('Finish this iteration 3!! 🤓');
 
-let arr =[];
-let myTodos = new TodoList(arr);
+let myTodos = new TodoList();
 
 console.log("Number of items:", myTodos.addTask(task1));
 console.log("Number of items:", myTodos.addTask(task2));

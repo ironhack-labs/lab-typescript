@@ -2,11 +2,12 @@
 // 1. Create a class Todo that implements the Interface created before.
 
 // Execution
+
 import  {Todointerface} from "./todoInterface";
 
 class Todo implements Todointerface{
-  constructor(public taskArray:Array<String>){}
-
+  constructor(){}
+  public taskArray: Array<String>=[];
   addTask = function(task:String): Number
     {
       console.log("Task :"+ task + "inserted in the list");
@@ -15,7 +16,7 @@ class Todo implements Todointerface{
     }
 
     listAllTasks = function () : void {
-      this.taskArray.forEach( e => {
+        this.taskArray.forEach( e => {
         console.log(e);});
     }
 
@@ -29,8 +30,7 @@ class Todo implements Todointerface{
 
 }
 
-let arr=[];
-let myTodos = new Todo(arr);
+const myTodos = new Todo();
 console.log("Number of items:", myTodos.addTask('This is our first task'));
 console.log("Number of items:", myTodos.addTask('Eat pizza 🍕 yummy!!!'));
 console.log("Number of items:", myTodos.addTask('Finish this iteration 1!! 🤓'));

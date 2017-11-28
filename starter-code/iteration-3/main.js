@@ -11,8 +11,8 @@ class TodoItem {
     }
 }
 class TodoList {
-    constructor(taskArray) {
-        this.taskArray = taskArray;
+    constructor() {
+        this.taskArray = [];
         this.addTask = function (task) {
             task.updateAt = new Date();
             console.log("Task :" + task.title + "inserted in the list");
@@ -38,8 +38,7 @@ let task2 = new TodoItem('Eat pizza 🍕 yummy!!!');
 let task3 = new TodoItem('Finish this iteration 1!! 🤓');
 let task4 = new TodoItem('Finish this iteration 2!! 🤓');
 let task5 = new TodoItem('Finish this iteration 3!! 🤓');
-let arr = [];
-let myTodos = new TodoList(arr);
+let myTodos = new TodoList();
 console.log("Number of items:", myTodos.addTask(task1));
 console.log("Number of items:", myTodos.addTask(task2));
 console.log("Number of items:", myTodos.addTask(task3));
