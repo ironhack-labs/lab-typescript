@@ -10,3 +10,17 @@
 // - Method for listing all task in the console, doesn't return anything.
 // - Method for delete a task where will receive an instance of TodoItem, doesn't return anything.
 // - Method for show all tasks that are not yet done, doesn't return anything.
+
+export interface TodoItemInterface {
+  title: String,
+  status: boolean,
+  updateAt: Date,
+  toogleStatus ():void
+}
+
+export interface TodoInterface {
+  taskArray : Array<TodoItemInterface>,
+  addTask (task:TodoItemInterface, taskArray: Array<TodoItemInterface>): Number,
+  listAllTasks (taskArray: Array<TodoItemInterface>) : void,
+  deleteTask (task:TodoItemInterface, taskArray: Array<TodoItemInterface>): Number
+}
