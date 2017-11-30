@@ -14,14 +14,14 @@ console.log("These are our tasks: ")
   })
 }
 // 4. Create a function to delete a task, you must find the task inside the array and delete it.
-function deleteTask( oneTask ) {
-  let itemIndex = myTasks.indexOf( oneTask);
-  console.log(itemIndex)
-  myTasks.splice(itemIndex, 1);
-  console.log(myTasks);
+function deleteTask( taskToDelete ) {
+  let itemIndex = myTasks.indexOf( taskToDelete );
+  console.log( itemIndex )
+  myTasks.splice( itemIndex, 1 );
+  console.log( myTasks );
 
 }
-
+//
 addTask("Go to school");
 addTask("Do homework");
 addTask("Buy Milk");
@@ -29,11 +29,11 @@ console.log( myTasks );
 listAllTasks( myTasks );
 deleteTask("Buy Milk")
 // Execution
-// console.log("Number of items:", addTask('This is our first task'));
-// console.log("Number of items:", addTask('Eat pizza 🍕 yummy!!!'));
-// console.log("Number of items:", addTask('Finish this iteration 1!! 🤓'));
-// console.log("Number of items:", addTask('Finish this iteration 2!! 🤓'));
-// console.log("Number of items:", addTask('Finish this iteration 3!! 🤓'));
-// listAllTasks();
-// console.log("Number of items:", deleteTask('Finish this iteration 1!! 🤓'));
-// listAllTasks();
+// console.log("Number of items:" + myTasks.length , addTask('This is our first task'));
+// console.log("Number of items:" + myTasks.length , addTask('Eat pizza 🍕 yummy!!!'));
+// console.log("Number of items:" + myTasks.length , addTask('Finish this iteration 1!! 🤓'));
+// console.log("Number of items:" + myTasks.length , addTask('Finish this iteration 2!! 🤓'));
+// console.log("Number of items:" + myTasks.length , addTask('Finish this iteration 3!! 🤓'));
+// listAllTasks(myTasks);
+// console.log("Number of items:" + myTasks.length , deleteTask('Finish this iteration 1!! 🤓'));
+// listAllTasks(myTasks);

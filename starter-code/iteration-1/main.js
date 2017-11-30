@@ -8,8 +8,8 @@ function listAllTasks(arrayOfTasks) {
         console.log(oneTask);
     });
 }
-function deleteTask(oneTask) {
-    var itemIndex = myTasks.indexOf(oneTask);
+function deleteTask(taskToDelete) {
+    var itemIndex = myTasks.indexOf(taskToDelete);
     console.log(itemIndex);
     myTasks.splice(itemIndex, 1);
     console.log(myTasks);
