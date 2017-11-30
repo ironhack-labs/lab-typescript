@@ -3,7 +3,7 @@
 const taskList: string[] = [];
 
 // 2. Create a function to add a task in to the array, call it `addTask`, the function has to accept a string and don't have to return anything.
-function addTask (task: string) {
+function addTask(task: string) {
     console.log("Task has been added.");
     return taskList.push(task);
 }
