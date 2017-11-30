@@ -1,6 +1,17 @@
 // Add the reference to the interface
+import { TodoItemInterface } from './interfaces';
+import { TodoInterface } from './interfaces';
 
 // Create class TodoItem that implements the corresponding interface
+
+class TodoItem implements TodoItemInterface {
+  constructor (
+    public title: string,
+    public status: boolean,
+    public updatedAt: number,
+  ) {}
+  toggle(status){}
+}
 
 // Create class TodoList that implements the corresponding interface
 
