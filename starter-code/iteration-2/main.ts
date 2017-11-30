@@ -1,5 +1,28 @@
+
+
 // Add the reference to the "TodoInterface"
 
+class Todo implements TodoItem {
+    constructor( public todolist: string[] = []) {}
+
+
+    addTask(task): number {
+        this.todolist.push(task);
+        return this.todolist.length;
+    }
+
+    listAllTasks(): void {
+        this.todolist.forEach( (task) => {
+            console.log(task);
+        }
+    }
+
+    deleteTask(task): number {
+        var i = this.todolist.indexOf(task);
+        this.todolist.splice(i, 1);
+        return this.todolist.length;
+    }
+}
 // 1. Create a class Todo that implements the Interface created before.
 
 // Execution
