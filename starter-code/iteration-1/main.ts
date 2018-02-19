@@ -1,6 +1,6 @@
 // Iteration 1
 // 1. Create an array of strings
-let toDoArr: Array<string> = [];
+let toDoArr: string[] = [];
 let toDoListLength: number;
 // 2. Create a function to add a task in to the array, call it `addTask`, the function has to accept a string and don't have to return anything.
 function addTask(task: string){
