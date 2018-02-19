@@ -1,11 +1,36 @@
 // Iteration 1
 // 1. Create an array of strings
 
+let taskArray: Array<String> = [];
+
 // 2. Create a function to add a task in to the array, call it `addTask`, the function has to accept a string and don't have to return anything.
+
+function addTask(task: string) {
+    taskArray.push(task);
+    console.log(task)
+    return taskArray.length;
+}
+
+addTask("Learning TypeScript");
 
 // 3. Create a function to list all tasks, it must show in the console de task.
 
+
+function listAllTasks() {
+    taskArray.forEach(function (i) {
+        console.log(i);
+    });
+}
+
+
 // 4. Create a function to delete a task, you must find the task inside the array and delete it.
+
+function deleteTask(task: String){
+    let position = taskArray.indexOf(task);
+    taskArray.splice(position);
+    console.log(task);
+    return taskArray.length;
+}
 
 // Execution
 console.log("Number of items:", addTask('This is our first task'));
