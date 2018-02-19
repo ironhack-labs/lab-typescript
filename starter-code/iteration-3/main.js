@@ -1,12 +1,11 @@
 "use strict";
-exports.__esModule = true;
 var TodoItem = (function () {
     function TodoItem(title) {
         this.title = title;
         this.done = false;
     }
     TodoItem.prototype.doneToggle = function () {
-        !this.done;
+        this.done = true;
     };
     return TodoItem;
 }());
