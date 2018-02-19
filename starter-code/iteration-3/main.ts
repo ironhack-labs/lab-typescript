@@ -1,6 +1,5 @@
 // Add the reference to the interface
-import { TodoItemInterface } from "./interfaces"
-import { TodoListInterface } from "./interfaces"
+import { TodoItemInterface, TodoListInterface } from "./interfaces"
 
 
 // Create class TodoItem that implements the corresponding interface
@@ -12,9 +11,7 @@ class TodoItem implements TodoItemInterface {
         this.title = title;
         this.updatedAt = new Date();
     }
-    toggleStats() {
-
-    }
+    toggleStats() { }
 
 }
 
@@ -30,7 +27,7 @@ class TodoList implements TodoListInterface {
     listAllTasks() {
         console.log("This ARE ALL THE TASKS IN THE ARRAY")
         this.array.forEach(e => {
-            console.log(`- ${ e.title } updated at : ${e.updatedAt}`)
+            console.log(`- ${e.title} updated at : ${e.updatedAt}`)
         })
     }
     deleteTask(task: TodoItem) {
@@ -46,7 +43,7 @@ class TodoList implements TodoListInterface {
         this.array.forEach(e => {
             console.log(e.title)
         })
-}
+    }
 
 }
 

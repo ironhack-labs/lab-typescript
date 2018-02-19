@@ -5,8 +5,7 @@ class TodoItem {
         this.title = title;
         this.updatedAt = new Date();
     }
-    toggleStats() {
-    }
+    toggleStats() { }
 }
 class TodoList {
     constructor() {
