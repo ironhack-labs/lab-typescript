@@ -1,5 +1,12 @@
 // Add the reference to the "TodoInterface"
+export interface TodoList {
+  list: string[];
+  addTask(task : string): number;
+  listAllTasks();
+  deleteTask(task : string): number;
+}
 
+let todovar: TodoList;
 // 1. Create a class Todo that implements the Interface created before.
 
 // Execution
