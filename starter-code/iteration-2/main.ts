@@ -2,7 +2,7 @@
 import { TodoTask } from "./todoInterface";
 
 // 1. Create a class Todo that implements the Interface created before.
-  class Todo implements TodoTask {
+class Todo implements TodoTask {
     
     myTask : Array<string> = [];
     constructor() {

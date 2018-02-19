@@ -1,16 +1,16 @@
-var myArray = [];
+let myArray = [];
 function addTask(task) {
     myArray.push(task);
     console.log("Task added!");
     return myArray.length;
 }
 function listAllTasks() {
-    myArray.forEach(function (t) {
+    myArray.forEach(t => {
         console.log(t);
     });
 }
 function deleteTask(task) {
-    for (var i = 0; i < myArray.length; i++) {
+    for (let i = 0; i < myArray.length; i++) {
         if (myArray[i] == task) {
             myArray.splice(i, 1);
             console.log("Task deleted!");
