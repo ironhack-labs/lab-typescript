@@ -3,7 +3,13 @@ import { todoInterface } from "./todoInterface";
 // 1. Create a class Todo that implements the Interface created before.
 
 class Todo implements todoInterface {
-  constructor(public task: Array<string>) {}
+
+  task:Array<string>;
+
+  constructor() {
+    this.task = [];
+
+  }
 
   addTask(task: string): number {
     this.task.push(task);
@@ -17,10 +23,22 @@ class Todo implements todoInterface {
 
   listAllTasks():void{
 
-    this.task.forEach(x => console.log(x))
+    this.task.forEach(x => console.log(x));
   
   }
 
+  deleteTask(task:string):number{
+
+    let taskAux = this.task.indexOf(task);
+    this.task.slice(taskAux,1);
+    let numElements = this.task.length;
+     console.log("=========== TASK REMOVED ===========");
+     console.log(`Task  ${task} removed from the list`);
+     console.log(`Number of items: ${numElements}`);
+  
+    return numElements;
+  
+  }
   
 }
 

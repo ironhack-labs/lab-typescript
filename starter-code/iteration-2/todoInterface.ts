@@ -7,6 +7,6 @@
 export interface todoInterface{
   task:Array<string>;
   addTask(task:string):number;
-  listAlltask():void;
+  listAllTasks():void;
   deleteTask(task:string):number;
 }

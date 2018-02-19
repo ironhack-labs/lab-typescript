@@ -1,6 +1,6 @@
-var stringArray = [];
+let stringArray = [];
 function addTask(task) {
-    var itemNumer = 0;
+    let itemNumer = 0;
     stringArray.push(task);
     itemNumer = stringArray.length;
     console.log("=========== NEW TASK ===========");
@@ -9,15 +9,15 @@ function addTask(task) {
     return itemNumer;
 }
 function listAllTasks() {
-    stringArray.forEach(function (x) { return console.log(x); });
+    stringArray.forEach(x => console.log(x));
 }
 function deleteTask(task) {
-    var taskAux = stringArray.indexOf(task);
+    let taskAux = stringArray.indexOf(task);
     stringArray.slice(taskAux, 1);
-    var numElements = stringArray.length;
+    let numElements = stringArray.length;
     console.log("=========== TASK REMOVED ===========");
-    console.log("Task  " + task + " removed from the list");
-    console.log("Number of items: " + numElements);
+    console.log(`Task  ${task} removed from the list`);
+    console.log(`Number of items: ${numElements}`);
     return numElements;
 }
 console.log("Number of items:", addTask('This is our first task'));
