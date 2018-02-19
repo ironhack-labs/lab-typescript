@@ -1,21 +1,21 @@
-var array = [];
-var addTask = function (task) {
+let array = [];
+let addTask = (task) => {
     array.push(task);
     console.log("=========== NEW TASK ===========");
-    console.log("Task \"" + task + "\" inserted in the list");
+    console.log(`Task "${task}" inserted in the list`);
     return array.length;
 };
-var listAllTasks = function () {
+let listAllTasks = () => {
     console.log("This are all the tasks:");
-    array.forEach(function (e) {
+    array.forEach(e => {
         console.log(e);
     });
 };
-var deleteTask = function (task) {
+let deleteTask = (task) => {
     var index = array.indexOf(task);
     array.splice(index, 1);
     console.log("=========== TASK REMOVED ===========");
-    console.log("Task " + task + " removed from the list");
+    console.log(`Task ${task} removed from the list`);
     return array.length;
 };
 console.log("Number of items:", addTask('This is our first task'));

@@ -1,5 +1,5 @@
 // Add the reference to the "TodoInterface"
-import { TodoInterface } from "./todointerface";
+import { TodoInterface } from "./todoInterface";
 // 1. Create a class Todo that implements the Interface created before.
 class Todo implements TodoInterface {
     array: Array<string> = [];
@@ -18,7 +18,7 @@ class Todo implements TodoInterface {
     }
     deleteTask(task: string) {
         let index = this.array.indexOf(task)
-        array.splice(index, 1);
+        this.array.splice(index, 1);
         console.log("=========== TASK REMOVED ===========")
         console.log(`Task ${task} removed from the list`)
         return this.array.length;
