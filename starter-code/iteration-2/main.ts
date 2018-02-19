@@ -1,10 +1,11 @@
 // Add the reference to the "TodoInterface"
-import { TodoInterface } from "./todoInterface";
+
+import {todoInterface} from "./todoInterface";
 
 // 1. Create a class Todo that implements the Interface created before.
-class Todo implements TodoInterface {
-    tasks: Array<string>;
-    addTask(task: string):void{this.tasks.push()};
+class Todo implements todoInterface {
+    tasks:Array<string> = [];
+    addTask(task: string):void{this.tasks.push(task)};
     listAllTasks():void{
         document.body.innerHTML += "<ul>";
         this.tasks.forEach(t => {

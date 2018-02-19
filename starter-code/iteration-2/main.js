@@ -2,8 +2,9 @@
 exports.__esModule = true;
 var Todo = (function () {
     function Todo() {
+        this.tasks = [];
     }
-    Todo.prototype.addTask = function (task) { this.tasks.push(); };
+    Todo.prototype.addTask = function (task) { this.tasks.push(task); };
     ;
     Todo.prototype.listAllTasks = function () {
         document.body.innerHTML += "<ul>";
