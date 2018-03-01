@@ -5,7 +5,6 @@ var tasks = [];
 function addTask(task) {
     tasks.push(task);
     console.log("=========== NEW TASK ===========\nTask \"" + task + "\" inserted on the list \n Number of items: " + tasks.length);
-    return tasks;
 }
 addTask('do homework');
 addTask('buy fruit');
@@ -13,7 +12,9 @@ addTask('This is our first task');
 addTask('Eat pizza 🍕 yummy!!!');
 // 3. Create a function to list all tasks, it must show in the console de task.
 function listAllTasks() {
-    tasks.forEach(function (task) { console.log(task); });
+    tasks.forEach(function (task) {
+        console.log(task);
+    });
 }
 listAllTasks();
 // 4. Create a function to delete a task, you must find the task inside the array and delete it.
@@ -22,6 +23,14 @@ function deleteTask(task) {
     tasks.splice(indexOfTask, 1);
     console.log("=========== TASK REMOVED ===========\nTask \"" + task + "\" removed from the list\nNumber of items: " + tasks.length + "\nRemaining array: " + tasks);
 }
+//también se podría hacer con un filter
+// function deleteTask(task: string):number {
+//   tasks = tasks.filter(t=>{
+//     return t!== task;
+//   });
+//   console.log(`task deleted: "${task}"`);
+//   return tasks.length;
+// }
 deleteTask('do homework');
 deleteTask('This is our first task');
 listAllTasks();
