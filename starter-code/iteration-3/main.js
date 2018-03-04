@@ -1,17 +1,26 @@
 "use strict";
+// Add the reference to the interface
 exports.__esModule = true;
-var TodoItem = (function () {
-    function TodoItem(title) {
-        this.status = false;
+// Create class TodoItem that implements the corresponding interface
+var Todo = /** @class */ (function () {
+    function Todo(title) {
         this.title = title;
+        this.status = false;
         this.updatedAt = new Date();
     }
-    TodoItem.prototype.toggleStatus = function () {
-        this.status = true;
+    Todo.prototype.toggleStatus = function () {
+        if (this.status == true) {
+            this.status = false;
+            this.updatedAt = new Date();
+        }
+        else {
+            this.status = true;
+            this.updatedAt = new Date();
+        }
     };
-    return TodoItem;
+    return Todo;
 }());
-var TodoList = (function () {
+var TodoList = /** @class */ (function () {
     function TodoList() {
         this.tasks = [];
     }
@@ -38,11 +47,13 @@ var TodoList = (function () {
     };
     return TodoList;
 }());
-var task1 = new TodoItem('This is our first task');
-var task2 = new TodoItem('Eat pizza 🍕 yummy!!!');
-var task3 = new TodoItem('Finish this iteration 1!! 🤓');
-var task4 = new TodoItem('Finish this iteration 2!! 🤓');
-var task5 = new TodoItem('Finish this iteration 3!! 🤓');
+// Create class TodoList that implements the corresponding interface
+// Execution
+var task1 = new Todo('This is our first task');
+var task2 = new Todo('Eat pizza 🍕 yummy!!!');
+var task3 = new Todo('Finish this iteration 1!! 🤓');
+var task4 = new Todo('Finish this iteration 2!! 🤓');
+var task5 = new Todo('Finish this iteration 3!! 🤓');
 var myTodos = new TodoList();
 console.log("Number of items:", myTodos.addTask(task1));
 console.log("Number of items:", myTodos.addTask(task2));

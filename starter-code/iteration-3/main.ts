@@ -1,30 +1,37 @@
 // Add the reference to the interface
 
-import { TodoItem } from './interfaces.js';
-import { TodoListInterface } from './interfaces.js';
+import { TodoItem } from './interfaces';
+import { TodoListInterface } from './interfaces';
 
 // Create class TodoItem that implements the corresponding interface
-class TodoItem implements TodoItem {
+class Todo implements TodoItem {
   title: string;
-  status: boolean = false;
+  status: boolean;
   updatedAt: Date;
 
   constructor(title:string){
     this.title = title;
+    this.status = false;
     this.updatedAt = new Date();
   }
 
   toggleStatus():void {
-    this.status=true;
+    if(this.status == true){
+      this.status = false;
+      this.updatedAt = new Date();
+    }else{
+      this.status = true;
+      this.updatedAt = new Date();
+    }
   }
 
 }
 class TodoList implements TodoListInterface {
-  tasks: Array<string> = [];
+  tasks: Array<TodoItem> = [];
 
   constructor(){}
 
-  addTask(task:string):number{
+  addTask(task:TodoItem):number{
     this.tasks.push(task);
     console.log(`Task inserted ${task}`);
     return this.tasks.length
@@ -34,7 +41,7 @@ class TodoList implements TodoListInterface {
     this.tasks.forEach((elem) => {console.log(elem)})
   }
 
-  deleteTask(task:string):number{
+  deleteTask(task:TodoItem):number{
     this.tasks = this.tasks.filter(elem => {
       return elem !== task;
     });
@@ -46,7 +53,6 @@ class TodoList implements TodoListInterface {
 
   listUncomplete():void{
     this.tasks.forEach((elem) => {
-      //console.log(elem);
       if(elem.status == false) console.log(elem);
     })
   }
@@ -55,11 +61,11 @@ class TodoList implements TodoListInterface {
 // Create class TodoList that implements the corresponding interface
 
 // Execution
-let task1 = new TodoItem('This is our first task');
-let task2 = new TodoItem('Eat pizza 🍕 yummy!!!');
-let task3 = new TodoItem('Finish this iteration 1!! 🤓');
-let task4 = new TodoItem('Finish this iteration 2!! 🤓');
-let task5 = new TodoItem('Finish this iteration 3!! 🤓');
+let task1 = new Todo('This is our first task');
+let task2 = new Todo('Eat pizza 🍕 yummy!!!');
+let task3 = new Todo('Finish this iteration 1!! 🤓');
+let task4 = new Todo('Finish this iteration 2!! 🤓');
+let task5 = new Todo('Finish this iteration 3!! 🤓');
 
 let myTodos = new TodoList();
 

@@ -21,10 +21,10 @@ export interface TodoItem {
 
 export interface TodoListInterface {
 
-  tasks: Array<string>;
+  tasks: Array<TodoItem>;
 
-  addTask(task):number;
+  addTask(task: TodoItem):number;
   listAllTasks():void;
-  deleteTask(task):void;
+  deleteTask(task: TodoItem):void;
   listUncomplete():void;
 }
