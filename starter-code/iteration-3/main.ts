@@ -1,8 +1,24 @@
 // Add the reference to the interface
+import { todoItem } from './interfaces.js';
 
 // Create class TodoItem that implements the corresponding interface
+class TodoItem implements todoItem{
+title:string;
+isDone:boolean;
+updatedAt:string;
+
+toogleDone():void;
+}
 
 // Create class TodoList that implements the corresponding interface
+class TodoList implements todo{
+  todoItem:Array<string>;
+
+  addTask(todoItem:string):void;
+  listAllTasks():void;
+  deleteTask(todoItem:string):void;
+  showNotDoneTasks():void;
+}
 
 // Execution
 let task1 = new TodoItem('This is our first task');
