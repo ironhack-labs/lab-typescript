@@ -1,8 +1,8 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-// 1. Create a class Todo that implements the Interface created before.
-var Todo = /** @class */ (function () {
+exports.__esModule = true;
+var Todo = (function () {
     function Todo() {
+        this.tasks = [];
     }
     Todo.prototype.addTask = function (task) {
         this.tasks.push(task);
@@ -21,7 +21,6 @@ var Todo = /** @class */ (function () {
     };
     return Todo;
 }());
-// Execution
 var myTodos = new Todo();
 console.log("Number of items:", myTodos.addTask('This is our first task'));
 console.log("Number of items:", myTodos.addTask('Eat pizza 🍕 yummy!!!'));
@@ -32,4 +31,3 @@ myTodos.listAllTasks();
 console.log("Number of items:", myTodos.deleteTask('Finish this iteration 1!! 🤓'));
 console.log("Number of items:", myTodos.deleteTask('Finish this iteration 2!! 🤓'));
 myTodos.listAllTasks();
-//# sourceMappingURL=main.js.map
