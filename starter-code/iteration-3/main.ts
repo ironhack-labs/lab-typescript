@@ -1,7 +1,64 @@
 // Add the reference to the interface
+import {TodoItemInterface,TodoListInterface} from "./interfaces.js"
 
-// Create class TodoItem that implements the corresponding interface
 
+class TodoItem implements TodoItemInterface {
+    title:string="";
+    status:boolean=false;
+    updatedAt: Date;
+    constructor (){};
+
+    toggleStatus():void {
+         this.status==false ?  this.status=true : this.status=false;    
+     }
+    
+}
+
+// // Write the interface for class Todo. It must have:
+class TodoList implements TodoListInterface {
+    TodoItem:Array<TodoItemInterface>;
+   
+    constructor (){};
+
+    addTask(task:TodoItem):void {
+        this.TodoItem.push(task);  
+     }
+     // 3. Create a function to list all tasks, it must show in the console de task.
+     listAllTasks():void {
+        this.TodoItem.forEach(item=>{
+          console.log(item);
+        })
+     }
+     // 4. Create a function to delete a task, you must find the task inside the array and delete it.
+     deleteTask (item:TodoItem):void {
+
+
+        this.TodoItem.forEach(i=>{
+            if(i.title==item.title){
+                let ind=this.TodoItem.indexOf(i);
+                this.TodoItem.splice(ind, 1)
+            }
+
+        })
+       // return this.TodoItem.length;
+     }
+
+     listUncompleted():void {
+        this.TodoItem.forEach(item=>{
+            item.status==false? console.log(item) 
+        
+        })
+     }
+    
+}
+
+// export interface TodoListInterface {
+//     TodoItem:Array<string>;
+//     addTask(task:string):void;
+//     listAllTasks():void;
+//     deleteTask(task:string):void;
+//     listUncompleted():void
+// }
 // Create class TodoList that implements the corresponding interface
 
 // Execution
