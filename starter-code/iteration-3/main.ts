@@ -1,8 +1,54 @@
 // Add the reference to the interface
 
+import {TodoItemInterface} from './interfaces';
+import {TodoListInterface} from './interfaces';
+
 // Create class TodoItem that implements the corresponding interface
 
+class TodoItem implements TodoItemInterface {
+  status: Boolean;
+  updatedAt: Date;
+  constructor(public title: String) {
+    this.updatedAt = new Date();
+  }
+  toogleStatus():void {
+    this.status === true ? this.status = false : this.status = true;
+  }
+}
+
 // Create class TodoList that implements the corresponding interface
+
+class TodoList implements TodoListInterface {
+  list: Array<TodoItem> = [];
+
+  constructor(){};
+
+  addTask(task:TodoItem):number{
+    this.list.push(task);
+    return this.list.length;
+  }
+
+  listAllTasks():void {
+    this.list.forEach(list => {
+      console.log(list.title)
+    })
+  }
+
+  deleteTask(task:TodoItem):number {
+    this.list = this.list.filter(list => {
+      return list === task;
+    });
+    return this.list.length;
+  }
+
+  listUncomplete():void {
+    this.list.forEach(list => {
+      if(list.status === false) {
+        console.log(list.title);
+      }
+    })
+  }
+}
 
 // Execution
 let task1 = new TodoItem('This is our first task');

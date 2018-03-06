@@ -8,20 +8,25 @@ class Todo implements TodoInterface {
 
   constructor(){};
 
-  addTask(task: string):number{
+  addTask(task: string):number {
     this.tasks.push(task);
-    return tasks.length
+    console.log(`Task inserted ${task}`);
+    return this.tasks.length
   };
-  listAllTasks():void{
-    this.tasks.forEach(tasks => {
-      console.log(task);
+
+  listAllTasks():void {
+    this.tasks.forEach(task => {
+      console.log(task)
     })
   };
-  deleteTask(task: string):number{
+
+  deleteTask(task: string):number {
     this.tasks = this.tasks.filter(t => {
       return t !== task
-    });
+    })
     console.log(`task deleted: ${task}`);
+    return this.tasks.length
+  };
 }
 
 // Execution

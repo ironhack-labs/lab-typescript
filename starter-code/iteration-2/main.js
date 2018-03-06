@@ -8,11 +8,12 @@ var Todo = /** @class */ (function () {
     ;
     Todo.prototype.addTask = function (task) {
         this.tasks.push(task);
-        return tasks.length;
+        console.log("Task inserted " + task);
+        return this.tasks.length;
     };
     ;
     Todo.prototype.listAllTasks = function () {
-        this.tasks.forEach(function (tasks) {
+        this.tasks.forEach(function (task) {
             console.log(task);
         });
     };
@@ -22,7 +23,9 @@ var Todo = /** @class */ (function () {
             return t !== task;
         });
         console.log("task deleted: " + task);
+        return this.tasks.length;
     };
+    ;
     return Todo;
 }());
 // Execution

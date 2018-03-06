@@ -25,9 +25,10 @@ function listAllTasks():void {
 
 function deleteTask(task: string):number {
   tasks = tasks.filter(t => {
-    return t !== task
-  });
+    return t !== task;
+  })
   console.log(`task deleted: ${task}`);
+  return task.length;
 }
 
 // Execution
