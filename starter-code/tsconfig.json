@@ -1,7 +1,8 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "removeComments": true
+    "removeComments": true,
+    "module": "system"
   },
   "files": [
     "./iteration-1/main.ts",
