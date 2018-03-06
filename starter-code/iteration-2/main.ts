@@ -1,5 +1,31 @@
 // Add the reference to the "TodoInterface"
+import {TodoInterface} from "./todoInterface.js"
 
+class Todo implements TodoInterface {
+    //model: string; No me queda claro lo del modelo
+    myTask : Array <String> = []
+    constructor() {}
+  
+    addTask (phrase : string){
+        return this.myTask.push(phrase);
+     }
+
+    listAllTasks() : void {
+        this.myTask.forEach((task)=>{
+            console.log(task);
+        })
+    } 
+
+    deleteTask(task) : number {
+        this.myTask.forEach((t)=>{
+            if (t===task){
+                this.myTask.splice(this.myTask.indexOf(t), 1);
+            } 
+        })
+        return this.myTask.length
+    }
+  }
+  
 // 1. Create a class Todo that implements the Interface created before.
 
 // Execution
