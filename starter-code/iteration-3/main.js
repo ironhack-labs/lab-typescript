@@ -1,6 +1,8 @@
 "use strict";
+// Add the reference to the interface
 exports.__esModule = true;
-var TodoItem = (function () {
+// Create class TodoItem that implements the corresponding interface
+var TodoItem = /** @class */ (function () {
     function TodoItem(title) {
         this.title = title;
         this.updatedAt = new Date();
@@ -10,7 +12,8 @@ var TodoItem = (function () {
     };
     return TodoItem;
 }());
-var TodoList = (function () {
+// Create class TodoList that implements the corresponding interface
+var TodoList = /** @class */ (function () {
     function TodoList() {
         this.list = [];
     }
@@ -39,6 +42,7 @@ var TodoList = (function () {
     };
     return TodoList;
 }());
+// Execution
 var task1 = new TodoItem('This is our first task');
 var task2 = new TodoItem('Eat pizza 🍕 yummy!!!');
 var task3 = new TodoItem('Finish this iteration 1!! 🤓');

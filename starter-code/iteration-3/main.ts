@@ -46,7 +46,7 @@ class TodoList implements TodoListInterface {
       if(list.status === false) {
         console.log(list.title);
       }
-    })
+    });
   }
 }
 
