@@ -21,7 +21,7 @@ listAllTasks();
 function deleteTask(task) {
     var indexOfTask = tasks.indexOf(task);
     tasks.splice(indexOfTask, 1);
-    console.log("=========== TASK REMOVED ===========\nTask \"" + task + "\" removed from the list\nNumber of items: " + tasks.length + "\nRemaining array: " + tasks);
+    console.log("=========== NEW TASK ===========\n  Task \"" + task + "\" inserted on the list\n  Number of items: \" + " + tasks.length);
 }
 //también se podría hacer con un filter
 // function deleteTask(task: string):number {

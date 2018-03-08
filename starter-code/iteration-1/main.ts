@@ -30,7 +30,9 @@ listAllTasks();
 function deleteTask(task: string) {
   let indexOfTask = tasks.indexOf(task);
   tasks.splice(indexOfTask, 1);
-  console.log(`=========== TASK REMOVED ===========\nTask "${task}" removed from the list\nNumber of items: ${tasks.length}\nRemaining array: ${tasks}`);
+  console.log(`=========== NEW TASK ===========
+  Task "${task}" inserted on the list
+  Number of items: " + ${tasks.length}`);
 }
 
 //también se podría hacer con un filter

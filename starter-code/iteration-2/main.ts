@@ -1,7 +1,5 @@
 // Add the reference to the "TodoInterface"
-import {
-  TodoInterface
-} from './todoInterface';
+import {TodoInterface} from './todoInterface';
 
 // 1. Create a class Todo that implements the Interface created before.
 
