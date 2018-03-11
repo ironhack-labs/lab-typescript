@@ -6,12 +6,11 @@ var Todo = (function () {
     }
     Todo.prototype.addTask = function (task) {
         this.allTodos.push(task);
-        console.log(task + " was added to the list.");
-        var numberOfTask = this.allTodos.length;
-        return numberOfTask;
+        console.log("=========== NEW TASK ===========\n    Task \"" + task + "\" inserted in the list");
+        return this.allTodos.length;
     };
     Todo.prototype.listAllTasks = function () {
-        console.log("all task:");
+        console.log("=========== ALL TASK ===========");
         for (var _i = 0, _a = this.allTodos; _i < _a.length; _i++) {
             var item = _a[_i];
             console.log(item);
@@ -20,9 +19,8 @@ var Todo = (function () {
     Todo.prototype.deleteTask = function (task) {
         var index = this.allTodos.indexOf(task);
         this.allTodos.splice(index, 1);
-        var numberOfTask = this.allTodos.length;
-        console.log(task + " was deleted from the list.");
-        return numberOfTask;
+        console.log("=========== TASK REMOVED ===========\n      Task \"" + task + "\" removed from the list");
+        return this.allTodos.length;
     };
     return Todo;
 }());
