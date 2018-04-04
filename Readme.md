@@ -18,7 +18,6 @@ After this lesson, you will be able to:
   ```
   $ npm install -g typescript
   ```
-- It's recommended to install the [atom-typescript](https://atom.io/packages/atom-typescript) extension.
 
 ## Submission
 
