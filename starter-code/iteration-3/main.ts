@@ -5,25 +5,31 @@ import {TodoInterface} from "./interfaces";
 class TodoItem implements TodoItemInterface {
   title: string;
   status: boolean = false;
-  updatedAt: string;
+  updatedAt: object = new Date();
   toogleStatus():void {
     if(this.status === false) { this.status = true }
     else {this.status = false }
   }
-  constructor(title: string, updatedAt: string) {
+  constructor(title: string) {
     this.toogleStatus()
   }
 }
 
 class TodoList implements TodoInterface {
-  TodoItem: Array<string>;
+  TodoItem: Array<string>=[];
   addTask(value):number {
     this.TodoItem.push(value)
     console.log("Element inserted", this.TodoItem.length)
     return this.TodoItem.length
   }
-  listAllTask():void {};
-  delete(value:string): number;
+  listAllTask():void {
+    console.log(this.TodoItem)
+  };
+  delete(value):number {
+    this.TodoItem.splice(this.TodoItem.indexOf(value), 1)
+    console.log("Element deleted", this.TodoItem.length)
+    return this.TodoItem.length
+  }
   constructor(){
 
   }
@@ -42,8 +48,7 @@ console.log("Number of items:", myTodos.addTask(task2));
 console.log("Number of items:", myTodos.addTask(task3));
 console.log("Number of items:", myTodos.addTask(task4));
 console.log("Number of items:", myTodos.addTask(task5));
-myTodos.listAllTasks();
-console.log("Number of items:", myTodos.deleteTask(task3));
-console.log("Number of items:", myTodos.deleteTask(task4));
-console.log("Number of items:", myTodos.deleteTask(task5));
-myTodos.listUncomplete();
+myTodos.listAllTask();
+console.log("Number of items:", myTodos.delete(task3));
+console.log("Number of items:", myTodos.delete(task4));
+console.log("Number of items:", myTodos.delete(task5));

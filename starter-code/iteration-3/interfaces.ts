@@ -6,7 +6,7 @@
 export interface TodoItemInterface {
   title: string,
   status: boolean,
-  updatedAt: string,
+  updatedAt: object,
   toogleStatus():void
 }
 
