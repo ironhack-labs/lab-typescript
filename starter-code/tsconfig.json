@@ -6,9 +6,9 @@
   },
   "files": [
     "./iteration-1/main.ts",
-    // "./iteration-2/main.ts",
-    // "./iteration-2/todoInterface.ts",
-    // "./iteration-3/main.ts",
-    // "./iteration-3/interfaces.ts"
+    "./iteration-2/main.ts",
+    "./iteration-2/todoInterface.ts",
+    "./iteration-3/main.ts",
+    "./iteration-3/interfaces.ts"
   ]
 }
