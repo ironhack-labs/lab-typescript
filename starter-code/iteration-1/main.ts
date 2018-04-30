@@ -1,12 +1,28 @@
 // Iteration 1
 // 1. Create an array of strings
-
-// 2. Create a function to add a task in to the array, call it `addTask`, the function has to accept a string and don't have to return anything.
-
+let toDoList: Array<string> = [];
+// 2. Create a function to add a task in to the array, call it `addTask`, the function has to accept
+// a string and don't have to return anything.
+function addTask(task: string){
+toDoList.push(task);
+console.log(`Task ${task} added! `);
+console.log(toDoList.length);
+return toDoList.length;
+}
 // 3. Create a function to list all tasks, it must show in the console de task.
-
+function listAllTasks() {
+    toDoList.forEach(oneTask => {
+      console.log(oneTask);
+    });
+   }
 // 4. Create a function to delete a task, you must find the task inside the array and delete it.
-
+function deleteTask(task: string){
+    let index = toDoList.indexOf(task);
+    toDoList.splice(index, 1);
+    console.log(`Deleted ${index} ${task}`);
+    console.log(`Tasks left ${toDoList.length}`);
+    return toDoList.length;
+}
 // Execution
 console.log("Number of items:", addTask('This is our first task'));
 console.log("Number of items:", addTask('Eat pizza 🍕 yummy!!!'));
