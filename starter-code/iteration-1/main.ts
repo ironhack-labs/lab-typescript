@@ -3,10 +3,11 @@
 let tasksArr : Array<String> = [];
 
 // 2. Create a function to add a task in to the array, call it `addTask`, the function has to accept a string and don't have to return anything.
-function addTask(task):void {
+function addTask(task) {
   tasksArr.push(task);
   console.log(`Task ${task} inserted in the list
-  Number of items: ${tasksArr.length}`)
+  Number of items: ${tasksArr.length }`)
+  return tasksArr.length;
 }
 
 // 3. Create a function to list all tasks, it must show in the console de task.
