@@ -1,0 +1,6 @@
+{
+    "compileOnSave": true,
+    "compilerOption": {
+        "target": "es6"
+    }
+}
