@@ -11,7 +11,7 @@ let task3 = new TodoItem('Finish this iteration 1!! 🤓');
 let task4 = new TodoItem('Finish this iteration 2!! 🤓');
 let task5 = new TodoItem('Finish this iteration 3!! 🤓');
 
-let myTodos = new TodoList();
+let myTodo2s = new TodoList();
 
 console.log("Number of items:", myTodos.addTask(task1));
 console.log("Number of items:", myTodos.addTask(task2));
