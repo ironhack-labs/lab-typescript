@@ -251,7 +251,7 @@ Once you are done with that, the exercise will be finished!
 - Create a `TodoList` class that implements the `TodoListInterface` interface, adding all the required properties and functions specified in the interface:
   - An `Array` of `TodoItem`s to be able to save the different tasks you want to do.
   - Create an `addTask` function:
-    - It receives a string as a parameter.
+    - It receives a `TodoItem` as a parameter.
     - It prints in console the same message as iteration 1.
     - It returns the number of elements in the list and prints the number.
   - Create a `listAllTasks` function:
