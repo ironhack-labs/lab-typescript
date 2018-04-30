@@ -10,3 +10,19 @@
 // - Method for listing all task in the console, doesn't return anything.
 // - Method for delete a task where will receive an instance of TodoItem, doesn't return anything.
 // - Method for show all tasks that are not yet done, doesn't return anything.
+
+
+export interface TodoItemInterface {
+    task: string;
+    isDone: boolean;
+    updatedAt: Date;
+    isToggle(): void;
+}
+
+export interface TodoListInterface {
+    todoItems: Array<TodoItemInterface>;
+    addTask(task: TodoItemInterface): number;
+    listAllTasks(): void;
+    deleteTask(task: TodoItemInterface): number;
+    listUncomplete(): void;
+}
