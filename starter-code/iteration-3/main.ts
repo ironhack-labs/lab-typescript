@@ -3,19 +3,30 @@ import {TodoItemInterface} from "./interfaces";
 import {TodoInterface} from "./interfaces";
 // Create class TodoList that implements the corresponding interface
 class TodoItem implements TodoItemInterface {
-  constructor(){ }
   title: string;
-  status: boolean;
+  status: boolean = false;
   updatedAt: string;
-  toogleStatus():void {}
+  toogleStatus():void {
+    if(this.status === false) { this.status = true }
+    else {this.status = false }
+  }
+  constructor(title: string, updatedAt: string) {
+    this.toogleStatus()
+  }
 }
 
 class TodoList implements TodoInterface {
-  constructor(){ }
   TodoItem: Array<string>;
-  addTask(value:string): number;
+  addTask(value):number {
+    this.TodoItem.push(value)
+    console.log("Element inserted", this.TodoItem.length)
+    return this.TodoItem.length
+  }
   listAllTask():void {};
-  delete(value:string): number
+  delete(value:string): number;
+  constructor(){
+
+  }
 }
 // Execution
 let task1 = new TodoItem('This is our first task');
