@@ -1,18 +1,20 @@
-// Iteration 1
-var Tasks = /** @class */ (function () {
-    function Tasks() {
-        this.list = [];
-        // 3. Create a function to list all tasks, it must show in the console de task.
-        // 4. Create a function to delete a task, you must find the task inside the array and delete it.
-        // Execution
+let list = [];
+function addTask(str) {
+    list.push(str);
+    console.log(list.length);
+    return list.length;
+}
+function listAllTasks() {
+    for (let i = 0; i < list.length; i++) {
+        console.log(list[i]);
     }
-    // 1. Create an array of strings
-    // 2. Create a function to add a task in to the array, call it `addTask`, the function has to accept a string and don't have to return anything.
-    Tasks.prototype.addTask = function (str) {
-        this.list.push(str);
-    };
-    return Tasks;
-}());
+}
+function deleteTask(task) {
+    list.splice(list.indexOf(task), 1);
+    console.log(list.length);
+    console.log(task + " was deleted!");
+    return list.length;
+}
 console.log("Number of items:", addTask('This is our first task'));
 console.log("Number of items:", addTask('Eat pizza 🍕 yummy!!!'));
 console.log("Number of items:", addTask('Finish this iteration 1!! 🤓'));
