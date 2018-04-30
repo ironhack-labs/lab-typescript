@@ -8,6 +8,22 @@
 // 4. Create a function to delete a task, you must find the task inside the array and delete it.
 
 // Execution
+let arr1: Array<string> = [];
+
+let addTask = task => {
+  arr1.push(task);
+};
+
+let listAllTasks = () => {
+  console.log(arr1);
+};
+
+let deleteTask = task => {
+  if (arr1.indexOf(task) >= 0) {
+    arr1.splice(arr1.indexOf(task), 1);
+  }
+};
+
 console.log("Number of items:", addTask('This is our first task'));
 console.log("Number of items:", addTask('Eat pizza 🍕 yummy!!!'));
 console.log("Number of items:", addTask('Finish this iteration 1!! 🤓'));
