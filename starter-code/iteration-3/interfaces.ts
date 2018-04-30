@@ -4,7 +4,7 @@
 // - A property updatedAt, obiously is a date.
 // - Method for toogle if it's done or not, doesn't return anything.
 
-interface tasks {
+export interface tasks {
     title: string;
     status: boolean;
     updatedAt: Date;
@@ -20,9 +20,9 @@ interface tasks {
 // - Method for show all tasks that are not yet done, doesn't return anything.
 
 
-interface TodoListInterface {
-    TodoItem: Array<string>;
+export interface TodoListInterface {
+    TodoItem: Array<tasks>;
     addTask(TodoItem): number;
     listAllTasks(): void;
-    
+    deleteTask(TodoItem): number;
 }
