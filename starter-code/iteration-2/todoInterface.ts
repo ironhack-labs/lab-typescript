@@ -4,10 +4,10 @@
 // - Method for listing all task in the console, doesn't return anything.
 // - Method for delete a task where will receive a string, doesn't return anything.
 
-interface Task {
-
-}
-
-class Todo {
-
-}
+export interface Task {
+  list: Array<string>;
+  addTask(str:string): Number;
+  listAllTasks():void;
+  deleteTask(str:string):Number;
+  }
+  
