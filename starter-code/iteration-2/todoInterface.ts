@@ -6,7 +6,7 @@
 
 export interface TodoInterface {
   array: Array<string>;
-  addTask(string): number;
+  addTask(task: string): number;
   listAllTasks(): void;
-  deleteTask(string): number;
+  deleteTask(task: string): number;
 }
