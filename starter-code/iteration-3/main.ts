@@ -9,10 +9,10 @@ interface TodoItemInterface {
 }
 // Create class TodoList that implements the corresponding interface
 interface TodoListInterface {
-  taskArray : Array<string>;
-  addTask(task: string) :number;
+  taskArray : Array<TodoItemInterface>;
+  addTask(task: TodoItemInterface) :number;
   listAllTasks();
-  deleteTask(task: string) :number;
+  deleteTask(task: TodoItemInterface) :number;
 }
 // Execution
 class TodoItem implements TodoItemInterface {
@@ -28,11 +28,11 @@ class TodoItem implements TodoItemInterface {
 
 class TodoList implements TodoListInterface {
 
-  taskArray: Array <string> =[];
+  taskArray: Array <TodoItemInterface> =[];
 
   constructor(){ }
   
-  addTask(task: string){
+  addTask(task: TodoItemInterface){
     this.taskArray.push(task);
     console.log(`Task "${task}" inserted in the list`);
     return this.taskArray.length;
@@ -44,7 +44,7 @@ class TodoList implements TodoListInterface {
     }
   }
 
-  deleteTask(task: string){
+  deleteTask(task: TodoItemInterface){
     for(let i=0; i< this.taskArray.length; i++){
       if(this.taskArray[i]=== task){
         this.taskArray.splice(i,1);
@@ -72,4 +72,4 @@ myTodos.listAllTasks();
 console.log("Number of items:", myTodos.deleteTask(task3));
 console.log("Number of items:", myTodos.deleteTask(task4));
 console.log("Number of items:", myTodos.deleteTask(task5));
-myTodos.listUncomplete();
+//myTodos.listUncomplete();
