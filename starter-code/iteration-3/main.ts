@@ -1,8 +1,82 @@
 // Add the reference to the interface
 
+interface TodoItemInterface {
+    title: string,
+    status: boolean,
+    updatedAt: Date,
+
+    // toggleStatus: Function
+}
+
+interface TodoListInterface {
+    TodoItemArray: string[]
+    addTask(TodoItem: any)
+    listOfAllTasks()
+    deleteTask(TodoItem: any)
+}
 // Create class TodoItem that implements the corresponding interface
 
+class TodoItem implements TodoItemInterface {
+    constructor ( public title: string, public status: boolean, public updatedAt: Date ) { }
+    
+    toggleStatus() {
+        if (this.status === true) {
+            console.log("finished")
+            this.status = false
+            this.updatedAt = new Date()
+        } else {
+            console.log("unfinished")
+            this.status = true;
+            this.updatedAt = new Date()
+        }
+
+    }
+}
+
+
+
 // Create class TodoList that implements the corresponding interface
+
+class TodoList implements TodoListInterface, TodoItemInterface {
+    constructor (   public TodoItemArray: string[], 
+                    public TodoItem: any,
+                    public title: string, 
+                    public status: boolean, 
+                    public updatedAt: Date
+                ) { }
+
+toggleStatus() {
+        if (this.status === true) {
+            console.log("finished")
+            this.status = false
+            this.updatedAt = new Date()
+        } else {
+            console.log("unfinished")
+            this.status = true;
+            this.updatedAt = new Date()
+        }
+
+
+addTask() {
+    this.TodoItemArray.push(this.TodoItem);
+    console.log(`Task  ${this.TodoItem} +  inserted in the list`)
+    console.log(`Number of items: ${this.TodoItemArray.length}` )
+    return this.TodoItemArray.length;
+}
+
+listOfAllTasks() {
+    this.TodoItemArray.forEach( function (oneTask) {
+        console.log(`all tasks:  + ${oneTask}`)
+    })   
+}
+
+deleteTask() {
+    if (this.TodoItemArray.indexOf(this.TodoItem) !== -1) {
+    this.TodoItemArray.splice(arrayOfStrings.indexOf(this.TodoItem), 1);
+    console.log(`Task  ${this.TodoItem} +  deleted from the list`)
+    console.log(`Number of items: ${this.TodoItemArray.length}` )
+    return this.TodoItemArray.length;
+}
 
 // Execution
 let task1 = new TodoItem('This is our first task');
