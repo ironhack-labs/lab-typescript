@@ -3,7 +3,7 @@ import { TodoItemInterface, TodoListInterface } from "./interfaces";
 
 // Create class TodoItem that implements the corresponding interface
 
-export class TodoItem implements TodoItemInterface {
+class TodoItem implements TodoItemInterface {
   constructor(public title: string) {}
   status: boolean;
   updatedAt: Date;
@@ -20,21 +20,30 @@ class TodoList implements TodoListInterface {
   addTask(task: TodoItem): number {
     this.todoItems.push(task);
     console.log(`=========== NEW TASK ===========
-    Task ${task} inserted in the list
+    Task ${task.title} inserted in the list
     Number of items: ${this.todoItems.length}`);
     return this.todoItems.length;
   }
 
   listAllTasks(): void {
     this.todoItems.forEach(e => {
-      console.log(`TASK: ${e}`);
+      console.log(`TASK: ${e.title}`);
     });
   }
 
   deleteTask(task: TodoItem): number {
-    let removedTask = this.todoItems.splice(this.todoItems.indexOf(task), 1);
+    let itemToRemove;
+    let indexItem;
+    this.todoItems.forEach((e, i) => {
+      if (e.title === task.title) {
+        itemToRemove = e;
+        indexItem = i;
+      }
+    });
+
+    this.todoItems.splice(indexItem, 1).join();
     console.log(`=========== TASK REMOVED ===========
-    Task ${removedTask} removed from the list
+    Task ${itemToRemove.title} removed from the list
     Number of items: ${this.todoItems.length}`);
     return this.todoItems.length;
   }

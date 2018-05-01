@@ -1,40 +1,49 @@
-export class TodoItem {
-  constructor(title) {
-    this.title = title;
-  }
-  toggleStatus() {
-    this.status ? (this.status = false) : (this.status = true);
-    this.updatedAt = new Date();
-  }
+class TodoItem {
+    constructor(title) {
+        this.title = title;
+    }
+    toggleStatus() {
+        this.status ? (this.status = false) : (this.status = true);
+        this.updatedAt = new Date();
+    }
 }
 class TodoList {
-  constructor() {
-    this.todoItems = [];
-  }
-  addTask(task) {
-    this.todoItems.push(task);
-    console.log(`=========== NEW TASK ===========
-    Task ${task} inserted in the list
+    constructor() {
+        this.todoItems = [];
+    }
+    addTask(task) {
+        this.todoItems.push(task);
+        console.log(`=========== NEW TASK ===========
+    Task ${task.title} inserted in the list
     Number of items: ${this.todoItems.length}`);
-    return this.todoItems.length;
-  }
-  listAllTasks() {
-    this.todoItems.forEach(e => {
-      console.log(`TASK: ${e}`);
-    });
-  }
-  deleteTask(task) {
-    let removedTask = this.todoItems.splice(this.todoItems.indexOf(task), 1);
-    console.log(`=========== TASK REMOVED ===========
-    Task ${removedTask} removed from the list
+        return this.todoItems.length;
+    }
+    listAllTasks() {
+        this.todoItems.forEach(e => {
+            console.log(`TASK: ${e.title}`);
+        });
+    }
+    deleteTask(task) {
+        let itemToRemove;
+        let indexItem;
+        this.todoItems.forEach((e, i) => {
+            if (e.title === task.title) {
+                itemToRemove = e;
+                indexItem = i;
+            }
+        });
+        this.todoItems.splice(indexItem, 1).join();
+        console.log(`=========== TASK REMOVED ===========
+    Task ${itemToRemove.title} removed from the list
     Number of items: ${this.todoItems.length}`);
-    return this.todoItems.length;
-  }
-  listUncomplete() {
-    this.todoItems.forEach(e => {
-      if (!e.status) console.log(e.title);
-    });
-  }
+        return this.todoItems.length;
+    }
+    listUncomplete() {
+        this.todoItems.forEach(e => {
+            if (!e.status)
+                console.log(e.title);
+        });
+    }
 }
 let task1 = new TodoItem("This is our first task");
 let task2 = new TodoItem("Eat pizza 🍕 yummy!!!");
