@@ -15,6 +15,7 @@ class TodoItem implements TodoItemInterface {
       this.updatedAt = new Date()
     } else {
       this.status = true
+      this.updatedAt = new Date()
     }
   }
 
