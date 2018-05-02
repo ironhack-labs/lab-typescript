@@ -1,10 +1,25 @@
 // Write the interface for class TodoItem. It must have:
+export interface TodoItemInterface {
+  title: string;
+  verify: boolean;
+  updatedAt: Date;
+  toogle(V: boolean);
+}
 // - A title of the task as a property.
 // - A boolean to mark if it's done.
 // - A property updatedAt, obiously is a date.
 // - Method for toogle if it's done or not, doesn't return anything.
 
 // Write the interface for class Todo. It must have:
+
+export interface TodoInterface {
+  item: Array<TodoItem>;
+  addTask(itemx: TodoItem);
+  listAllTasks(arr: Array<string>);
+  deleteTask(arr: Array<string>, y: TodoItem);
+  showTasks(arr: Array<string>, mark: boolean);
+}
+
 // - An array of TodoItem as a property.
 // - Method for adding task where will receive an instance of TodoItem, doesn't return anything.
 // - Method for listing all task in the console, doesn't return anything.
