@@ -3,6 +3,7 @@
   "compilerOptions": {
     "removeComments": true,
     "target": "es6",
+    "module": "commonjs",
   },
   "files": [
     "./iteration-1/main.ts",
