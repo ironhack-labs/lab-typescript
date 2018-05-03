@@ -25,18 +25,18 @@ Upon completion, run the following commands:
 
 ```bash
 $ git add .
-$ git commit -m"done"
+$ git commit -m "done"
 $ git push origin master
 ```
-Navigate to your repo and create a Pull Request from your master branch to the original repository master branch.
+Navigate to your repo and create a pull request from your master branch to the original repository master branch.
 
-In the Pull request name, add your name and last names separated by a dash "-"
+In the pull request name, add your name and last names separated by a dash "-"
 
 ## Introduction
 
-When we are studying, it's very common to create lists to remember different things: finish exercises, create a pull-request with the solution, eat, sleep... some of them are more important than others, but we have to remember all of them.
+When we are studying, it's very common to create to-do lists so we remember to do specific exercises and tasks. Some of them are more important than others, but we have to remember all of them.
 
-We are going to help you with this. How? We are going to create a ToDo list project in TypeScript. We are going to create different lists following different strategies with TypeScript. In the process, we will cover several important basic topics: variable types, functions, classes, and interfaces.
+We are going to help you with this. How? We are going to create a to-do list project in TypeScript. We are going to create different lists following different strategies with TypeScript. In the process, we will cover several important basic topics: variable types, functions, classes, and interfaces.
 
 ### Project Structure
 
@@ -71,9 +71,9 @@ Remember that the `*.js` files are generated every time we save the TypeScript f
 
 ### Iteration #1: Functions
 
-In the first iteration of the exercise, we are going to create our To-Do list using functions. Let's consider what we need to implement all the necessary functions for our list.
+In the first iteration of the exercise, we are going to create our to-do list using functions. Let's consider what we need to implement all the necessary functions for our list.
 
-First of all, we need to be able to save the tasks we have to do.  In order to do this, we will need somewhere to store them. We will use an array. With this array we will be able to:
+First of all, we need to be able to save tasks. In order to do this, we will need somewhere to store them. We will use an array, which will be able to:
 
 - Add a new task (a string).
 - Remove a task that we've completed.
@@ -138,7 +138,7 @@ Once you have implemeneted all these features, you will have the first iteration
 
 ### Iteration #2: Class with one Interface
 
-In this iteration we are going to implement the same functionality by using an Interface. We are going to be working with the `iteration-2` folder.
+In this iteration, we are going to implement the same functionality by using an Interface. We are going to be working with the `iteration-2` folder.
 
 Remember that an interface specifies all the functions that a class will have, and also the parameters of each function.
 
@@ -151,7 +151,7 @@ We will create an Interface in the `todointerface.ts` file that will specify the
 
 Once we have defined and exported the Interface, we will create a class called `Todo` that will implement the interface and its methods. We are going to add this class in the `main.ts` file.
 
-We have to keep the same inputs and outputs we have used in the previous iteration.
+We will keep the same inputs and outputs we used in the previous iteration.
 
 **Tasks**
 
@@ -199,8 +199,8 @@ The list item interface will have the following properties:
 
 - Title of the task, which will be a string.
 - Status of the task, represented by a boolean value.
-- Updated At, that will store the date when the task was last modified.
-- Toggle Status function, which will set the status as true if it's false, and viceversa.
+- updatedAt, which will store the date when the task was last modified.
+- toggleStatus function, which will set the status as true if it's false, and vice versa.
 
 In the Todo list interface, we will have the following properties:
 
@@ -251,7 +251,7 @@ Once you are done with that, the exercise will be finished!
 - Create a `TodoList` class that implements the `TodoListInterface` interface, adding all the required properties and functions specified in the interface:
   - An `Array` of `TodoItem`s to be able to save the different tasks you want to do.
   - Create an `addTask` function:
-    - It receives a `TodoItem` as a parameter.
+    - It receives a string as a parameter.
     - It prints in console the same message as iteration 1.
     - It returns the number of elements in the list and prints the number.
   - Create a `listAllTasks` function:
