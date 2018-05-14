@@ -1,11 +1,32 @@
 // Iteration 1
 // 1. Create an array of strings
+let array = []
 
 // 2. Create a function to add a task in to the array, call it `addTask`, the function has to accept a string and don't have to return anything.
-
+let addTask = (task:string):number => {
+    array.push(task);
+    console.log(`Task ${task} inserted in the list`)
+    return array.length;
+} 
 // 3. Create a function to list all tasks, it must show in the console de task.
-
+let listAllTasks = ():void => {
+    array.forEach( (element:string) => {
+        console.log(element);
+    })
+}
 // 4. Create a function to delete a task, you must find the task inside the array and delete it.
+let deleteTask = (task:string):number => {
+    for (let i = 0; i < array.length; i++){
+        if (array[i] === task){
+            array.splice(i, 1);
+            break;
+        }
+    }
+    console.log(`Task ${task} removed from the list`)
+    // console.log(`Number of items: ${array.length}`);
+
+    return array.length;
+} 
 
 // Execution
 console.log("Number of items:", addTask('This is our first task'));
