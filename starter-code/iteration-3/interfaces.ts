@@ -4,10 +4,10 @@
 // - A property updatedAt, obiously is a date.
 // - Method for toogle if it's done or not, doesn't return anything.
 
-interface TodoItemInterface {
+export interface TodoItemInterface {
   title: string;
-  status: string;
-  updatedAt: Date;
+  status: boolean;
+  updatedAt: number;
   toggleStatus():void;
 }
 
@@ -21,15 +21,10 @@ interface TodoItemInterface {
 // - Method for delete a task where will receive an instance of TodoItem, doesn't return anything.
 // - Method for show all tasks that are not yet done, doesn't return anything.
 
-interface TodoInterface {
-  doArray: Array<TodoItemInterface>;
-  addTask(TodoItemInterface):number;
+export interface TodoInterface {
+  doArray: Array<object>;
+  addTask(TodoItem:object):number;
   listAllTasks():void;
-  deleteTask(TodoItemInterface):number;
+  deleteTask(TodoItem:object):number;
 }
 
-
-export {
-  TodoInterface, 
-  TodoItemInterface,
-}
