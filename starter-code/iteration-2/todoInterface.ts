@@ -3,3 +3,11 @@
 // - Method for adding task where will receive a string, doesn't return anything.
 // - Method for listing all task in the console, doesn't return anything.
 // - Method for delete a task where will receive a string, doesn't return anything.
+
+export interface TodoInterface{
+    todoArray: string[];
+    // [todoArray: number]: string;
+    addTask(value: string): number;
+    listAllTasks(): void;
+    deleteTask(value: string): number;
+}
