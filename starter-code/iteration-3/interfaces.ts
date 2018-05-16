@@ -10,3 +10,23 @@
 // - Method for listing all task in the console, doesn't return anything.
 // - Method for delete a task where will receive an instance of TodoItem, doesn't return anything.
 // - Method for show all tasks that are not yet done, doesn't return anything.
+
+//two interfaces 
+export interface ITodoItem {
+  title: string;
+  status: boolean;
+  updatedAt: number;
+  toggleStatus():void;
+}
+//whatever is going to differ between the toDoItems- when building constructor funct.
+
+
+
+
+export interface IToDo {
+  ToDoITems : Array<object>;
+  addTask(ToDoItem: object): number;
+  //returns number of task in the end
+  listAllTask(): void;
+  deleteTask(TodoItem: object): number;
+}
