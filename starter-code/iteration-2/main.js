@@ -30,7 +30,7 @@ var Todo = /** @class */ (function () {
     return Todo;
 }());
 // 1. Create a class Todo that implements the Interface created before.
-// Execution
+// Execution------/
 var myTodos = new Todo([]);
 console.log("Number of items:", myTodos.addTask('This is our first task'));
 console.log("Number of items:", myTodos.addTask('Eat pizza 🍕 yummy!!!'));
