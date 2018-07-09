@@ -1,6 +1,21 @@
 // Add the reference to the "TodoInterface"
+interface TodoInterface {
+    task: Array<string>;
+    addTask(task: string);
+    listAllTasks;
+    deleteTask(task: string);
+}
+
 
 // 1. Create a class Todo that implements the Interface created before.
+class Todo implements TodoInterface{
+    constructor(
+    public addTask: string,
+    public listAllTasks: string,
+    public deleteTask: string
+    ) { }
+    }
+
 
 // Execution
 let myTodos = new Todo();
