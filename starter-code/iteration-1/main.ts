@@ -3,8 +3,7 @@
 let stringArray: Array<string> = [];
 // 2. Create a function to add a task in to the array, call it `addTask`, the function has to accept a string and don't have to return anything.
 function addTask(params:string):void {
-    let a: string;
-    this.string = a;
+    stringArray.push(this.string);
 }
 // 3. Create a function to list all tasks, it must show in the console de task.
 function () {
