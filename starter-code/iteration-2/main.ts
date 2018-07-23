@@ -1,5 +1,26 @@
+import { Inter} from './todoInterface';
 // Add the reference to the "TodoInterface"
-
+class Todo implements Inter {
+    public arr: Array<string>=[];
+    constructor() {
+    }
+    addTask(task:string):number {
+      this.arr.push(task);
+      console.log('insertion sucess');
+      return this.arr.length;
+    }
+    listAllTasks(): void{
+      this.arr.forEach(element => {
+        console.log(element); 
+     });
+    }
+    deleteTask(task: string): number{
+      this.arr.splice(this.arr.indexOf(task),1)
+      console.log('removal sucess');
+      console.log(this.arr.length);
+      return this.arr.length;
+    }
+}
 // 1. Create a class Todo that implements the Interface created before.
 
 // Execution
