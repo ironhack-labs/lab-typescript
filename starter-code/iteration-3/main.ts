@@ -1,8 +1,51 @@
 // Add the reference to the interface
-
+interface toDoItemInterface {
+  title: string;
+  isDone: boolean;
+  updatedAt: Date;
+  checkDone(): void;
+}
 // Create class TodoItem that implements the corresponding interface
+class TodoItem implements toDoItemInterface{
+  constructor(public title:string, public isDone:boolean = false, public updatedAt: Date = new Date()) {}
+  checkDone() {
+    if(this.isDone){
+      this.isDone = false;
+    } else {
+      this.isDone = true;
+    }
+  }
+}
+
 
 // Create class TodoList that implements the corresponding interface
+interface TodoInterface {
+  tasks: Array<toDoItemInterface>;
+  addTask(task): void;
+  listAllTasks(): void;
+  deleteTask(task): void;
+}
+// 1. Create a class Todo that implements the Interface created before.
+class TodoList implements TodoInterface{
+  constructor(public tasks: Array<TodoItem> = []){}
+  addTask = (loquesea) : void=> {
+    this.tasks.push(loquesea);
+  }
+  listAllTasks = () : void => {
+    console.log(this.tasks);
+  }
+  deleteTask = (el) : void => {
+    let pos = this.tasks.indexOf(el);
+    this.tasks.splice(pos, 1);
+  }
+  listUncomplete = () : void => {
+    this.tasks.forEach(e => {
+      if(!e.isDone){
+        console.log(e)
+      }
+    })
+  }
+}
 
 // Execution
 let task1 = new TodoItem('This is our first task');
