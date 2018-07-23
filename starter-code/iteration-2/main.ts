@@ -1,6 +1,21 @@
 // Add the reference to the "TodoInterface"
 
+
 // 1. Create a class Todo that implements the Interface created before.
+class myTodos implements TodoInterface{
+  constructor(public tasks : Array<string>) {
+    addTask(): number{
+      console.log(`Number of items: ${tasks.length}`);
+    }
+    listAllTasks() {
+      console.log(tasks);
+    }
+    deleteTask(): number {
+      
+    }
+  }
+
+}
 
 // Execution
 let myTodos = new Todo();
