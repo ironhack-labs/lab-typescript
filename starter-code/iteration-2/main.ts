@@ -1,6 +1,31 @@
 // Add the reference to the "TodoInterface"
+import { EmptyArray } from './todoInterface';
 
 // 1. Create a class Todo that implements the Interface created before.
+class Todo implements EmptyArray {
+    tasks:Array<string> = [];
+
+    addTask(task): number{
+      this.tasks.push(task)
+      return this.tasks.length;
+      console.log(`Task: ${task} inserted into list.`)
+    }
+
+    listAllTasks():void {
+      this.tasks.forEach(function (task){
+        console.log("" + task)
+      })
+    }
+
+    deleteTask(task):number {
+      this.tasks.splice(this.tasks.indexOf(task),1)
+      return this.tasks.length;
+      console.log(`Task: ${task} has been removed.`)
+
+    }
+
+
+}
 
 // Execution
 let myTodos = new Todo();
