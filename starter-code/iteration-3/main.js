@@ -1,3 +1,36 @@
+class TodoItem {
+    constructor(title) {
+        this.title = title;
+        this.isDone = false;
+        this.updatedAt = new Date();
+    }
+    done() {
+        this.isDone = true;
+        this.updatedAt = new Date();
+    }
+}
+class TodoList {
+    constructor() {
+        this.todoList = [];
+    }
+    addTask(task) {
+        this.todoList.push(task);
+    }
+    ;
+    listAllTasks() {
+        this.todoList.forEach(e => console.log(e));
+    }
+    ;
+    deleteTask(task) {
+        this.todoList.splice(this.todoList.indexOf(task), 1);
+    }
+    ;
+    listUncomplete() {
+        this.todoList.forEach(e => { if (!e.isDone)
+            console.log(e); });
+    }
+    ;
+}
 let task1 = new TodoItem('This is our first task');
 let task2 = new TodoItem('Eat pizza 🍕 yummy!!!');
 let task3 = new TodoItem('Finish this iteration 1!! 🤓');
