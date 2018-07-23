@@ -1,4 +1,26 @@
 // Add the reference to the "TodoInterface"
+import {pong} from "./todoInterface";
+class Todo implements pong{
+    add: Array<string> = []
+    constructor(){}
+    addTask(task):void{
+        this.add.push(task)
+    }
+
+    listAllTasks():void{
+        this.add.forEach(e => {
+            console.log(e);
+        });
+    }
+    deleteTask(task):number{
+    this.add.splice(this.add.indexOf(task),1);
+    document.body.innerHTML = "Delete done";
+    console.log(this.add.length);
+    return this.add.length;
+    }
+}
+
+
 
 // 1. Create a class Todo that implements the Interface created before.
 
