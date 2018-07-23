@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 // Iteration 1
 // 1. Create an array of strings
 var myArray = [];
