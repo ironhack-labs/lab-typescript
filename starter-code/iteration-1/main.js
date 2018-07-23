@@ -18,8 +18,8 @@ var deleteTask = function (task) {
     var pos = tasks.indexOf(task);
     if (pos !== -1) {
         tasks.splice(pos, 1);
+        console.log("Task \"" + task + "\" removed from the list");
     }
-    console.log("Task \"" + task + "\" deleted from the list");
     return tasks.length;
 };
 // Execution
