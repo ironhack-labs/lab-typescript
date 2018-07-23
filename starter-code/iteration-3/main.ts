@@ -1,6 +1,62 @@
 // Add the reference to the interface
+import {iTodoItem} from "./interfaces";
+import {iTodo} from "./interfaces";
 
 // Create class TodoItem that implements the corresponding interface
+
+class TodoItem implements iTodoItem{
+	
+	title: string;
+	done: boolean;
+	
+	constructor(title: string){
+		this.title = title;
+		this.done = false;
+	}
+	
+	toggleDone(bool: boolean) {
+		this.done = bool;
+	}
+}
+
+class TodoList implements iTodo {
+	
+	constructor(public tasks: iTodoItem[] = []){}
+	
+	addTask(task:TodoItem){
+		this.tasks.push(task);
+		return this.tasks.length;
+	}
+
+// 3. Create a function to list all tasks, it must show in the console de task.
+
+	listAllTasks(){
+		this.tasks.forEach(function(theTask) {
+			console.log(theTask.title);
+		});
+	}
+
+// 4. Create a function to delete a task, you must find the task inside the array and delete it.
+	deleteTask(task:TodoItem){
+		//this.tasks.splice(this.tasks.indexOf(task), 1);
+		
+		let index = 0; 
+		
+		while(task.title != this.tasks[index].title){
+			if(index < this.tasks.length )
+				return this.tasks.length;			
+			index++
+		}		
+		this.tasks.splice(index, 1);
+		return this.tasks.length;
+	}
+	
+	listUncomplete(){
+		this.tasks.forEach(function(theTask) {
+			console.log(theTask.title);
+		});
+	}
+}
 
 // Create class TodoList that implements the corresponding interface
 
