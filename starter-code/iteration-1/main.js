@@ -1,14 +1,12 @@
 let arr = [];
 function addTask(task) {
     arr.push(task);
-    return arr.length;
 }
 function listAllTasks() {
     arr.forEach(e => console.log(e));
 }
 function deleteTask(task) {
     arr.splice(arr.indexOf(task), 1);
-    return arr.length;
 }
 console.log("Number of items:", addTask('This is our first task'));
 console.log("Number of items:", addTask('Eat pizza 🍕 yummy!!!'));
