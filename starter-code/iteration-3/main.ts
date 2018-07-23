@@ -8,12 +8,12 @@ class TodoItem implements TodoItemInterface {
     status: boolean;
     title: string;
     updatedAt: Date
+    // myArray: Array<string> = [];
 
     constructor(title: string){
         this.title = title;
         this.status = true;
     }
-    myArray: Array<string>
     
     toggleStatus(): void{
         if(this.status === true) this.status = false;
@@ -25,7 +25,7 @@ class TodoItem implements TodoItemInterface {
 
 class TodoList implements TodoListInterface {
     task: TodoItem
-    myArray: Array<TodoItem>
+    myArray: Array<TodoItem>  = []
 
     
     addTask(task:TodoItem): number{
@@ -40,16 +40,11 @@ class TodoList implements TodoListInterface {
         })
     }
     deleteTask(task:TodoItem): number{
-        //let lastElement = myArray.pop()
-        let indexOf = null;
-        this.myArray.forEach(function(element, index){
-            if(element === task){
-                this.myArray.splice(index, 1)
-            }
-        })
-        //array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
-        //console.log(lastElement)
-        //console.log(myArray.length)
+
+        for(let i=0; i<this.myArray.length; i++){
+            if(this.myArray[i]== task) this.myArray.splice(i,1);
+        }
+
         return this.myArray.length;
     }
 
@@ -74,3 +69,4 @@ console.log("Number of items:", myTodos.deleteTask(task3));
 console.log("Number of items:", myTodos.deleteTask(task4));
 console.log("Number of items:", myTodos.deleteTask(task5));
 // myTodos.listUncomplete();
+myTodos.listAllTasks();

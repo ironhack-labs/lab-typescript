@@ -7,7 +7,7 @@
 export interface TodoItemInterface {
     title: string
     status: boolean
-    myArray: Array<string>
+    // myArray: Array<string>
     updatedAt: Date
     toggleStatus(): void
 }

@@ -3,7 +3,7 @@ import {TodoInterface} from "./todoInterface"
 
 // 1. Create a class Todo that implements the Interface created before.
 class Todo implements TodoInterface{
-    myArray: Array<string>
+    myArray: Array<string> = [];
 
     addTask(task:string): number{
         this.myArray.push(task);

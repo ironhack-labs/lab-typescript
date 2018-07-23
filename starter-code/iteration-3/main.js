@@ -2,6 +2,7 @@
 exports.__esModule = true;
 // Create class TodoItem that implements the corresponding interface
 var TodoItem = /** @class */ (function () {
+    // myArray: Array<string> = [];
     function TodoItem(title) {
         this.title = title;
         this.status = true;
@@ -17,6 +18,7 @@ var TodoItem = /** @class */ (function () {
 // Create class TodoList that implements the corresponding interface
 var TodoList = /** @class */ (function () {
     function TodoList() {
+        this.myArray = [];
     }
     TodoList.prototype.addTask = function (task) {
         this.myArray.push(task);
@@ -30,16 +32,10 @@ var TodoList = /** @class */ (function () {
         });
     };
     TodoList.prototype.deleteTask = function (task) {
-        //let lastElement = myArray.pop()
-        var indexOf = null;
-        this.myArray.forEach(function (element, index) {
-            if (element === task) {
-                this.myArray.splice(index, 1);
-            }
-        });
-        //array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
-        //console.log(lastElement)
-        //console.log(myArray.length)
+        for (var i = 0; i < this.myArray.length; i++) {
+            if (this.myArray[i] == task)
+                this.myArray.splice(i, 1);
+        }
         return this.myArray.length;
     };
     return TodoList;
@@ -61,3 +57,4 @@ console.log("Number of items:", myTodos.deleteTask(task3));
 console.log("Number of items:", myTodos.deleteTask(task4));
 console.log("Number of items:", myTodos.deleteTask(task5));
 // myTodos.listUncomplete();
+myTodos.listAllTasks();

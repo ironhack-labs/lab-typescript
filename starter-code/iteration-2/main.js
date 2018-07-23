@@ -3,6 +3,7 @@ exports.__esModule = true;
 // 1. Create a class Todo that implements the Interface created before.
 var Todo = /** @class */ (function () {
     function Todo() {
+        this.myArray = [];
     }
     Todo.prototype.addTask = function (task) {
         this.myArray.push(task);
