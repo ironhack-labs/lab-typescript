@@ -1,9 +1,41 @@
-// Add the reference to the interface
 
+// Add the reference to the interface
+import {ITodoItem} from "./interfaces"
+import {I2ToDo} from "./interfaces"
 // Create class TodoItem that implements the corresponding interface
+class TodoItem implements ITodoItem {
+    updatedAt: Date;
+    isDone: boolean;
+    constructor(public title: string){}
+    toggleDone():void{
+        this.isDone=!this.isDone
+    }
+}
 
 // Create class TodoList that implements the corresponding interface
+class TodoList implements I2ToDo {
+    constructor(public ArrayTodoItem:TodoItem[]=[]){
 
+    }
+    addTask(newtask: TodoItem):any{
+        this.ArrayTodoItem.push(newtask); 
+        return this.ArrayTodoItem.length;
+        }
+    listAllTasks():any{
+        this.ArrayTodoItem.forEach(eachTask => {
+            console.log(eachTask.title)
+        });
+    }
+    deleteTask(newtask: TodoItem):any{
+        this.ArrayTodoItem.splice(this.ArrayTodoItem.indexOf(newtask), 1)   
+        return this.ArrayTodoItem.length;
+    }
+    listUncomplete():any{
+        this.ArrayTodoItem.forEach(thingy => {
+         console.log(thingy.title)
+            })
+        };
+    }
 // Execution
 let task1 = new TodoItem('This is our first task');
 let task2 = new TodoItem('Eat pizza 🍕 yummy!!!');
