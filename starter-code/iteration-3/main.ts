@@ -1,9 +1,56 @@
 // Add the reference to the interface
-
+import { TodoItemInterface } from "../iteration-3/interfaces.js";
+import { TodoListInterface } from "../iteration-3/interfaces.js";
 // Create class TodoItem that implements the corresponding interface
+class TodoItem implements TodoItemInterface{
+    title;
+    status;
+    done: false;
+    updatedAt = new Date();
+    constructor(title){
+        this.title = title;
+    };
+    toggleStatus(done:boolean):void{
+        if(done){!done}
+        this.updatedAt = new Date;
+    };
 
+}
 // Create class TodoList that implements the corresponding interface
-
+class TodoList  implements TodoListInterface {
+        listItems:Array<TodoItemInterface>;
+        
+        constructor(){
+            this.listItems = [];
+        };
+    
+        addTask(taskToAdd:TodoItem):number{
+            this.listItems.push(taskToAdd);
+            console.log(`añadido
+            Task "${taskToAdd}" inserted in the list
+            Number of items: ${this.listItems.length}`);
+            return this.listItems.length;
+        }
+    
+        listAllTasks():void{
+            this.listItems.forEach(task => {
+                console.log(task);
+            });
+        }
+    
+        deleteTask(taskToDelete:TodoItem):number{
+            this.listItems.forEach((task) => {
+                if(task.title===taskToDelete.title){
+                    this.listItems.splice(this.listItems.indexOf(task),1)
+                    console.log(`borrado
+                    Task "${taskToDelete}" removed from the list
+                    Number of items: ${this.listItems.length}`)
+                }
+            });
+        
+            return this.listItems.length;
+        }
+    }
 // Execution
 let task1 = new TodoItem('This is our first task');
 let task2 = new TodoItem('Eat pizza 🍕 yummy!!!');
@@ -22,4 +69,3 @@ myTodos.listAllTasks();
 console.log("Number of items:", myTodos.deleteTask(task3));
 console.log("Number of items:", myTodos.deleteTask(task4));
 console.log("Number of items:", myTodos.deleteTask(task5));
-myTodos.listUncomplete();
