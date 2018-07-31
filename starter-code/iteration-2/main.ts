@@ -1,9 +1,10 @@
 // Add the reference to the "TodoInterface"
-import {taskMethods} from 'todoInterface.js';
+import {taskMethods} from './todoInterface.js';
 
 // 1. Create a class Todo that implements the Interface created before.
 class Todo implements taskMethods {
-    tasks: Array<string>;
+    // constructor(public string: Array<string>){}
+    tasks= [];
     addTask(string:string){
         this.tasks.push(string);
         console.log(`Inserted "${string}" into Tasks`)

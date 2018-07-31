@@ -3,10 +3,11 @@
 // - Method for adding task where will receive a string, doesn't return anything.
 // - Method for listing all task in the console, doesn't return anything.
 // - Method for delete a task where will receive a string, doesn't return anything.
-export interface taskMethods{
+interface taskMethods{
     tasks: Array<string>;
-    addTask(string): Number;
+    addTask(string:string): Number;
     listAllTasks(): void;
-    deleteTask(string): Number;
+    deleteTask(string:string): Number;
 }
 
+export {taskMethods}
