@@ -18,7 +18,7 @@ export interface TaskName {
 // - Method for show all tasks that are not yet done, doesn't return anything.
 export interface Task {
   tasks:                        Array<Object>;
-  addTask(taskName:    Object): void;
+  addTask(taskName:    Object): Number;
   listAllTasks():               void;
-  deleteTask(taskName: Object): void;
+  deleteTask(taskName: Object): Number;
 }

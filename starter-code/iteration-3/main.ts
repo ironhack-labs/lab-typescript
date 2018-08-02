@@ -21,19 +21,25 @@ class TodoItem implements TaskName {
 class TodoList implements Task {
   constructor(public tasks: Array<TodoItem>) {}
 
-  addTask(task: TodoItem): void {
+  addTask(task: TodoItem): Number {
     this.tasks.push(task);
+    console.log(`=========== NEW TASK ===========
+      Task "${task.title}" inserted in the list`);
+    return this.tasks.length;
   }
 
   listAllTasks(): void {
     this.tasks.forEach(task => {
-      console.log(task);
+      console.log(task.title);
     })
   }
 
-  deleteTask(task: TodoItem): void {
+  deleteTask(task: TodoItem): Number {
     const taskIndex = this.tasks.indexOf(task);
     this.tasks.splice(taskIndex, 1);
+    console.log(`=========== TASK REMOVED ===========
+      Task "${task.title}" removed from the list`);
+    return this.tasks.length;
   }
 }
 
@@ -55,5 +61,4 @@ myTodos.listAllTasks();
 console.log("Number of items:", myTodos.deleteTask(task3));
 console.log("Number of items:", myTodos.deleteTask(task4));
 console.log("Number of items:", myTodos.deleteTask(task5));
-console.log(myTodos);
 // myTodos.listUncomplete();

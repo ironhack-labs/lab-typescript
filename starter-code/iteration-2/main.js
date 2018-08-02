@@ -18,7 +18,6 @@ class Todo {
         this.tasks.splice(taskIndex, 1);
         console.log(`=========== TASK REMOVED ===========
       Task "${task}" removed from the list`);
-        console.log(this.tasks.length);
         return this.tasks.length;
     }
 }

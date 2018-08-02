@@ -15,15 +15,21 @@ class TodoList {
     }
     addTask(task) {
         this.tasks.push(task);
+        console.log(`=========== NEW TASK ===========
+      Task "${task.title}" inserted in the list`);
+        return this.tasks.length;
     }
     listAllTasks() {
         this.tasks.forEach(task => {
-            console.log(task);
+            console.log(task.title);
         });
     }
     deleteTask(task) {
         const taskIndex = this.tasks.indexOf(task);
         this.tasks.splice(taskIndex, 1);
+        console.log(`=========== TASK REMOVED ===========
+      Task "${task.title}" removed from the list`);
+        return this.tasks.length;
     }
 }
 let task1 = new TodoItem('This is our first task');
@@ -41,4 +47,3 @@ myTodos.listAllTasks();
 console.log("Number of items:", myTodos.deleteTask(task3));
 console.log("Number of items:", myTodos.deleteTask(task4));
 console.log("Number of items:", myTodos.deleteTask(task5));
-console.log(myTodos);
