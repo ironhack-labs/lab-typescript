@@ -6,7 +6,7 @@
 
 export interface TodoList {
   tasks: Array<string>;
-  addTask(task: string): void;
+  addTask(task: string): Number;
   listAllTasks(): void;
-  deleteTask(task: string): void;
+  deleteTask(task: string): Number;
 }
