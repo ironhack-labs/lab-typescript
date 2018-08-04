@@ -1,10 +1,14 @@
 // Iteration 1
 // 1. Create an array of strings
-
+let stringArray: Array<string> = [];
 // 2. Create a function to add a task in to the array, call it `addTask`, the function has to accept a string and don't have to return anything.
-
+function addTask(params:string):void {
+    stringArray.push(this.string);
+}
 // 3. Create a function to list all tasks, it must show in the console de task.
-
+function () {
+    
+}
 // 4. Create a function to delete a task, you must find the task inside the array and delete it.
 
 // Execution
