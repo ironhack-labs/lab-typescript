@@ -1,6 +1,35 @@
-// Add the reference to the "TodoInterface"
+// <------------------------------------INTERFACE-------------------------------------->
+interface toDoList{
+    list: Array<string>;
+    addTask(task:string):number;
+    listAllTasks():void;
+    deleteTask(task:string):number;
+}
+// <-------------------------------------MAIN------------------------------------------>
 
 // 1. Create a class Todo that implements the Interface created before.
+class Todo implements toDoList {
+
+    list: Array<string> = [];
+
+    addTask(task:string):number{
+        this.list.push(task);
+        return this.list.length;
+    };
+
+    listAllTasks():void{
+        this.list.forEach(element => {
+            console.log(element);
+        });
+    };
+
+    deleteTask(task:string):number{
+        this.list.splice(this.list.findIndex(element => {
+            return element === task;
+        }), 1);
+        return this.list.length;
+    };
+}
 
 // Execution
 let myTodos = new Todo();
