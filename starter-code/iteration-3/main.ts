@@ -1,8 +1,72 @@
 // Add the reference to the interface
+interface ItemInterface {
+  title: string;
+  status: string;
+  updatedAt: Date;
+  toggleStatus();
+}
+
+interface ListInterface {
+  todoItems: ItemInterface[];
+  addTask(task: ItemInterface): number;
+  listAllTasks();
+  deleteTask(item: ItemInterface): number;
+}
+
+
+
+
+
 
 // Create class TodoItem that implements the corresponding interface
+class TodoItem implements ItemInterface {
+  status: string;
+  updatedAt: Date;
+  
+  constructor(public title: string) {
+    this.status = 'unfinished';
+    this.updatedAt = new Date();
+  }
+
+  toggleStatus(){
+    if (this.status === 'unfinished') {
+      this.status = 'finished';
+    } else {
+      this.status = 'unfinished';
+    }
+
+    this.updatedAt = new Date;
+  }
+
+}
 
 // Create class TodoList that implements the corresponding interface
+class TodoList implements ListInterface {
+  todoItems: TodoItem[];
+
+  constructor() {
+    this.todoItems = [];
+  }
+
+  addTask(task: TodoItem): number {
+    this.todoItems.push(task);
+
+    return this.todoItems.length;
+  }
+  
+  listAllTasks() {
+    this.todoItems.forEach(task => {
+      console.log(task.title, task.updatedAt.now());
+    });
+  }
+  
+  deleteTask(item: TodoItem): number {
+    this.todoItems.splice(this.todoItems.indexOf(item), 1);
+   
+    return this.todoItems.length;
+  }
+
+}
 
 // Execution
 let task1 = new TodoItem('This is our first task');
