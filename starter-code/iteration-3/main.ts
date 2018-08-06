@@ -1,5 +1,21 @@
 // Add the reference to the interface
 
+interface TodoItemInterface {
+  title: string;
+  status: boolean;
+  updatedAt: any;
+  toggleStatus(task:string);
+}
+
+interface TodoListInterface {
+  arr:Array<TodoItem>;
+  addTask(task:TodoItem):number;
+  listAllTasks();
+  deleteTask(task:TodoItem):number;
+}
+
+
+
 // Create class TodoItem that implements the corresponding interface
 
 // Create class TodoList that implements the corresponding interface
