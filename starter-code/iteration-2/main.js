@@ -3,7 +3,7 @@ class Todo {
     addTask(task) {
         tasks.push(task);
         console.log(`
-        =========== NEW TASK ===========    \m
+        =========== NEW TASK ===========    \n
         Task ${task} inserted in the list   \n
         Number of items: ${tasks.length}    \n
         `);
