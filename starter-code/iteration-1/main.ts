@@ -5,6 +5,7 @@ let arrayTasks: Array<string> = [];
 const addTask = (task: string): number => {
     console.log(`=========== NEW TASK ===========`);
     arrayTasks.push(task);
+    console.log(`${task}`);
     console.log(`Insertion done!!!!`);
     return arrayTasks.length
 }
@@ -17,9 +18,12 @@ const listAllTasks = (): void => {
 // 4. Create a function to delete a task, you must find the task inside the array and delete it.
 const deleteTask = (task: string): number => {
     console.log(`=========== DELETE TASK ===========`);
-    arrayTasks.forEach((taskInArray: string, i: number) => {
-        if (taskInArray === task) arrayTasks.splice(1, i);
-    });
+    arrayTasks.forEach(
+        (taskInArray: string, i: number) => {
+            if (taskInArray === task) arrayTasks.splice(1, i);
+        })
+    ;
+    console.log(`${task}`);
     console.log(`Deletion done!!!!`);
     return arrayTasks.length
 }
