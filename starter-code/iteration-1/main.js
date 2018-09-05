@@ -4,7 +4,7 @@ var tasks = [];
 // 2. Create a function to add a task in to the array, call it `addTask`, the function has to accept a string and return 
 function addTask(task) {
     console.info('=========== NEW TASK ===========');
-    console.info("Task " + task + " inserted in the list");
+    console.info(" Task " + task + " inserted in the list");
     tasks.push(task);
     return tasks.length;
 }
@@ -13,12 +13,18 @@ function listAllTasks() {
     tasks.forEach(function (element) { return console.info(element); });
 }
 // 4. Create a function to delete a task, you must find the task inside the array and delete it.
+function deleteTask(task) {
+    tasks.splice(tasks.indexOf(task), 1);
+    console.info('=========== TASK REMOVED ===========');
+    console.info("Task " + task + " removed from the list");
+    return tasks.length;
+}
 // Execution
-console.log("Number of items:", addTask('This is our first task'));
+console.log("Number of items:", addTask('This is our first taski'));
 console.log("Number of items:", addTask('Eat pizza 🍕 yummy!!!'));
 console.log("Number of items:", addTask('Finish this iteration 1!! 🤓'));
 console.log("Number of items:", addTask('Finish this iteration 2!! 🤓'));
 console.log("Number of items:", addTask('Finish this iteration 3!! 🤓'));
 listAllTasks();
-// console.log("Number of items:", deleteTask('Finish this iteration 1!! 🤓'));
-// listAllTasks();
+console.log("Number of items:", deleteTask('Finish this iteration 1!! 🤓'));
+listAllTasks();
