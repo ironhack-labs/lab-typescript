@@ -3,3 +3,10 @@
 // - Method for adding task where will receive a string, doesn't return anything.
 // - Method for listing all task in the console, doesn't return anything.
 // - Method for delete a task where will receive a string, doesn't return anything.
+
+export interface ITodo {
+  tasks: Array<string>;
+  addTask(newTask: string): number;
+  listAllTasks(): void;
+  deleteTask(taskToRemove: string): number;
+}
