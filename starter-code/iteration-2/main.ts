@@ -1,15 +1,37 @@
 // Add the reference to the "TodoInterface"
-
+import { ToDoInterface } from './todoInterface';
 // 1. Create a class Todo that implements the Interface created before.
+class ToDo implements ToDoInterface{
+    constructor(public tasksArray:Array<string> = []){}
+    addTask(task:string):number{ // SIPONGO QUE RETORNA NUMBER PERO EN INTERFAZ PONE VOID PORQUE NO ME SALE ERRROR? 
+        this.tasksArray.push(task);
+        return this.tasksArray.length;  
+    }
+    
+    listAllTasks():void{
+        this.tasksArray.forEach(elem => {
+            console.log(elem);
+        });
+    }
+    
+    deleteTask(task:string):number{
+        this.tasksArray.splice(this.tasksArray.indexOf(task), 1);
+        console.log(`Task "${task}" has been deleted`);
+        return this.tasksArray.length;
+    }
+}
+// Execution 
+let myToDos:ToDo = new ToDo();
 
-// Execution
-let myTodos = new Todo();
-console.log("Number of items:", myTodos.addTask('This is our first task'));
-console.log("Number of items:", myTodos.addTask('Eat pizza 🍕 yummy!!!'));
-console.log("Number of items:", myTodos.addTask('Finish this iteration 1!! 🤓'));
-console.log("Number of items:", myTodos.addTask('Finish this iteration 2!! 🤓'));
-console.log("Number of items:", myTodos.addTask('Finish this iteration 3!! 🤓'));
-myTodos.listAllTasks();
-console.log("Number of items:", myTodos.deleteTask('Finish this iteration 1!! 🤓'));
-console.log("Number of items:", myTodos.deleteTask('Finish this iteration 2!! 🤓'));
-myTodos.listAllTasks();
+console.log("Number of items:", myToDos.addTask('first task'));
+console.log("Number of items:", myToDos.addTask('second task'));
+console.log("Number of items:", myToDos.addTask('third task'));
+console.log("Number of items:", myToDos.addTask('fourth task'));
+console.log("Number of items:", myToDos.addTask('fifth task'));
+
+myToDos.listAllTasks();
+console.log("Number of items:", myToDos.deleteTask('third task'));
+myToDos.listAllTasks();
+
+
+
