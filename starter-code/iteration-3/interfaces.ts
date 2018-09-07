@@ -4,9 +4,25 @@
 // - A property updatedAt, obiously is a date.
 // - Method for toogle if it's done or not, doesn't return anything.
 
+export interface TodoItemInterface{
+    title: string;
+    status: boolean;
+    updatedAt: Date;
+    toggleStatus(task:TodoItemInterface):void;
+}
+  
 // Write the interface for class Todo. It must have:
 // - An array of TodoItem as a property.
 // - Method for adding task where will receive an instance of TodoItem, doesn't return anything.
 // - Method for listing all task in the console, doesn't return anything.
 // - Method for delete a task where will receive an instance of TodoItem, doesn't return anything.
 // - Method for show all tasks that are not yet done, doesn't return anything.
+
+export interface TodoListInterface{
+    listItems:Array<TodoItemInterface>;//array de objetos de ese tipo, que es una interfaz
+    addTask(task: TodoItemInterface):number;
+    listAllTasks(tasks:Array<TodoItemInterface>):void;
+    deleteTask(task: TodoItemInterface):number;
+    listUncomplete(tasks:Array<TodoItemInterface>):void;
+    uncompletedTasks:Array<TodoItemInterface>;
+}
