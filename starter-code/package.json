@@ -1,0 +1,19 @@
+{
+  "name": "lab-typescript",
+  "version": "1.0.0",
+  "description": "![Ironhack Logo](https://i.imgur.com/1QgrNNw.png)",
+  "main": "index.js",
+  "scripts": {
+    "watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex96gm/lab-typescript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alex96gm/lab-typescript/issues"
+  },
+  "homepage": "https://github.com/alex96gm/lab-typescript#readme"
+}
