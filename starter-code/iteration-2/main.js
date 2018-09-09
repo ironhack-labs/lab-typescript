@@ -14,10 +14,7 @@ class Todo {
         };
         this.deleteTask = (task) => {
             console.log(`=========== DELETE TASK ===========`);
-            this.arrayTasks.forEach((taskInArray, i) => {
-                if (taskInArray === task)
-                    this.arrayTasks.splice(1, i);
-            });
+            this.arrayTasks.splice(this.arrayTasks.indexOf(task), 1);
             console.log(`Deletion done!!!!`);
             return this.arrayTasks.length;
         };

@@ -1,9 +1,50 @@
 // Add the reference to the interface
+import * as InterfacesToDo from './interfaces'
+//import {TodoListInterface, TodoItemInterface} from './interfaces'
 
 // Create class TodoItem that implements the corresponding interface
-
+class TodoItem implements InterfacesToDo.TodoItemInterface {
+    constructor(
+        public title:string, 
+        public status:boolean = false, 
+        public updatedAt:Date = new Date()
+        ){}
+    toggleStatus(task:InterfacesToDo.TodoItemInterface):void{
+        task.status = !this.status;
+        console.log(`Task "${task.title} is complete"`);
+    }
+}
 // Create class TodoList that implements the corresponding interface
-
+class TodoList implements InterfacesToDo.TodoListInterface {
+    constructor(
+        public arrayTasks:Array<InterfacesToDo.TodoItemInterface> = [], 
+        public uncompletedTasks:Array<InterfacesToDo.TodoItemInterface> = []
+        ){}
+    
+    addTask(task:InterfacesToDo.TodoItemInterface):number{
+        console.log(`=========== NEW TASK ===========`);
+        this.arrayTasks.push(task);
+        console.log(`Insertion done!!!!`);
+        return this.arrayTasks.length
+    }
+    
+    listAllTasks():void{        
+        this.arrayTasks.forEach((task)=>{
+            console.log(task.title);
+        })
+    }
+    deleteTask(task:InterfacesToDo.TodoItemInterface):number{
+        console.log(`=========== DELETE TASK ===========`);
+        this.arrayTasks.splice(this.arrayTasks.indexOf(task), 1);
+        console.log(`Deletion done!!!!`);
+        return this.arrayTasks.length
+    }
+    listUncomplete():Array<InterfacesToDo.TodoItemInterface>{        
+        return this.uncompletedTasks = this.arrayTasks.filter((task)=>{
+            return task.status !== true;
+        })
+    }
+}
 // Execution
 let task1 = new TodoItem('This is our first task');
 let task2 = new TodoItem('Eat pizza 🍕 yummy!!!');
