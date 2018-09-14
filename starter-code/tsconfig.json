@@ -1,8 +1,7 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "removeComments": true,
-    "target": "es6",
+    "removeComments": true
   },
   "files": [
     "./iteration-1/main.ts",
