@@ -1,5 +1,10 @@
 // Add the reference to the "TodoInterface"
+interface TodoInterface {
+  array : Array<string>;
+  addTask(task:string): number
 
+}
+function addTask (config: TodoInterface
 // 1. Create a class Todo that implements the Interface created before.
 
 // Execution
