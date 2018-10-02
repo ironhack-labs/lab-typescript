@@ -8,7 +8,7 @@ interface TodoItemInterface {
   title: string;
   status: boolean;
   updatedAt: Date;
-  toggleStatus():any;
+  toggleStatus();
 }
 
 // Write the interface for class Todo. It must have:
@@ -18,20 +18,26 @@ interface TodoItemInterface {
 // - Method for delete a task where will receive an instance of TodoItem, doesn't return anything.
 // - Method for show all tasks that are not yet done, doesn't return anything.
 interface TodoListInterface {
-  TodoItems: Array<string>;
-  addTask(TodoItem): number;
-  listAllTasks(): any;
-  deleteTask(TodoItem): number;
+  todoItems: Array<TodoItemInterface>;
+  addTask(task: TodoItem): number;
+  listAllTasks();
+  deleteTask(task: TodoItem): number;
+  listUncomplete():void;
 }
 
 // Create class TodoItem that implements the corresponding interface
 
 class TodoItem implements TodoItemInterface {
-  status: boolean;
+  status: boolean = false;
+  title: string;
+  updatedAt: Date;
 
-  constructor(public title: string, public updatedAt: Date) {}
+  constructor(title: string, updatedAt: Date = new Date()) {
+    this.title = title;
+    this.updatedAt = updatedAt;
+  }
   toggleStatus() {
-    this.status = !status;
+    this.status = !this.status;
     this.updatedAt= new Date();
   };
 
@@ -39,28 +45,29 @@ class TodoItem implements TodoItemInterface {
 
 // Create class TodoList that implements the corresponding interface
 class TodoList implements TodoListInterface {
-  TodoItem = [];
+  todoItems: Array<TodoItem> = [];
 
-  constructor() {
-  }
-
-  addTask(task: string) {
-    this.TodoItem.push(task)
-    return this.TodoItem.length;
+  addTask(task: TodoItem): number {
+    this.todoItems.push(task)
+    return this.todoItems.length;
   }
 
   listAllTasks() {
-    this.TodoItem.forEach((item) => {
+    this.todoItems.forEach((item) => {
       console.log(item.title + item.updatedAt)
     })
   }
 
-  deleteTask(task: string) {
-    for (let i = this.TodoItem.length - 1; i >= 0; i--) {
-      if (this.TodoItem[i] === task) this.TodoItem.splice(i, 1);
+  deleteTask(task: TodoItem): number {
+    for (let i = this.todoItems.length - 1; i >= 0; i--) {
+      if (this.todoItems[i] === task) this.todoItems.splice(i, 1);
     }
     console.log('Deleted ' + task)
-    return this.TodoItem.length
+    return this.todoItems.length;
+  }
+
+  listUncomplete() {
+    this.todoItems.filter((item) => item.status).forEach(item => console.log(item));
   }
 
 }

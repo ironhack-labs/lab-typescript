@@ -1,17 +1,14 @@
 
 interface TodoInterface {
   tasks: Array<string>;
-  addTask(task:string) : any;
-  listAllTasks() : any;
-  deleteTask(task: string) : any;
+  addTask(task:string) : void;
+  listAllTasks() : void;
+  deleteTask(task: string) : void;
 }
 
 // Add the reference to the "TodoInterface"
 class Todo implements TodoInterface {
-  tasks = []
-
-  constructor() {
-  }
+  tasks: Array<string> = [];
 
   addTask(task: string) {
     this.tasks.push(task)
