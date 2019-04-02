@@ -13,8 +13,9 @@ function listAllTasks():void {
     });
 }
 // 4. Create a function to delete a task, you must find the task inside the array and delete it.
-function deleteTask(taskToDelete):void{
+function deleteTask(taskToDelete):number{
     tasks = tasks.filter(task => task !== taskToDelete)
+    return tasks.length;
 }
 // Execution
 console.log("Number of items:", addTask('This is our first task'));
