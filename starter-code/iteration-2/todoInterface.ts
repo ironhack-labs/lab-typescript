@@ -1,11 +1,8 @@
 // Write the interface for class Todo. It must have:
 export default class inter{
     array: Array<String>
-
     addTask(task:String):void{}
-
     listAllTasks():void{}
-
     deleteTask(task:String):void{}
 }
 // - An array of strings as a property.
