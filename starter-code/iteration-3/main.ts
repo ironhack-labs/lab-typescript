@@ -1,25 +1,83 @@
 // Add the reference to the interface
 
+import { TodoItemInterface, TodoInterface } from "./interfaces";
+
 // Create class TodoItem that implements the corresponding interface
+
+class TodoItem implements TodoItemInterface {
+  constructor(public title: string) {}
+  done = false;
+  updatedAt = new Date();
+
+  toggleDone() {
+    this.done = !this.done;
+  }
+}
 
 // Create class TodoList that implements the corresponding interface
 
+class TodoList implements TodoInterface {
+  tasks = [];
+
+  addTask(task: TodoItemInterface) {
+    this.tasks.push(task);
+    console.log(
+      `=========== NEW TASK ===========
+    Task ${task.title} inserted in the list
+    at ${task.updatedAt}
+    Number of items: ${this.tasks.length}`
+    );
+  }
+
+  deleteTask(task: TodoItemInterface) {
+    if (this.tasks.indexOf(task) > -1) {
+      this.tasks.splice(this.tasks.indexOf(task), 1);
+      console.log(
+        `=========== TASK REMOVED ===========
+      Task ${task.title} removed from the list
+      at ${task.updatedAt}
+      Number of items: ${this.tasks.length}`
+      );
+    } else {
+      console.log(
+        `=========== TASK NOT FOUND ===========
+      Number of items: ${this.tasks.length}`
+      );
+    }
+  }
+
+  listAllTasks() {
+    console.log(`=========== ALL TASKS ===========`)
+    this.tasks.map((el, idx) => console.log(`${idx + 1} ${el.title} done: ${el.done}`));
+  }
+
+  listUncomplete() {
+    console.log(`=========== UNCOMPLETE TASKS ===========`)
+    let i = 1
+    this.tasks.filter(el => el.done === false).map(el => {
+      console.log(`${i} ${el.title}`)
+      i++
+    });
+  }
+}
+
 // Execution
-let task1 = new TodoItem('This is our first task');
-let task2 = new TodoItem('Eat pizza 🍕 yummy!!!');
-let task3 = new TodoItem('Finish this iteration 1!! 🤓');
-let task4 = new TodoItem('Finish this iteration 2!! 🤓');
-let task5 = new TodoItem('Finish this iteration 3!! 🤓');
+let task1 = new TodoItem("This is our first task");
+let task2 = new TodoItem("Eat pizza 🍕 yummy!!!");
+let task3 = new TodoItem("Finish this iteration 1!! 🤓");
+let task4 = new TodoItem("Finish this iteration 2!! 🤓");
+let task5 = new TodoItem("Finish this iteration 3!! 🤓");
 
 let myTodos = new TodoList();
 
-console.log("Number of items:", myTodos.addTask(task1));
-console.log("Number of items:", myTodos.addTask(task2));
-console.log("Number of items:", myTodos.addTask(task3));
-console.log("Number of items:", myTodos.addTask(task4));
-console.log("Number of items:", myTodos.addTask(task5));
+console.log(myTodos.addTask(task1));
+console.log(myTodos.addTask(task2));
+console.log(myTodos.addTask(task3));
+console.log(myTodos.addTask(task4));
+console.log(myTodos.addTask(task5));
 myTodos.listAllTasks();
-console.log("Number of items:", myTodos.deleteTask(task3));
-console.log("Number of items:", myTodos.deleteTask(task4));
-console.log("Number of items:", myTodos.deleteTask(task5));
+task1.toggleDone()
+console.log(myTodos.deleteTask(task3));
+console.log(myTodos.deleteTask(task4));
+console.log(myTodos.deleteTask(task5));
 myTodos.listUncomplete();
