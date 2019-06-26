@@ -18,8 +18,8 @@ export interface TodoItemInterface {
 // - Method for show all tasks that are not yet done, doesn't return anything.
 export interface TodoInterface {
     tasks: Array<TodoItemInterface>,
-    addTask(task: TodoItemInterface): void,
+    addTask(task: TodoItemInterface): number,
     listAllTasks(): void,
-    deleteTask(task: TodoItemInterface): void,
+    deleteTask(task: TodoItemInterface): number,
     listUncomplete(): void
 }
